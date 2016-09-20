@@ -1,0 +1,86 @@
+\documentclass[a4paper]{book} %{article}
+
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\def\UrlBreaks{\do\/\do-}
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{bm} % Bold math \bm command
+\usepackage[UKenglish]{isodate} % UK-format date
+
+\newcommand{\six}[1]{\SI[parse-numbers=false]{X}{#1}}
+\graphicspath{{Images/}}
+
+% Discussion times
+\newcommand{\disctime}{10:30 to 12:00 }
+\newcommand{\discdays}{Wednesdays }
+\newcommand{\discroom}{W4-529}
+\newcommand{\discexam}{8th February 2017} % Final exam
+\newcommand{\course}{Fourier Analysis }
+\newcommand{\courseurl}{fourier-analysis}
+\newcommand{\nensei}{3rd}
+
+
+\newcommand{\hash}[2]{MD5(#1\_X) = #2\ldots}
+% Add timetable?
+
+\title{Fourier Analysis\\Autumn 2016}
+\author{James Cannon, Kyushu University}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        \Huge
+        \textbf{Fourier Analysis}
+
+        Autumn 2016
+        
+        \vspace{2.0cm}
+        \LARGE
+        James Cannon\\Kyushu University
+        
+        \vspace{1.5cm}
+        \Large
+        Last updated:\\\today
+
+        \vfill
+        
+        \normalsize
+        \url{http://www.jamescannon.net/teaching/\courseurl}
+        \vspace{0.5cm}
+
+        \small
+        License: \emph{CC BY-NC 4.0}.
+        
+    \end{center}
+\end{titlepage}
+
+\input{instructions}
+\input{hash}
+
+\newpage
+\tableofcontents
+
+\chapter{Periods and frequencies}
+\include{periods}
+\chapter{Fourier Series}
+\include{fourier_series}
+% Sine and cosine series? Even odd functions?
+%\chapter{Fourier Transform (continuous)}
+%\chapter{Fourier Transform (discrete)}
+% Discrete FT
+% FFT
+% Zero-padding
+
+% Convolution?
+\end{document}

@@ -1,0 +1,46 @@
+\newpage
+\section{Hash-generation}
+\label{sec:hashes}
+
+Most solutions to challenges are encrypted using MD5 hashes. In order to check your solution, you need to generate its MD5 hash and compare it to that provided.  MD5 hashes can be generated at the following sites:
+
+\begin{itemize}
+    \item Wolfram alpha: \url{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22q_1.00\%22}
+    \item \url{www.md5hashgenerator.com}
+\end{itemize}
+
+Since MD5 hashes are very sensitive to even single-digit variation, you must enter the solution exactly. This means maintaining a sufficient level of accuracy when developing your solution, and then entering the solution according to the format below:
+
+Unless specified otherwise, any number from $0.00$ to $\pm 9999.99$ should be represented as a normal number to two decimal places. All other numbers should be in scientific form. See the table below for examples.
+
+\begin{center}
+\begin{tabular}{|l|l|}
+    \hline
+    \textbf{Solution} & \textbf{Input} \\ \hline
+    1 & 1.00 \\
+    -3 & -3.00 \\
+    -3.5697 & -3.57 \\
+    0.05 & 0.05 \\
+    0.005 & 5.00e-3 \\
+    50 & 50.00 \\
+    500 & 500.00 \\
+    5000 & 5000.00 \\
+    50,000 & 5.00e4 \\
+    $5 \times 10^{-476}$ & 5.00e-476 \\
+    $5.0009 \times 10^{-476}$ & 5.00e-476 \\
+    $-\infty$ & -infinity (never ``infinite'')\\
+    $2 \pi$ & $6.28$ \\
+    i & im(1.00) \\
+    2i & im(2.00) \\
+    1 + 2i & re(1.00)im(2.00) \\
+    1/i = i/-1 = -i & im(-1.00) \\
+    $e^{i2\pi}$ [$= cos(2 \pi) + isin(2 \pi) = 1 + i0 = 1$] & 1.00 \\
+    $e^{i\pi/3}$ [$= cos(\pi/3) + isin(\pi/3) = 0.5 + i 0.87$] & re(0.50)im(0.87) \\
+    Choices in order A, B, C, D & abcd \\
+    \hline
+\end{tabular}
+\end{center}
+
+Entry format is given with the problem. So ``q\_X'' means to enter ``q\_X'' replacing ``X'' with your solution. The first 6 digits of the MD5 sum should match the given solution (MD5(q\_X)= \ldots).
+
+Note that although some answers can usually only be integers (eg, number of elephants), for consistency, to generate the correct hash, the accuracy in terms of decimal places noted above is required.
