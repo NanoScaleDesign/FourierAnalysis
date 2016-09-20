@@ -3,7 +3,7 @@ This is course material for the Fourier Analysis course held at Kyushu Universit
 The students learn by utilising freely-available online content to work through challenges contained in a PDF file.
 The intention is to take the students from "beginner" to "experienced" by working through the challenges in sequence.
 
-The latest version of the PDF can be downloaded [here](https://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/ode.pdf).
+The latest version of the PDF can be downloaded [here](https://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/fourier_analysis.pdf).
 
 The course is still being developed and is work-in-progress.
 Suggestions and corrections are very welcome. Content is licensed with creative-commons *CC BY-NC 4.0*.
