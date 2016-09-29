@@ -13,6 +13,8 @@
 \usepackage{siunitx}
 \usepackage{bm} % Bold math \bm command
 \usepackage[UKenglish]{isodate} % UK-format date
+\usepackage{ctable} % Thick table lines
+
 
 \newcommand{\six}[1]{\SI[parse-numbers=false]{X}{#1}}
 \graphicspath{{Images/}}
@@ -39,37 +41,42 @@
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
-        
+
         \Huge
         \textbf{Fourier Analysis}
 
         Autumn 2016
-        
-        \vspace{2.0cm}
-        \LARGE
-        James Cannon\\Kyushu University
-        
+
         \vspace{1.5cm}
         \Large
         Last updated:\\\today
 
-        \vfill
-        
+        \vspace{4.0cm}
+        \LARGE
+        James Cannon\\Kyushu University
+         \vfill
+
         \normalsize
         \url{http://www.jamescannon.net/teaching/\courseurl}
+        \vspace{0.2cm}
+        \small
+        \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/fourier_analysis.pdf}
         \vspace{0.5cm}
 
-        \small
         License: \emph{CC BY-NC 4.0}.
-        
+
     \end{center}
 \end{titlepage}
 
-\input{instructions}
-\input{hash}
+\setcounter{chapter}{-1}
 
-\newpage
 \tableofcontents
+
+\chapter{Course information}
+\newpage
+\input{instructions}
+\input{timetable}
+\input{hash}
 
 \chapter{Periods and frequencies}
 \include{periods}
