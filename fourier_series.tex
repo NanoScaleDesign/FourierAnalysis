@@ -34,6 +34,8 @@ Hint: Using $sin(A+B) = sin(A) cos(B) + cos(A) sin(B)$ it should is possible to 
     \item MD5(d\_$a_k$) = 93d647\ldots, MD5(f\_$b_k$) = 9a7b58\ldots
 \end{enumerate}
 
+\timebox
+
 
 
 
@@ -80,6 +82,7 @@ X
 
 \hash{g}{6a18c0}
 
+\timebox
 
 
 
@@ -124,6 +127,7 @@ X
 
 \hash{k}{e82a2a}
 
+\timebox
 
 
 
@@ -167,6 +171,8 @@ X
 
 \hash{c}{fda796}
 
+\timebox
+
 
 
 
@@ -190,6 +196,8 @@ X
 
 \hash{m}{36ab38}
 
+\timebox
+
 
 
 
@@ -207,9 +215,9 @@ X
 \end{itemize}
 
 \subsection*{Challenge}
-Derive an expression for $C_k$ in terms of the $a_n$'s and $b_n$'s in the expression
+Derive an expression for $C_k$ in terms of the $a_k$'s and $b_k$'s in the expression
 \begin{equation}
-    f(t) = \frac{a_0}{2} + \sum_{k=1}^{k=N} a_k cos(2 \pi k t) + b_n sin(2 \pi k t) = \sum_{k=-N}^{k=N} C_k e^{2 \pi i k t}
+    f(t) = \frac{a_0}{2} + \sum_{k=1}^{k=N} a_k cos(2 \pi k t) + b_k sin(2 \pi k t) = \sum_{k=-N}^{k=N} C_k e^{2 \pi i k t}
 \end{equation}
 
 To check your answer, substitute $a_0 = 1$, $a_1 = 3$ and $b_1 = 5$ as required to calculate $C_k$ for k = -1, 0 and 1.
@@ -229,6 +237,8 @@ X
 X
 
 \hash{n}{284b53}
+
+\timebox
 
 
 
@@ -252,6 +262,8 @@ Considering the function $f(t)=t$ over the interval 0 to 1, calculate the Fourie
 X
 
 \hash{aa}{2708ad}
+
+\timebox
 
 
 
@@ -277,6 +289,8 @@ To check your answer, evaluate the Fourier coefficient for $k=-30$.
 X
 
 \hash{bb}{e904e9}
+
+\timebox
 
 
 
@@ -308,6 +322,8 @@ X
 
 \hash{cc}{d21e19}
 
+\timebox
+
 
 
 
@@ -328,9 +344,11 @@ Many textbooks will work in terms of ``Fourier sine series'' and ``Fourier cosin
 
 
 \subsection*{Challenge}
-Re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series.
+Re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines).
 
 To check your answer, evaluate the Fourier series up to $n=2$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
+
+\timebox
 
 
 
@@ -359,6 +377,8 @@ X
 
 \hash{dd}{83e943}
 
+\timebox
+
 
 
 
@@ -385,6 +405,8 @@ The Fourier series is a sum to $\pm \infty$, however in some cases the coefficie
 X
 
 \hash{ee}{8e05a4}
+
+\timebox
 
 
 
@@ -413,6 +435,8 @@ X
 Y
 
 MD5(gg\_Y) = a379b8\ldots
+
+\timebox
 
 
 
@@ -463,6 +487,8 @@ Note the symmetry of the problem. Can you see what terms will be zero? To check 
     \hline
 \end{tabular}
 
+\timebox
+
 
 
 
@@ -478,6 +504,8 @@ Calculate the Fourier series for the square wave introduced in challenge \ref{se
 \six{}
 
 \hash{oo}{bd7e5e}
+
+\timebox
 
 
 
@@ -516,12 +544,130 @@ Sum the points of the vectors in 2D that are orthogonal:
 
 \hash{pp}{92843f}
 
+\timebox
 
-% Talk about orthogonality with sec 1.9, taking some questions (and especially, the orthogonality explanation) SE.
-% Mention circles intuition
 
-% Still need to mention something about convergence?
 
-% Need to flesh out first part a bit more?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Orthonormal basis}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/math/linear-algebra/alternate-bases/orthonormal-basis/v/linear-algebra-introduction-to-orthonormal-bases}
+\end{itemize}
+
+\subsection*{Challenge}
+Sum the points of the following vectors that form an orthonormal basis:
+
+1 point :
+($\displaystyle \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}}$) and
+($\displaystyle \frac{2}{\sqrt{5}}, \frac{4}{\sqrt{5}}$)
+
+2 points:
+($\displaystyle \frac{2}{\sqrt{5}}$, $\displaystyle \frac{1}{\sqrt{5}}$) and
+($\displaystyle \frac{-1}{\sqrt{5}}$, $\displaystyle \frac{2}{\sqrt{5}}$)
+
+4 points:
+($\displaystyle \frac{2}{\sqrt{2}}, \sqrt{\frac{7}{8}}, \frac{1}{\sqrt{6}}$),
+($\displaystyle -\sqrt{\frac{2}{5}}, \frac{7}{\sqrt{14}}, -\frac{1}{\sqrt{6}}$) and
+($\displaystyle \frac{1}{\sqrt{3}},  \frac{1}{5 \sqrt{3}}, -\frac{7}{5 \sqrt{3}}$)
+
+8 points:
+($\displaystyle \frac{1}{\sqrt{21}}, \frac{2}{\sqrt{21}}, \frac{4}{\sqrt{21}}$),
+($\displaystyle -\sqrt{\frac{2}{7}}, \frac{3}{\sqrt{14}}, -\frac{1}{\sqrt{14}}$) and
+($\displaystyle \sqrt{\frac{2}{3}},  \frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}$)
+
+16 points:
+($\displaystyle \frac{1}{\sqrt{6}}, \sqrt{\frac{2}{3}}, \frac{1}{\sqrt{6}}$),
+($\displaystyle -\frac{1}{\sqrt{2}},  \frac{2 \sqrt{2}}{5}, -\frac{3}{5 \sqrt{2}}$) and
+($\displaystyle \frac{1}{\sqrt{3}},  \frac{1}{5 \sqrt{3}}, -\frac{7}{5 \sqrt{3}}$)
+
+32 points:
+($0, 2$) and ($2, 0$)
+
+64 points:
+($0, 1$) and ($1, 0$)
+
+\subsection*{Solution}
+\six{}
+
+\hash{qq}{097fd7}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Natural basis}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
+\subsection*{Challenge}
+Sum the components of the following vectors of an orthonormal basis in $\mathbb{R}^{300}$ space:
+
+\begin{itemize}
+    \item First component of the first vector
+    \item first component of the second vector
+    \item 200th component of the 100th vector
+    \item 200th component of the 200th vector
+    \item last component of the 299th vector
+    \item last component of the last vector
+\end{itemize}
+
+\subsection*{Solution}
+\six{}
+
+\hash{rr}{095c77}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Orthonormal basis for Fourier series}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
+\subsection*{Comment}
+The previous challenges have focussed on the orthogonality and orthonormality of vectors. We now make the jump to functions. As chapter 1.9 explains, although its not perfect, the analogy between vectors and functions is a good way to help understand and visualise the role that the terms of a Fourier series play in defining a basis upon which to describe a function.
+
+\subsection*{Challenge}
+Starting from the inner product of two terms ($e^{2 \pi i k_1 t}$, $e^{2 \pi i k_2 t}$) of a Fourier series, demonstrate that the terms of a Fourier series form an orthonormal basis. \textbf{Show a full derivation}.
+
+To check your intuition, you may evaluate the following cases:
+
+$X = (e^{2 \pi i k_1 t}, e^{2 \pi i k_1 t})$
+
+$Y = (e^{2 \pi i k_1 t}, e^{2 \pi i k_2 t})$
+
+\subsection*{Solution}
+If you are not confident about your derivation, please check with someone else. If there is any step that you do not fully understand, do not hesitate to ask. If you do not understand the connection between previous challenges on vectors and this challenge using functions, do not hesitate to ask someone.
+
+\textbf{X}
+
+\hash{ss}{8f7f41}
+
+\textbf{Y}
+
+MD5(tt\_Y) = 2c669b\ldots
+
+\timebox
+
+
 
 % Gibbs phenomena
