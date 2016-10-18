@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Partial derivatives}
+
+\subsection*{Challenge}
+Determine $u_t$ and $u_{xx}$ for the equation
+
+\begin{equation}
+    u(x,t) = 5tx^2 + 3t - x
+\end{equation}
+
+To check your answer, substitute $x=3$ and $t=2$ into your answers, as appropriate.
+
+\subsection*{Solution}
+$u_t$: \hash{ww}{7901cb}
+
+$u_{xx}$: \hash{xx}{6aba1c}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Heat equation: Periodicity}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Lecture 4 from 37:00 onwards: (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA}), continuing at the start of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
+\end{itemize}
+
+\subsection*{Comment}
+Please follow the derivation of the heat equation shown in the videos in lectures 4-5. This use of Fourier series is a great example of how the relatively abstract mathematical concepts covered by the course so-far can have real physical applications in science and engineering.
+
+\subsection*{Challenge}
+Add the points of the following true statements concerning a heated ring with circumference 1 and temperature distribution described by $u(x,t)$:
+
+1 point: $\displaystyle u(x,t) = u(x,t)$
+
+2 points: $\displaystyle u(x,t) = u(x,t+1)$
+
+4 points: $\displaystyle u(x,t) = u(x,t+2)$
+
+8 points: $\displaystyle u(x,t) = u(x+1,t)$
+
+16 points: $\displaystyle u(x,t) = u(x+1,t+1)$
+
+32 points: $\displaystyle u(x,t) = u(x+1,t+2)$
+
+64 points: $\displaystyle u(x,t) = u(x+2,t)$
+
+128 points: $\displaystyle u(x,t) = u(x+2,t+1)$
+
+256 points: $\displaystyle u(x,t) = u(x+2,t+2)$
+
+512 points: The temperature distribution is periodic in space but not time
+
+1024 points: The temperature distribution is periodic in time but not space
+
+2048 points: The temperature distribution is periodic in both space and time
+
+4096 points: The temperature distribution is periodic neither in space nor time
+
+
+\subsection*{Solution}
+\six{}
+
+\hash{yy}{ed4019}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Heat equation: Fourier coefficients}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Lecture 4 from 37:00 onwards: (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA}), continuing at the start of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
+\end{itemize}
+
+\subsection*{Challenge}
+Starting from the heat (diffusion) equation $u_t = u_{xx}/2$, show that the Fourier coefficient at time $t$ is given by
+
+\begin{equation}
+    C_k(t) = C_k(0) e^{-2 \pi^2 k^2 t}
+\end{equation}
+
+
+\subsection*{Solution}
+If you are not confident about your derivation or there is something you do not understand, please do not hesitate to ask.
+
+\timebox
+
+
+% Express u(x,t) in terms of a fourier sum
+
+% So we have a fourier series in space (with FC's given by C_k when t=0) that decays over time
+% Note f^(k) is the equivalent of c_k
+% Calculate the heat around a ring
+
+
