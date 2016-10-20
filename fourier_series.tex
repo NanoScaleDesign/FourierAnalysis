@@ -91,9 +91,8 @@ X
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Fourier Coefficients of sin(x)}
+\section{Fourier coefficients of sin(x)}
 \label{sec:fcsinx}
-% NT: Need to break this down into smaller steps so people know its not that complicated.
 
 \subsection*{Resources}
 \begin{itemize}
@@ -105,28 +104,18 @@ X
 You should be able to follow the derivation of the formula for Fourier coefficients ($C_k$'s) in the video. Feel free to seek help if you have trouble.
 
 \subsection*{Challenge}
-By writing $sin(x)$ in exponential form, deduce the Fourier coefficients ($C_k$'s) for the function $sin(x)$, for the following cases:
-\begin{enumerate}
-    \item k = -1
-    \item k = 0
-    \item k = 1
-\end{enumerate}
+1. Write $Sin(x)$ in exponential form.
+
+2. Expand the Fourier series for the function $f(x)$ within the limit $k=-1$ to $k=1$. % NT: Check evaluation by making this a separate question and substituting to check answer.
+
+3. Deduce the Fourier coefficients ($C_k$'s) for the function $Sin(x)$. \emph{This should be possible by inspection, rather than any significant calculation.} % NT: Include C_2, etc too
 
 \subsection*{Solutions}
-\subsubsection{k=-1}
-X
+$C_{-1}$: \hash{h}{28f251}
 
-\hash{h}{28f251}
+$C_{0}$: \hash{j}{4fd3f6}
 
-\subsubsection{k=0}
-X
-
-\hash{j}{4fd3f6}
-
-\subsubsection{k=1}
-X
-
-\hash{k}{e82a2a}
+$C_{1}$: \hash{k}{e82a2a}
 
 \timebox
 
@@ -149,28 +138,14 @@ X
 You should be able to follow the derivation of the formula for Fourier coefficients in the video. Feel free to seek help if you have trouble.
 
 \subsection*{Challenge}
-Continuing from challenge \ref{sec:fcsinx}, deduce the Fourier coefficients ($C_k$'s) for the function $1+sin(x)$, for the following cases:
-\begin{enumerate}
-    \item k = -1
-    \item k = 0
-    \item k = 1
-\end{enumerate}
+Using the same approach as challenge \ref{sec:fcsinx}, deduce for the function $1+sin(x)$ the following Fourier coefficients:
 
 \subsection*{Solutions}
-\subsubsection{k=-1}
-X
+$C_{-1}$: \hash{z}{39e026}
 
-\hash{z}{39e026}
+$C_0$: \hash{x}{0ef183}
 
-\subsubsection{k=0}
-X
-
-\hash{x}{0ef183}
-
-\subsubsection{k=1}
-X
-
-\hash{c}{89b992}
+$C_1$: \hash{c}{89b992}
 
 \timebox
 
@@ -202,47 +177,7 @@ X
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Converting between trigonometric and exponential forms}
-\label{sec:trigexpconvert}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.4 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 2 (\url{https://www.youtube.com/watch?v=1rqJl7Rs6ps})
-\end{itemize}
-
-\subsection*{Challenge}
-Derive an expression for $C_k$ in terms of the $a_k$'s and $b_k$'s in the expression
-\begin{equation}
-    f(t) = \frac{a_0}{2} + \sum_{k=1}^{k=N} a_k cos(2 \pi k t) + b_k sin(2 \pi k t) = \sum_{k=-N}^{k=N} C_k e^{2 \pi i k t}
-\end{equation}
-
-To check your answer, substitute $a_0 = 1$, $a_1 = 3$ and $b_1 = 5$ as required to calculate $C_k$ for k = -1, 0 and 1.
-
-\subsection*{Solutions}
-\subsubsection{k=-1}
-X
-
-\hash{v}{052df3}
-
-\subsubsection{k=0}
-X
-
-\hash{b}{fb29ff}
-
-\subsubsection{k=1}
-X
-
-\hash{n}{284b53}
-
-\timebox
-
-
-
+\stepcounter{section}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -333,6 +268,7 @@ X
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{The Fourier series of $f(t)=t$ in trigonometric form}
+\label{sec:trigexpconvert}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -341,13 +277,20 @@ X
 \end{itemize}
 
 \subsection*{Comment}
-Many textbooks will work in terms of ``Fourier sine series'' and ``Fourier cosine series''. For a function that is perfectly even or odd, it is possible to write a Fourier series using one of these two forms. There are direct approaches to calculating sine and cosine Fourier series, in contrast to the route taken here via the exponential form. We will continue to work in the exponential form however, since not only does this provide a deeper understanding, but you can always easily switch between exponential and trigonometric forms if you really want to.
+Since cosine and sine can be written in terms of exponentials, it is possible to switch between Fourier series that are expressed in terms of exponentials and Fourier series that are expressed in terms of sines and cosines. Many textbooks will actually work in terms of these trigonometric forms. Where only sine terms are involved, it is called a ``Fourier sine series'' and where only cosines are involved it's termed a ``Fourier cosine series''. The series have coefficients $a_0$, $a_k$ and $b_k$, in the following fashion:
 
+\begin{equation}
+    f(t) = \frac{a_0}{2} + \sum_{k=1}^{k=N} a_k cos(2 \pi k t) + b_k sin(2 \pi k t)
+\end{equation}
+
+Note that the sum here goes from $k=1$ to $k=N$, in contrast to the exponential form of Fourier series which goes between $k=\pm N$.
 
 \subsection*{Challenge}
-Re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines).
+1. Re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines). To check your answer, evaluate the Fourier series up to $k=2$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
 
-To check your answer, evaluate the Fourier series up to $n=2$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
+2. You should find you are left with an expression only in terms of sine or cosine. Which is it, and how is this related to even/odd functions?
+
+
 
 \timebox
 
