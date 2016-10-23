@@ -94,10 +94,46 @@ Starting from the heat (diffusion) equation $u_t = u_{xx}/2$, show that the Four
 
 
 \subsection*{Solution}
-If you are not confident about your derivation or there is something you do not understand, please do not hesitate to ask.
+Compare with your peers during discussion time and please ask if there is anything you do not understand.
 
 \timebox
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Heat equation}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Lecture 4 from 37:00 onwards: (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA}), continuing at the start of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
+\end{itemize}
+
+\subsection*{Comment}
+Note that the exponential in the answer for $B(t)$ is negative, leading to a decay to mean ambient temperature over time (you can think of the temperature $u(x,t)$ as the temperature relative to the surrounding environment rather than absolute temperature measured in Kelvin).
+
+\subsection*{Challenge}
+Write the heat equation and its Fourier coefficient in the form below. Identify A(x), B(t) and C(x). To check your answers, substitute $k=1$, $x=2$ and $t=3$ into the expressions (purely for checking the solution; these numbers have no physical basis).
+% This is not ideal because it doesn't distinguish negative signs
+
+\begin{equation}
+    \hat{f}(k) = \int_0^1 A(x) f(x) dx
+\end{equation}
+
+\begin{equation}
+    u(x,t) = \sum_{k=-\infty}^{k=\infty} \hat{f}(k) B(t) C(x)
+\end{equation}
+
+\subsection*{Solution}
+A: \hash{zz}{ffef92}
+
+B: \hash{aaa}{c04067}
+
+C: \hash{bbb}{ae8c65}
+
+\timebox
 
 % Express u(x,t) in terms of a fourier sum
 
