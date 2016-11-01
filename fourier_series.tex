@@ -1,3 +1,4 @@
+% NT: Specifically direct students to watch videos and read specific materials; especially the 2nd lecture video.
 \section{Introduction to Fourier coefficients}
 \label{sec:fouriercoeffintro}
 
@@ -128,6 +129,7 @@ $C_{1}$: \hash{k}{e82a2a}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Fourier Coefficients of 1 + sin(x)}
+\label{sec:fcsinxp1}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -307,8 +309,11 @@ Note that the sum here goes from $k=1$ to $k=N$, in contrast to the exponential 
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book: 1.6 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+    \item Book: 1.6.1 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
 \end{itemize}
+
+\subsection*{Comment}
+Please read the resource. There, $c_n$ is illustrated for an arbitrary period $T$ going from $0$ to $T$, but you do not need to start from $0$. If instead you want to approximate a function from time $T_0$ to $T_0+T$, you can simply swap the integration limits (ie, $T_0$ instead of $0$ and $T_0+T$ for $T$).
 
 \subsection*{Challenge}
 Determine the Fourier series for the same function as in \ref{sec:fstexpform} ($f(t)=t$), except approximate the function over the region $1<x<3$ instead of $0<x<1$.
@@ -334,11 +339,33 @@ X
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Infinite series}
 
+\subsection*{Resources}
+\begin{itemize}
+    \item Book: 1.7 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
 \subsection*{Comment}
-It is important to understand why some series are infinite, while others are not (well, technically all series are infinite since they all involve sums to $n=\infty$, however for some series the Fourier coefficients are all zero above a certain value of $n$). Therefore, make sure you understand why the answer is as it is, below. If you don't, be sure to discuss with others.
+It is important to understand why some series are infinite, while others are not (well, technically all series are infinite since they all involve sums to $n=\infty$, however for some series the Fourier coefficients are all zero above a certain value of $n$). Here
 
 \subsection*{Challenge}
-1. The Fourier series is a sum to $\pm \infty$, however in some cases the coefficients ($C_k$'s) are zero beyond a certain number of terms. Which of the terms below will have Fourier coefficients that are all zero after a certain number of terms? Sum the points of these functions.
+1. In challenge \ref{sec:fcsinx} and \ref{sec:fcsinxp1} you determined the fourier coefficients for $sin(x)$ and $sin(x)+1$. If you write the function in the form
+\begin{equation}
+    \label{eq:sinxform}
+    sin(x)=\sum_{k=-N}^{k=N} C_k e^{i k x}
+\end{equation}
+what is $N$ here?
+
+\vspace{1em}
+2. Expand $e^{i k x}$ in terms of sine and cosine. Which has the higher frequency? $k=1$ or $k=100$?
+
+\vspace{1em}
+3. Referring to the resource, do sharp corners in a function lead to higher or lower frequencies?
+
+\vspace{1em}
+4. Does non-periodiciy lead to higher or lower frequencies? In challenge \ref{sec:fstexpform} you calculated the Fourier series for $f(t)=t$. If the series is written in a form similar to equation \ref{eq:sinxform}, what would $N$ be in this case?
+
+\vspace{1em}
+5. In general, the Fourier series is a sum to $\pm \infty$, however in some cases the coefficients ($C_k$'s) are zero beyond a certain number of terms. Which of the functions below will have Fourier coefficients that are all zero after a certain number of terms? Sum the points of these functions.
 
 1 point: $x$
 
@@ -349,12 +376,18 @@ It is important to understand why some series are infinite, while others are not
 8 points: $e^{2 \pi i x}$
 
 \vspace{1em}
-2. Briefly explain the characteristics of functions that lead to infinite Fourier series and finite Fourier series.
+6. Briefly explain the characteristics of functions that lead to infinite Fourier series and finite Fourier series.
 
 \subsection*{Solution}
-X
+1. (enter as an integer, without ``.00'') \hash{ee1}{b6cadd} 
 
-\hash{ee}{8e05a4}
+2. (``1'' or ``100'') \hash{ee2}{a0bebe}
+
+3. (``lower'' or ``higher'') \hash{ee3}{f0d1f9}
+
+4. \hash{ee4}{7cd9d2}
+
+5. \hash{ee5}{9d1559}
 
 \timebox
 
@@ -423,7 +456,7 @@ Using the direct trigonometric Fourier series, obtain a general expression for t
 
 A graph of the function, including the solution for various values of $n$, is shown here:
 
-\includegraphics{fs_square_wave.png}
+\includegraphics[scale=0.75]{fs_square_wave.png}
 
 Note the symmetry of the problem. Can you see what terms will be zero? To check your solution, calculate $a_k$ and $b_k$ for $k=0$, $k=2$ and $k=3$. Also note that you will have to break the integrals into two parts and sum them in order to tackle this problem.
 
