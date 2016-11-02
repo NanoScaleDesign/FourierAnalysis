@@ -284,17 +284,34 @@ X
 Since cosine and sine can be written in terms of exponentials, it is possible to switch between Fourier series that are expressed in terms of exponentials and Fourier series that are expressed in terms of sines and cosines. Many textbooks will actually work in terms of these trigonometric forms. Where only sine terms are involved, it is called a ``Fourier sine series'' and where only cosines are involved it's termed a ``Fourier cosine series''. The series have coefficients $a_0$, $a_k$ and $b_k$, in the following fashion:
 
 \begin{equation}
+    \label{eq:fsoftintrigform}
     f(t) = \frac{a_0}{2} + \sum_{k=1}^{k=N} a_k cos(2 \pi k t) + b_k sin(2 \pi k t)
 \end{equation}
 
 Note that the sum here goes from $k=1$ to $k=N$, in contrast to the exponential form of Fourier series which goes between $k=\pm N$.
 
 \subsection*{Challenge}
-1. Re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines). To check your answer, evaluate the Fourier series up to $k=2$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
-% NT: Need to explain about re-arranging. Otherwise students try to use formula instead. Need practise about switching from sums from -infty to sums from 1
+1. Write $sin(x)$ in the form of an exponential sum:
+\begin{equation}
+    sin(x)=\sum_{k=-N}^{k=N} f(k) e^{g(k,x)}
+\end{equation}
+Your answer in challenge \ref{sec:fcsinx} may help you.
 
-2. You should find you are left with an expression only in terms of sine or cosine. Which is it, and how is this related to even/odd functions?
+What is $f(k)$, $g(k,x)$ and $N$? To check your answers for $f(k)$ and $g(k,x)$, substitute $k=1$ and $x=2$ as appropriate into your expressions for $f(k)$ and $g(k,x)$.
 
+2. By converting from an exponential-form sum ($\sum_{k=-\infty}^{k=\infty}$) to a trigonometric-form sum ($\sum_{k=1}^{k=\infty}$), re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines). To check your answer, evaluate the Fourier series up to $k=2$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
+% NT: Put re-arranging practise into another challenge and make it in more depth (cosines, and both directions). Otherwise students try to use formula instead. Need practise about switching from sums from -infty to sums from 1
+
+3. You should find you are left with an expression only in terms of sine or cosine. Which is it, and how is this related to even/odd functions?
+
+\subsection*{Solution}
+\emph{(See the hash examples about entering imaginary numbers)}
+
+$f(k)$: \hash{iiif}{3979fa}
+
+$g(k)$: \hash{iiig}{6cd239}
+
+$N$: \hash{iiin}{e3f634}
 
 \timebox
 
@@ -444,7 +461,7 @@ It is hopefully clear now that for real signals, due to the symmetry of the posi
 \end{equation}
 
 \subsection*{Challenge}
-Using the direct trigonometric Fourier series, obtain a general expression for the $a_k$ and $b_k$ coefficients for the square-wave signal with periodicity 4
+Using the direct trigonometric Fourier series, obtain a general expression for the $a_k$ and $b_k$ coefficients for the square-wave signal with periodicity 4:
 
 \begin{equation}
     f(t)=
@@ -454,11 +471,11 @@ Using the direct trigonometric Fourier series, obtain a general expression for t
     \end{cases}
 \end{equation}
 
+Note the symmetry of the problem. Can you see what terms will be zero? To check your solution, calculate $a_k$ and $b_k$ for $k=0$, $k=2$ and $k=3$. Note that you will have to break the integrals into two parts and sum them in order to tackle this problem.
+
 A graph of the function, including the solution for various values of $n$, is shown here:
 
 \includegraphics[scale=0.75]{fs_square_wave.png}
-
-Note the symmetry of the problem. Can you see what terms will be zero? To check your solution, calculate $a_k$ and $b_k$ for $k=0$, $k=2$ and $k=3$. Also note that you will have to break the integrals into two parts and sum them in order to tackle this problem.
 
 \subsection*{Solution}
 \begin{tabular}{|l|l|l|}
@@ -482,7 +499,7 @@ Note the symmetry of the problem. Can you see what terms will be zero? To check 
 \section{Direct trigonometric calculation of a Fourier series: the series}
 
 \subsection*{Challenge}
-Calculate the Fourier series for the square wave introduced in challenge \ref{sec:fs_squarewave} using direct trigonometric calculation for up to $n=3$. Check your solution by evaluating for $t=0.1$.
+Calculate the Fourier series for the square wave introduced in challenge \ref{sec:fs_squarewave} using direct trigonometric calculation for up to $k=3$ (equation \ref{eq:fsoftintrigform}). Check your solution by evaluating for $t=0.1$.
 
 \subsection*{Solution}
 \six{}
