@@ -333,18 +333,75 @@ $N$: \hash{iiin}{e3f634}
 Please read the resource. There, $c_n$ is illustrated for an arbitrary period $T$ going from $0$ to $T$, but you do not need to start from $0$. If instead you want to approximate a function from time $T_0$ to $T_0+T$, you can simply swap the integration limits (ie, $T_0$ instead of $0$ and $T_0+T$ for $T$).
 
 \subsection*{Challenge}
-Determine the Fourier series for the same function as in \ref{sec:fstexpform} ($f(t)=t$), except approximate the function over the region $1<x<3$ instead of $0<x<1$.
+\subsubsection*{Part I}
+1. By expanding the exponential out in terms of sine and cosine, determine the numerical value of $e^{i \pi k}$ for $k=0,1,2,3,4$.
 
-To check your answer, evaluate the Fourier series up to $n=2$ with $t=1.8$.
+2. Assuming $k$ can only be an integer, determine the value of $N$ in the formula $e^{i \pi k} = N^k$ and the value of $M$ in the formula $e^{i 2 \pi k} = M^k$.
 
-The graph with increasing values of $n$ looks like this:
+\subsubsection*{Part II}
+Determine $C_0$ and $C_k$ for the following square-wave functions using exponential fourier-series representation:
 
-\includegraphics{fs_other_periods.png}
+\vspace{2em}
+1.
+\begin{equation}
+    f(t)=
+    \begin{cases}
+        1 & \text{for } 0<t<1 \\
+        0 & \text{for } 1<t<2
+    \end{cases}
+\end{equation}
+
+\includegraphics[scale=0.5]{fourier_series_square_wave_01_2.png}
+
+\vspace{2em}
+2.
+\begin{equation}
+    f(t)=
+    \begin{cases}
+        1 & \text{for } 0<t<\frac{1}{2} \\
+        0 & \text{for } \frac{1}{2}<t<1
+    \end{cases}
+\end{equation}
+
+\includegraphics[scale=0.5]{fourier_series_square_wave_00p5_1.png}
+
+\vspace{2em}
+3. \emph{(Do not try to simplify the exponentials beyond cosines and sines)}
+\begin{equation}
+    f(t)=
+    \begin{cases}
+        1 & \text{for } \frac{1}{8}<t<\frac{7}{8} \\
+        0 & \text{for } \frac{7}{8}<t<\frac{9}{8}
+    \end{cases}
+\end{equation}
+
+\includegraphics[scale=0.5]{fourier_series_square_wave_eighths.png}
 
 \subsection*{Solution}
-X
+\subsubsection*{Part I}
+1.\\
+$k=0$: \hash{ddk0}{1b3914}\\
+$k=1$: \hash{ddk1}{da2480}\\
+$k=2$: \hash{ddk2}{67efb2}\\
+$k=3$: \hash{ddk3}{26a591}\\
+$k=4$: \hash{ddk4}{f09b1c}
 
-\hash{dd}{83e943}
+2.\\
+N: \hash{ddn}{f3550e}\\
+M: \hash{ddm}{e84cb4}
+
+\subsubsection*{Part II}
+1.\\
+$C_0$: \hash{dd1c0}{aab052}\\
+$C_1$: $\displaystyle \frac{-i}{\pi}$
+
+2.\\
+$C_0$: \hash{dd2c0}{c34c5d}\\
+$C_1$: $\displaystyle \frac{-i}{\pi}$
+
+3.\\
+$C_0$: \hash{dd3c0}{ac102c}\\
+$C_1$: $\displaystyle \frac{-1}{\sqrt{2}\pi}$
 
 \timebox
 
