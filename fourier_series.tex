@@ -248,19 +248,23 @@ X
 \end{itemize}
 
 \subsection*{Challenge}
-Write the function $f(t)=t$ in terms of its infinite exponential Fourier series.
+1. Write $e^{i 2 \pi k}$ in terms of cosines and sines.
+
+2. Evaluate your expression obtained in (1) for $k=0,1,2,3,4$
+
+3. Write the function $f(t)=t$ evaluated between 0 and 1 in terms of its exponential Fourier series $f(t)=\sum_{k=-N}^{k=N} g(k,t)$ replacing $g(k,t)$ as appropriate.
 
 % NT: Add a challenge with a sum from k=-n to n with n=2
-To check your answer, evaluate the Fourier series up to $n=2$ with $t=0.8$.
+To check your answer, evaluate the Fourier series up to $N=1$ with $t=0.8$.
 
-The graph with increasing values of $n$ looks like this:
+The graph with increasing values of $N$ looks like this:
 
 \includegraphics{fourier_series_t.png}
 
 \subsection*{Solution}
 X
 
-\hash{cc}{d21e19}
+\hash{cc}{caa033}
 
 \timebox
 
@@ -299,7 +303,7 @@ Your answer in challenge \ref{sec:fcsinx} may help you.
 
 What is $f(k)$, $g(k,x)$ and $N$? To check your answers for $f(k)$ and $g(k,x)$, substitute $k=1$ and $x=2$ as appropriate into your expressions for $f(k)$ and $g(k,x)$.
 
-2. By converting from an exponential-form sum ($\sum_{k=-\infty}^{k=\infty}$) to a trigonometric-form sum ($\sum_{k=1}^{k=\infty}$), re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines). To check your answer, evaluate the Fourier series up to $k=2$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
+2. By converting from an exponential-form sum ($\sum_{k=-N}^{k=N}$) to a trigonometric-form sum ($\sum_{k=1}^{k=N}$), re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines). To check your answer, evaluate the Fourier series with $N=1$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
 % NT: Put re-arranging practise into another challenge and make it in more depth (cosines, and both directions). Otherwise students try to use formula instead. Need practise about switching from sums from -infty to sums from 1
 
 3. You should find you are left with an expression only in terms of sine or cosine. Which is it, and how is this related to even/odd functions?
