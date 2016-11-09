@@ -129,6 +129,7 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fourier transform of a triangle function}
+\label{sec:ft_triangle}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -253,12 +254,49 @@ $1$ s delay: $0.0274405 + 0.0199367i$
 \timebox
 
 
-% Need to do an exmaple with fourier transform (square wave?) Is in in the PDF? https://www.youtube.com/watch?annotation_id=annotation_655167&feature=iv&src_vid=8JKb9UN6W4c&v=_HJH3MekMHY
 
-% Next: continue to figure out what the fourier transform is, and try to make a problem with it.
 
-% 2.2.4 pairs and duality?
-% 2.2.6: Linearity, shift, stretch
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier transform of a stretched triangle function}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Book: Chapter 2.2.8 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
+\subsection*{Challenge}
+Since this can be a little confusing, please be sure to fully read the listed resource and make sure you understand the reasoning and derivation.
+
+A triangle function of general width can be defined as
+
+\begin{equation}
+    f(at)=
+    \begin{cases}
+        1 - a|t| & \text{for } a|t| < 1\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+
+1. In challenge \ref{sec:ft_triangle} the base-width of the triangle was $2$ (ie, $1-(-1)$) and the half-base-width was $1$ (ie, $1-0$). What is the half-base-width for a triangle when $a=2$ and $a=1/2$?
+
+2. Calculate the Fourier Transform $\hat{f}(s)$ for the case where the width of the triangle-function is doubled. To check your answer, evaluate the transform at $s=0.1$.
+
+3. Write a few sentences explaining how stretching and squeezing in the time-domain is related to stretching and squeezing in the frequency domain.
+
+\includegraphics[scale=0.75]{triangledouble.png}
+
+\subsection*{Solution}
+1.\\
+$a=2$: \hash{iii}{e8cb88}\\
+$a=1/2$: \hash{jjj}{eb8c63}\\
+
+2. $\hat{f}(0.1)=1.75$
+
+\timebox
+
+
 
 
 % Show that Sin(x)/x is 1 at x=0
