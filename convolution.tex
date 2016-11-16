@@ -1,0 +1,203 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convolution introduction}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video lecture 8 starting at 31:30: \url{https://youtu.be/wUT1huREHJM?t=31m30s}
+\end{itemize}
+
+\subsection*{Comment}
+Here we expand our study to convolution; a powerful function for processing signals. Convolution is not immediately intuetive, but Prof. Osgood provides an excellent introduction.
+
+\subsection*{Challenge}
+Make notes following the above video deriving the formula relating convolution in the frequency and time domains.
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Filtering}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video lecture 9 until 24:15: \url{https://www.youtube.com/watch?v=NrOR2qMVWOs}
+\end{itemize}
+
+\subsection*{Comment}
+The above video includes an excellent example of using fourier analysis in a scientific context, including its application in filters.
+
+The challenge below asks you to watch to 24:15, however after this point he goes on to describe the futility of trying to visualise convolution in the time-domain. Nevertheless, the graphics on convolution on Wikipedia [1] (especially these: [2a,b]) I think go some way to visualising what's happening in the time-domain.
+
+1: \url{https://en.wikipedia.org/wiki/Convolution}\\
+2a: \url{https://en.wikipedia.org/wiki/Convolution\#/media/File:Convolution_of_box_signal_with_itself2.gif}\\
+2b: \url{https://en.wikipedia.org/wiki/Convolution\#/media/File:Convolution_of_spiky_function_with_box2.gif}
+
+For your reference, turbidity standards of 5, 50, and 500 Nephelometric Turbidity Units (left to right respectively) are shown here:\\
+\includegraphics{turbidity.png}\\
+\emph{Source: \url{https://en.wikipedia.org/wiki/Turbidity}}
+
+\subsection*{Challenge}
+1. Take notes following the above video until 24:15. There is a lot of useful information here. The questions below highlight the key points that I want you to understand, however they do not cover everything, so please be sure to follow the video.
+
+2. Using a few sentences and diagrams, describe an ideal low-pass, high-pass and band-pass filter. How can they be applied in the frequency domain to influence the signal in the time-domain?
+
+3. Write a few sentences and equations describing how convolution in the time-domain is related to signal multiplication in the frequency-domain.
+
+\timebox
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convolution with a window function}
+
+\subsection*{Comment}
+If you still find this confusing, one useful way to think about it (and there are probably better ways to think about it than this) is to imagine you have a signal $g(t)$ that varies with time $t$. You then apply a window filtering function at time $\tau$, after which you shift the function $g$ to $t-\tau$ so that the origin of $g$ is now at the filter function (ie, $t-\tau$ instead of just $t$). You then add up the total common area under the curves by varying $\tau$. Note that notation $t$ and $\tau$ can be different or even opposite, depending on the context. Your only way of knowing the meaning is to see how they are used in the functions.
+
+\subsection*{Challenge}
+1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(\tau)=\tau^2$ with time. 
+
+Obtain the convolution of the signal $(f \star g)(t)$ with a window function (essentially a low-pass filter)
+\begin{equation}
+    f(\tau)=
+    \begin{cases}
+        1 & \text{for } -1/2 < \tau < 1/2\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+check your answer by calculating the value of the convolved function at $t=0$.
+
+2. Compare the answer above when $t=0$ with direct integration of $\tau^2$ between $-1/2$ and $1/2$. Why are they the same?
+
+\subsection*{Solution}
+\hash{ppp}{290253}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convolution with a continuous function}
+
+\subsection*{Challenge}
+Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies with time $\tau$ as $f(\tau)=\tau$.  Apply a filter to the signal that is defined at time $t$ as $e^{-|t|}$.
+
+\emph{Hint: $\int_{-\infty}^{\infty} \text{(even function)} = 2 \int_{0}^{\infty} \text{(even function)}$.}
+
+To check your answer, substitute $t=1$ into your final answer.
+
+\subsection*{Solution}
+\hash{qqq}{e48f28}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Inequalities}
+
+\subsection*{Challenge}
+1. Re-write $-1/2 < t - \tau$ in the form $f(\tau) < t$ replacing $f(\tau)$ with appropriate expressions.
+
+2. Re-write $t - \tau < 1/2$ in the form $t < f(\tau)$ replacing $f(\tau)$ with appropriate expressions.
+
+3. Re-write $-1/2 < t - \tau < 1/2$ in the form $f(\tau) < t < g(\tau)$ replacing $f(\tau)$ and $g(\tau)$ with appropriate expressions.
+
+\subsection*{Solution}
+To check your solutions, substitute $\tau=1/2$ into the final expressions:
+
+1. $f(1/2)$: \hash{kkk}{115edb}\\
+2. $f(1/2)$: \hash{mmm}{6d64cd}\\
+3. $f(1/2)$: \hash{nnn}{414d80} and $g(1/2)$: \hash{ooo}{3ec4d7}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Touching window functions}
+\label{sec:touchingwindows}
+
+\subsection*{Challenge}
+1. Consider two window functions $f$ and $g$.
+\begin{equation}
+    f(\tau)=
+    \begin{cases}
+        1 & \text{for } -1/2 < \tau < 1/2\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+\begin{equation}
+    g(t-\tau)=
+    \begin{cases}
+        1 & \text{for } -1/2 < t-\tau < 1/2\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+You can imagine a fixed window function $f$ and a shiftable window-function $g$ (depending on the value of $t$). What is the value of $t$ in the following situations?
+
+a) The left side of window $f$ and the right side of window $g$ are touching.\\
+b) Complete overlap of windows $f$ and $g$.\\
+c) The right side of window $f$ and the left side of window $g$ are touching.
+
+2.\\
+a) Write a function that describes the position of the left-hand-side of window function $g$ at time $t$.\\
+b) Write a function that describes the position of the right-hand-side of window function $g$ at time $t$.\\
+To check your answers, substitute $t=1$ into your expressions.
+
+\subsection*{Solution}
+1.a) \hash{rrr}{1e3803}\\
+1.b) \hash{sss}{171271}\\
+1.c) \hash{ttt}{95acc3}\\
+
+2.a) \hash{uuu}{e27eca}\\
+2.b) \hash{vvv}{23da5b}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convolution of two window functions}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Webpage: \url{http://cnx.org/contents/h0BzlV-O@7/Convolution---Complete-example}
+\end{itemize}
+
+\subsection*{Challenge}
+1. Show that the convolution of the two window functions in challenge \ref{sec:touchingwindows} in the time-domain results in the triangle function
+\begin{equation}
+    h(t)=
+    \begin{cases}
+        1+t & \text{for } 1 < t < 0\\
+        1-t & \text{for } 0 < t < 1\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+
+2. Given the function of a window function in the frequency domain (ie, your answer for challenge \ref{sec:tophat}), calculate the convolution of two window functions in the frequency domain. You don't need to try to convert your answer to the time-domain (unless you want to).
+
+\timebox
+
+\fi

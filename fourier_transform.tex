@@ -6,12 +6,12 @@
 \subsection*{Resources}
 \begin{itemize}
     \item Book: Chapter 2 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video I: Last part of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
+    \item Video I: Lecture 5 from 27:00 (\url{https://youtu.be/X5qRpgfQld4?t=27m})
     \item Video II: First part of lecture 6 (\url{https://www.youtube.com/watch?v=4lcvROAtN_Q})
 \end{itemize}
 
 \subsection*{Comment}
-Until now we have been considering Fourier series which allows us to describe periodic phenomena. This can however cause issues, such as in challenge \ref{sec:fstexpform} or \ref{sec:nonunitperiods} when the function isn't actually periodic, since the derived fourier series results in periodicity outside the region of integration. The Fourier transform can help overcome this limitation and accurately describe signals which are non-periodic.
+Until now we have been considering Fourier series which allows us to describe periodic phenomena. This can however cause issues, such as in challenge \ref{sec:fstexpform} when the function isn't actually periodic, since the derived fourier series results in periodicity outside the region of integration. The Fourier transform can help overcome this limitation and accurately describe signals which are non-periodic.
 
 The suggested resources provide an excellent intuetive path to the connection between Fourier Series and Fourier Transforms, and this challenge is designed to give you the opportunity to take some time to try to understand the main concepts behind the transition.
 
@@ -223,6 +223,7 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
 \subsection*{Resources}
 \begin{itemize}
     \item Book: Chapter 2.2.7 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+    \item Video lecture 8: \url{https://www.youtube.com/watch?v=wUT1huREHJM}
 \end{itemize}
 
 \subsection*{Challenge}
@@ -264,6 +265,7 @@ $1$ s delay: $0.0274405 + 0.0199367i$
 \subsection*{Resources}
 \begin{itemize}
     \item Book: Chapter 2.2.8 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+    \item Video lecture 8: \url{https://www.youtube.com/watch?v=wUT1huREHJM}
 \end{itemize}
 
 \subsection*{Challenge}
@@ -299,6 +301,35 @@ $a=1/2$: \hash{jjj}{eb8c63}\\
 
 
 
-% Show that Sin(x)/x is 1 at x=0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier transform of a shifted-stretched function}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Book: Chapter 2.2.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
+\subsection*{Comment}
+During the past few challenges we have been considering various transforms of common functions. The ability to utilise such transforms; and generate your own manipulations of them; can be very useful for applications related to filtering.
+
+\subsection*{Challenge}
+Show that the Fourier Transform of the function $f(at\pm b)$ can be given by
+\begin{equation}
+    \frac{1}{|a|} e^{\pm i 2 \pi s b/a} \hat{f}(s/a)
+\end{equation}
+
+
+\timebox
+
+
+
+
+\input{convolution}
+% Discrete (L19-10:30,L20)
+
+
 
 % Calculate fourier transform of dirichlet window https://www.youtube.com/watch?annotation_id=annotation_655167&feature=iv&src_vid=8JKb9UN6W4c&v=_HJH3MekMHY
+
