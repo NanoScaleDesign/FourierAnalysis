@@ -196,6 +196,8 @@ X
 
 \subsection*{Challenge}
 Considering the function $f(t)=t$ over the interval 0 to 1, calculate the Fourier coefficient $C_0$ using the derived formula for Fourier coefficients. Compare with the average over the interval.
+% NT: Add practise of e^2pi i k = 1 before this challenge.
+% NT: Change to saw-wave
 
 \subsection*{Solution}
 X
@@ -295,25 +297,25 @@ Since cosine and sine can be written in terms of exponentials, it is possible to
 Note that the sum here goes from $k=1$ to $k=N$, in contrast to the exponential form of Fourier series which goes between $k=\pm N$.
 
 \subsection*{Challenge}
-1. Write $sin(x)$ in the form of an exponential sum:
+1. Write $sin(2 \pi t)$ in the form of an exponential sum:
 \begin{equation}
-    sin(x)=\sum_{k=-N}^{k=N} f(k) e^{g(k,x)}
+    sin(2 \pi k t)=\sum_{k=-N}^{k=N} f(k) e^{g(k,t)}
 \end{equation}
 Your answer in challenge \ref{sec:fcsinx} may help you.
 
-What is $f(k)$, $g(k,x)$ and $N$? To check your answers for $f(k)$ and $g(k,x)$, substitute $k=1$ and $x=2$ as appropriate into your expressions for $f(k)$ and $g(k,x)$.
+What is $f(k)$, $g(k,t)$ and $N$? To check your answers for $f(k)$ and $g(k,t)$, substitute $k=1$ and $t=2$ as appropriate into your expressions for $f(k)$ and $g(k,t)$.
 
 2. By converting from an exponential-form sum ($\sum_{k=-N}^{k=N}$) to a trigonometric-form sum ($\sum_{k=1}^{k=N}$), re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines). To check your answer, evaluate the Fourier series with $N=1$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
 % NT: Put re-arranging practise into another challenge and make it in more depth (cosines, and both directions). Otherwise students try to use formula instead. Need practise about switching from sums from -infty to sums from 1
 
-3. You should find you are left with an expression only in terms of sine or cosine. Which is it, and how is this related to even/odd functions?
+3. You should find you are left with an expression only in terms of sine or cosine. Which is it? Is the function $f(t)=t$ is an odd function ($f(-t)=-f(t)$). Does an odd function result in $a_k$ or $b_k$ being zero? Note that for an even function ($f(-t)=f(t)$), the opposite is true.
 
 \subsection*{Solution}
 \emph{(See the hash examples about entering imaginary numbers)}
 
 $f(k)$: \hash{iiif}{3979fa}
 
-$g(k)$: \hash{iiig}{6cd239}
+$g(k)$: \hash{iiig}{365dd7}
 
 $N$: \hash{iiin}{e3f634}
 
