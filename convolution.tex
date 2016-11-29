@@ -5,7 +5,7 @@
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Video lecture 8 starting at 31:30: \url{https://youtu.be/wUT1huREHJM?t=31m30s}
+    \item Video lecture 8 starting at 32:15: \url{https://youtu.be/wUT1huREHJM?t=32m15s}
 \end{itemize}
 
 \subsection*{Comment}
@@ -52,7 +52,6 @@ For your reference, turbidity standards of 5, 50, and 500 Nephelometric Turbidit
 \timebox
 
 
-
 \iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -60,10 +59,10 @@ For your reference, turbidity standards of 5, 50, and 500 Nephelometric Turbidit
 \section{Convolution with a window function}
 
 \subsection*{Comment}
-If you still find this confusing, one useful way to think about it (and there are probably better ways to think about it than this) is to imagine you have a signal $g(t)$ that varies with time $t$. You then apply a window filtering function at time $\tau$, after which you shift the function $g$ to $t-\tau$ so that the origin of $g$ is now at the filter function (ie, $t-\tau$ instead of just $t$). You then add up the total common area under the curves by varying $\tau$. Note that notation $t$ and $\tau$ can be different or even opposite, depending on the context. Your only way of knowing the meaning is to see how they are used in the functions.
+To the ``signal'' here is $g(t-\tau)$ and the ``window function'' is $f(\tau)$.
 
 \subsection*{Challenge}
-1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(\tau)=\tau^2$ with time. 
+1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t-\tau)=(t-\tau)^2$ with time. 
 
 Obtain the convolution of the signal $(f \star g)(t)$ with a window function (essentially a low-pass filter)
 \begin{equation}
@@ -73,7 +72,6 @@ Obtain the convolution of the signal $(f \star g)(t)$ with a window function (es
         0 & \text{otherwise}
     \end{cases}
 \end{equation}
-check your answer by calculating the value of the convolved function at $t=0$.
 
 2. Compare the answer above when $t=0$ with direct integration of $\tau^2$ between $-1/2$ and $1/2$. Why are they the same?
 
@@ -85,92 +83,92 @@ check your answer by calculating the value of the convolved function at $t=0$.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Convolution with a continuous function}
-
-\subsection*{Challenge}
-Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies with time $\tau$ as $f(\tau)=\tau$.  Apply a filter to the signal that is defined at time $t$ as $e^{-|t|}$.
-
-\emph{Hint: $\int_{-\infty}^{\infty} \text{(even function)} = 2 \int_{0}^{\infty} \text{(even function)}$.}
-
-To check your answer, substitute $t=1$ into your final answer.
-
-\subsection*{Solution}
-\hash{qqq}{e48f28}
-
-\timebox
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Inequalities}
-
-\subsection*{Challenge}
-1. Re-write $-1/2 < t - \tau$ in the form $f(\tau) < t$ replacing $f(\tau)$ with appropriate expressions.
-
-2. Re-write $t - \tau < 1/2$ in the form $t < f(\tau)$ replacing $f(\tau)$ with appropriate expressions.
-
-3. Re-write $-1/2 < t - \tau < 1/2$ in the form $f(\tau) < t < g(\tau)$ replacing $f(\tau)$ and $g(\tau)$ with appropriate expressions.
-
-\subsection*{Solution}
-To check your solutions, substitute $\tau=1/2$ into the final expressions:
-
-1. $f(1/2)$: \hash{kkk}{115edb}\\
-2. $f(1/2)$: \hash{mmm}{6d64cd}\\
-3. $f(1/2)$: \hash{nnn}{414d80} and $g(1/2)$: \hash{ooo}{3ec4d7}
-
-\timebox
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Convolution with a continuous function}
+%
+%\subsection*{Challenge}
+%Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies with time $\tau$ as $f(\tau)=\tau$.  Apply a filter to the signal that is defined at time $t$ as $e^{-|t|}$.
+%
+%\emph{Hint: $\int_{-\infty}^{\infty} \text{(even function)} = 2 \int_{0}^{\infty} \text{(even function)}$.}
+%
+%To check your answer, substitute $t=1$ into your final answer.
+%
+%\subsection*{Solution}
+%\hash{qqq}{e48f28}
+%
+%\timebox
 
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Touching window functions}
-\label{sec:touchingwindows}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Inequalities}
+%
+%\subsection*{Challenge}
+%1. Re-write $-1/2 < t - \tau$ in the form $f(\tau) < t$ replacing $f(\tau)$ with appropriate expressions.
+%
+%2. Re-write $t - \tau < 1/2$ in the form $t < f(\tau)$ replacing $f(\tau)$ with appropriate expressions.
+%
+%3. Re-write $-1/2 < t - \tau < 1/2$ in the form $f(\tau) < t < g(\tau)$ replacing $f(\tau)$ and $g(\tau)$ with appropriate expressions.
+%
+%\subsection*{Solution}
+%To check your solutions, substitute $\tau=1/2$ into the final expressions:
+%
+%1. $f(1/2)$: \hash{kkk}{115edb}\\
+%2. $f(1/2)$: \hash{mmm}{6d64cd}\\
+%3. $f(1/2)$: \hash{nnn}{414d80} and $g(1/2)$: \hash{ooo}{3ec4d7}
+%
+%\timebox
 
-\subsection*{Challenge}
-1. Consider two window functions $f$ and $g$.
-\begin{equation}
-    f(\tau)=
-    \begin{cases}
-        1 & \text{for } -1/2 < \tau < 1/2\\
-        0 & \text{otherwise}
-    \end{cases}
-\end{equation}
-\begin{equation}
-    g(t-\tau)=
-    \begin{cases}
-        1 & \text{for } -1/2 < t-\tau < 1/2\\
-        0 & \text{otherwise}
-    \end{cases}
-\end{equation}
-You can imagine a fixed window function $f$ and a shiftable window-function $g$ (depending on the value of $t$). What is the value of $t$ in the following situations?
 
-a) The left side of window $f$ and the right side of window $g$ are touching.\\
-b) Complete overlap of windows $f$ and $g$.\\
-c) The right side of window $f$ and the left side of window $g$ are touching.
 
-2.\\
-a) Write a function that describes the position of the left-hand-side of window function $g$ at time $t$.\\
-b) Write a function that describes the position of the right-hand-side of window function $g$ at time $t$.\\
-To check your answers, substitute $t=1$ into your expressions.
 
-\subsection*{Solution}
-1.a) \hash{rrr}{1e3803}\\
-1.b) \hash{sss}{171271}\\
-1.c) \hash{ttt}{95acc3}\\
-
-2.a) \hash{uuu}{e27eca}\\
-2.b) \hash{vvv}{23da5b}
-
-\timebox
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Touching window functions}
+%\label{sec:touchingwindows}
+%
+%\subsection*{Challenge}
+%1. Consider two window functions $f$ and $g$.
+%\begin{equation}
+%    f(\tau)=
+%    \begin{cases}
+%        1 & \text{for } -1/2 < \tau < 1/2\\
+%        0 & \text{otherwise}
+%    \end{cases}
+%\end{equation}
+%\begin{equation}
+%    g(t-\tau)=
+%    \begin{cases}
+%        1 & \text{for } -1/2 < t-\tau < 1/2\\
+%        0 & \text{otherwise}
+%    \end{cases}
+%\end{equation}
+%You can imagine a fixed window function $f$ and a shiftable window-function $g$ (depending on the value of $t$). What is the value of $t$ in the following situations?
+%
+%a) The left side of window $f$ and the right side of window $g$ are touching.\\
+%b) Complete overlap of windows $f$ and $g$.\\
+%c) The right side of window $f$ and the left side of window $g$ are touching.
+%
+%2.\\
+%a) Write a function that describes the position of the left-hand-side of window function $g$ at time $t$.\\
+%b) Write a function that describes the position of the right-hand-side of window function $g$ at time $t$.\\
+%To check your answers, substitute $t=1$ into your expressions.
+%
+%\subsection*{Solution}
+%1.a) \hash{rrr}{1e3803}\\
+%1.b) \hash{sss}{171271}\\
+%1.c) \hash{ttt}{95acc3}\\
+%
+%2.a) \hash{uuu}{e27eca}\\
+%2.b) \hash{vvv}{23da5b}
+%
+%\timebox
 
 
 
@@ -180,24 +178,45 @@ To check your answers, substitute $t=1$ into your expressions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Convolution of two window functions}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item Webpage: \url{http://cnx.org/contents/h0BzlV-O@7/Convolution---Complete-example}
-\end{itemize}
-
 \subsection*{Challenge}
-1. Show that the convolution of the two window functions in challenge \ref{sec:touchingwindows} in the time-domain results in the triangle function
+%1. Show that the convolution of the two window functions in challenge \ref{sec:touchingwindows} in the time-domain results in the triangle function
+%\begin{equation}
+%    h(t)=
+%    \begin{cases}
+%        1+t & \text{for } 1 < t < 0\\
+%        1-t & \text{for } 0 < t < 1\\
+%        0 & \text{otherwise}
+%    \end{cases}
+%\end{equation}
+
+In challenge \ref{sec:tophat} you calculated the spectrum of a window function. Imagine here you have two window functions $f(t)$ and $g(\tau)$.
+
 \begin{equation}
-    h(t)=
+    f(t)=
     \begin{cases}
-        1+t & \text{for } 1 < t < 0\\
-        1-t & \text{for } 0 < t < 1\\
-        0 & \text{otherwise}
+        1 & \text{for } |t| < 1/2 \\
+        0 & \text{for } |t| > 1/2
     \end{cases}
 \end{equation}
 
-2. Given the function of a window function in the frequency domain (ie, your answer for challenge \ref{sec:tophat}), calculate the convolution of two window functions in the frequency domain. You don't need to try to convert your answer to the time-domain (unless you want to).
+\begin{equation}
+    g(\tau)=
+    \begin{cases}
+        1 & \text{for } |\tau| < 1/2 \\
+        0 & \text{for } |\tau| > 1/2
+    \end{cases}
+\end{equation}
+
+1. Calculate the frequency-domain spectrum of the convolution of the two window functions.
+
+2. Deduce (without calculation) what the resulting function is in the time-domain.
+
+\subsection*{Solution}
+To check your answer, substitute $s=1$ into your answers
+
+1. 0.71
+
+2. \hash{www}{9a90c0}
 
 \timebox
-
 \fi
