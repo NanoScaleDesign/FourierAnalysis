@@ -54,12 +54,12 @@ For your reference, turbidity standards of 5, 50, and 500 Nephelometric Turbidit
 \section{Convolution with a window function}
 
 \subsection*{Comment}
-To the ``signal'' here is $g(t-\tau)$ and the ``window function'' is $f(\tau)$.
+The ``signal'' here is $g(t-\tau)$ and the ``window function'' is $f(\tau)$.
 
 \subsection*{Challenge}
 1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t-\tau)=(t-\tau)^2$ with time. 
 
-Obtain the convolution of the signal $(f \star g)(t)$ with a window function (essentially a low-pass filter)
+Obtain the convolution of the signal $(f \star g)(t)$ with a window function:
 \begin{equation}
     f(\tau)=
     \begin{cases}
@@ -194,9 +194,9 @@ In challenge \ref{sec:tophat} you calculated the spectrum of a window function. 
     \end{cases}
 \end{equation}
 
-1. Calculate the frequency-domain spectrum of the convolution of the two window functions.
+1. Use your knowledge of the window-function in the frequency domain from challenge \ref{sec:tophat} to calculate the frequency-domain spectrum of the convolution of the two window functions.
 
-2. Deduce (without calculation) what the resulting function is in the time-domain.
+2. Compare your answer to that obtained in challenge \ref{sec:ft_triangle}. What is the resulting function in the time-domain? \emph{This should be possible by comparison, without calculation.}
 
 \subsection*{Solution}
 To check your answer, substitute $s=1$ into your answers
