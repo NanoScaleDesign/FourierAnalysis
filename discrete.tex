@@ -222,3 +222,101 @@ B = \hash{b}{23ae42}
 
 
 % NT: Go the other way to reconstruct a signal. Should spend an entire class on this.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The limits of DFT calculation}
+\label{sec:dftlimits}
+
+\subsection*{Resources}
+Practically, the DFT is calculated using the Fast Fourier Transform (FFT). The reason is that the number of operations grows with the square of the number of samples which is unsustainable for typical signals.
+
+The following pages are based on slides developed by Prof. Maraso Yamashiro for the 2015 class on Fourier Analysis, and highlight this problem quantitatively.
+
+\includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x2,frame=true]{fft_1-4.pdf}
+
+\subsection*{Challenge}
+Considering a spectrum of frequencies range from 0 to 22 kHz with a resolution of 1 Hz, how many multiplications were required to calculate that spectrum?
+
+\subsection*{Solutions}
+\emph{(Note: a number like 5,232,500,000 is entered as ``5.23e9'')}
+
+\hash{c}{5bd29d}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The concepts of the FFT}
+
+\subsection*{Resources}
+The Cooley and Tukey algorithm for calculating the FFT is not that complicated, but can get very messy and it takes some time to really understand it. Therefore, we will limit ourselves to understanding some basic concepts upon which it is built.
+
+The main concept is that many of the elements in the Fourier matrix are repetitive. For example, you can notice the symmetry about the diagonal in the $F_4$ matrix:
+
+\begin{equation}
+   F_4 = \left(
+\begin{array}{cccc}
+    1 & \tcr{1} & \tcr{1} & \tcr{1} \\
+    \tcb{1} & -i & \tcr{-1} & \tcr{i} \\
+    \tcb{1} & \tcb{-1} & 1 & \tcr{-1} \\
+    \tcb{1} & \tcb{i} & \tcb{-1} & -i \\
+\end{array}
+\right) 
+\end{equation}
+
+One key concept therefore is that once we have calculated an element of the matrix, we don't need to calculate it again for elements that will turn out to be the same. The key question then becomes: how do we determine which elements will be repetitions of which other elements?
+
+The ``twiddle factor'' shows how elements of matrix $F_N$ (ie, $w^{nk}$) are repeated. This can be visualised as points on a circle on the real-imaginary plane as the following slides from Prof. Maraso Yamashiro show.
+
+\includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x2,frame=true]{fft_6-7.pdf}
+
+First one can notice that repeated terms are consistently even or odd. For example, for $N=8$ it was seen that $w^0$, $w^8$, $w^{16}$ and $w^{24}$ all share the same value ($=1$) while $w_7$ and $w_{15}$ share the same (off-axis) value. You will notice however that simply breaking the functions into odd and even terms is not enough to unambiguously define the values of the twiddle factors, since even and odd terms can each still have multiple values.
+
+One can take advantage of this symmetry (in ways not explained here) by taking the even-numbered terms and odd-numbered terms of the signal-vector $\bm{f}$ to create two new vectors, each of half the length of the original signal-vector:
+
+\begin{align}
+    \bm{f_{even}} &= [f_0, f_2, \dots, f_{N-2}]^T \\
+    \bm{f_{odd}} &= [f_1, f_3, \dots, f_{N-1}]^T
+\end{align}
+
+Then renumbering the terms back to $0, 1, 2, \dots, N/2-1$:
+
+\begin{align}
+    \bm{f_{even}} &= [f_{ev,0}, f_{ev,1}, \dots, f_{ev,N/2-1}]^T \\
+    \bm{f_{odd}} &= [f_{od,0}, f_{od,1}, \dots, f_{od,N/2-1}]^T \\
+\end{align}
+
+This can then be repeated, taking the even- and odd-numbered terms of $\bm{f_{even}}$ to make two more vectors of half-length, and doing the same for $\bm{f_{odd}}$ so we now have 4 vectors each $1/4$ the length of the original signal-vector $\bm{f}$. This is repeated until there are $N/2$ vectors each of length $2$.
+
+Although beyond the scope of the explanation here, this ultimately allows one to take advantage of the repetitive nature of the twiddle factor, reducing the scaling of the number of multiplications drastically from $N^2$ to $Nlog_2 N$, as shown in the following slide from Prof. Maraso Yamashiro:
+
+\includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x2,frame=true]{fft_28.pdf}
+
+A further point to note is that, in order to continuously divide the signal in half until each vector is length $2$, the original signal must be of length $2^p$ where p is some integer. For example, a signal of length $8$ can be halved twice into four vectors of length $2$, but a signal of length $9$ cannot be divided into two signals of \emph{equal length}.
+
+This problem is overcome through the use of \emph{zero-padding}. In the example in the previous paragraph, the signal of length $9$ would simply have seven zeros added to it at the end to create a signal of total length $16$, which could then be halved three times into eight vectors of length $2$.
+
+\subsection*{Challenge}
+1. Considering the signal that generated the spectrum in challenge \ref{sec:dftlimits}, how many zeros must be added to the end of the sampled signal to permit FFT to be performed?
+
+2. How many times can the padded signal be halved?
+
+3. How many multiplications does this signal require under FFT?
+
+4. Considering the original unpadded signal, how many times more multiplications are required under standard DFT compared to processing under FFT?
+
+\subsection*{Solutions}
+1. \hash{d}{65464b}
+
+2. \hash{e}{166b99}
+
+3. 491,520
+
+4. 984.70
