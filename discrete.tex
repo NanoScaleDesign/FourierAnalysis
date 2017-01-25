@@ -241,7 +241,7 @@ The following pages are based on slides developed by Prof. Maraso Yamashiro for 
 \includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x2,frame=true]{fft_1-4.pdf}
 
 \subsection*{Challenge}
-Considering a spectrum of frequencies range from 0 to 22 kHz with a resolution of 1 Hz, how many multiplications were required to calculate that spectrum?
+Considering a signal sampled at 22 kHz, how many multiplications are required to calculate $F$ in the calculation $\bm{\hat{f}} = F \bm{f}$?
 
 \subsection*{Solutions}
 \emph{(Note: a number like 5,232,500,000 is entered as ``5.23e9'')}
@@ -300,9 +300,9 @@ Although beyond the scope of the explanation here, this ultimately allows one to
 
 \includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x2,frame=true]{fft_28.pdf}
 
-A further point to note is that, in order to continuously divide the signal in half until each vector is length $2$, the original signal must be of length $2^p$ where p is some integer. For example, a signal of length $8$ can be halved twice into four vectors of length $2$, but a signal of length $9$ cannot be divided into two signals of \emph{equal length}.
+A further point to note is that, in order to continuously divide the signal in half until each vector is length $2$, the original signal must be of length $2^p$ where p is some integer. For example, a signal of length $8$ such as $\bm{[1,2,3,4,5,6,7,8]}$ can be halved once into two vectors of length four ($\bm{[1,3,5,7]}$ and $\bm{[2,4,6,8]}$) and then again into four vectors of length two ($\bm{[1,5]}$, $\bm{[3,7]}$, $\bm{[2,6]}$, $\bm{[4,8]}$). If the vector is of length 9 however, such as $\bm{[1,2,3,4,5,6,7,8,9]}$, the signal cannot be divided into two signals of \emph{equal length}.
 
-This problem is overcome through the use of \emph{zero-padding}. In the example in the previous paragraph, the signal of length $9$ would simply have seven zeros added to it at the end to create a signal of total length $16$, which could then be halved three times into eight vectors of length $2$.
+This problem is overcome through the use of \emph{zero-padding}. In the example in the previous paragraph, the signal of length $9$ would simply have seven zeros added to it at the end to create a signal of total length $16$ ($\bm{[1,2,3,4,5,6,7,8,9,0,0,0,0,0,0,0]}$), which could then be halved three times into eight vectors of length $2$.
 
 \subsection*{Challenge}
 1. Considering the signal that generated the spectrum in challenge \ref{sec:dftlimits}, how many zeros must be added to the end of the sampled signal to permit FFT to be performed?
