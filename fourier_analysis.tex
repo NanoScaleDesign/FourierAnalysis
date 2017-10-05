@@ -25,6 +25,7 @@
 \graphicspath{{Images/}}
 
 % Discussion times
+\newcommand{\courseyear}{2017 }
 \newcommand{\disctime}{10:30 to 12:00 }
 \newcommand{\discdays}{Wednesdays }
 \newcommand{\discroom}{W4-529}
@@ -33,13 +34,16 @@
 \newcommand{\courseurl}{fourier-analysis}
 \newcommand{\nensei}{3rd}
 \newcommand{\timebox}{\vfill Study-time (from end of previous challenge to end of this challenge): \underline{\hspace{1cm} minutes}}
-\newcommand{\assstart}{26 October}
 
 
 \newcommand{\hash}[2]{MD5(#1\_X) = #2\ldots}
 \newcommand{\tcr}[1]{\textcolor{red}{#1}}
 \newcommand{\tcb}[1]{\textcolor{blue}{#1}}
-% Add timetable?
+
+\newcommand{\solint}[2]{X = Your solution\\Form: Integer.\\Place the indicated letter in front of the number.\\Example: aX where $X=46$ is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22a46\%22}{a46}\\\\Hash of {#1}X = {#2}}
+\newcommand{\solstr}[2]{X = Your solution\\Form: String.\\Place the indicated letter in front of the string.\\Example: aX where X=abcd is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22aabcd\%22}{aabcd}\\\\Hash of {#1}X = {#2}}
+\newcommand{\soltwodp}[2]{X = Your solution\\Form: Decimal to 2 decimal places.\\Place the indicated letter in front of the number.\\Example: aX where $X=46.00$ is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22a46.00\%22}{a46.00}\\\\Hash of {#1}X = {#2}}
+\newcommand{\solscitwodp}[2]{X = Your solution\\Form: Scientific notation with the mantissa in standard form to 2 decimal places and the exponent in integer form.\\Place the indicated letter in front of the number.\\Example: aX where $X=4.0543 \times 10^{-3}$ is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22a4.05e-3\%22}{a4.05e-3}\\\\Hash of {#1}X = {#2}}
 
 \title{Fourier Analysis\\Autumn 2016}
 \author{James Cannon, Kyushu University}
@@ -54,7 +58,7 @@
         \Huge
         \textbf{Fourier Analysis}
 
-        Autumn 2016
+        Autumn \courseyear
 
         \vspace{1.5cm}
         \Large
@@ -63,10 +67,10 @@
         \vspace{4.0cm}
         \LARGE
         James Cannon\\Kyushu University
-         \vfill
+        \vfill
 
         \normalsize
-        \url{http://www.jamescannon.net/teaching/\courseurl}
+        \url{http://www.jamescannon.net/teaching/\courseurl}\\
         \vspace{0.2cm}
         \small
         \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/fourier_analysis.pdf}
@@ -86,19 +90,21 @@
 \input{instructions}
 \input{timetable}
 \input{hash}
-\input{coursework}
+%\input{coursework}
 
-\chapter{Periods and frequencies}
-\include{periods}
-\chapter{Fourier Series}
-\include{fourier_series}
-\chapter{Fourier Transform}
-\include{fourier_transform}
-\chapter{Discrete Fourier Transform}
-\include{discrete}
-\appendix 
-\chapter{Practise challenges}
-\include{appendix}
-\chapter{Mid-term exam questions}
-\include{mid_term_exam}
+\chapter{Hash practise}
+\include{hashpractise}
+%\chapter{Periods and frequencies}
+%\include{periods}
+%\chapter{Fourier Series}
+%\include{fourier_series}
+%\chapter{Fourier Transform}
+%\include{fourier_transform}
+%\chapter{Discrete Fourier Transform}
+%\include{discrete}
+%\appendix 
+%\chapter{Practise challenges}
+%\include{appendix}
+%\chapter{Mid-term exam questions}
+%\include{mid_term_exam}
 \end{document}

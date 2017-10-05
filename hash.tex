@@ -2,30 +2,19 @@
 \section{Hash-generation}
 \label{sec:hashes}
 
-Most solutions to challenges are encrypted using MD5 hashes. In order to check your solution, you need to generate its MD5 hash and compare it to that provided.  MD5 hashes can be generated at the following sites:
+Some solutions to challenges are encrypted using MD5 hashes. In order to check your solution, you need to generate its MD5 hash and compare it to that provided. MD5 hashes can be generated at the following sites:
 
 \begin{itemize}
-    \item Wolfram alpha: (For example: md5 hash of ``q\_1.00'') \url{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22q_1.00\%22}
+    \item Wolfram alpha: (For example: md5 hash of ``q1.00'') \url{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22q1.00\%22}
     \item \url{www.md5hashgenerator.com}
 \end{itemize}
 
-Since MD5 hashes are very sensitive to even single-digit variation, you must enter the solution exactly. This means maintaining a sufficient level of accuracy when developing your solution, and then entering the solution according to the format below:
-
-Unless specified otherwise, any number from $0.00$ to $\pm 9999.99$ should be represented as a normal number to two decimal places. All other numbers should be in scientific form. See the table below for examples.
+Since MD5 hashes are very sensitive to even single-digit variation, you must enter the solution \emph{exactly}. This means maintaining a sufficient level of accuracy when developing your solution, and then entering the solution according to the format suggested by the question. Some special input methods:
 
 \begin{center}
 \begin{tabular}{|l|l|}
     \hline
     \textbf{Solution} & \textbf{Input} \\ \hline
-    1 & 1.00 \\
-    -3 & -3.00 \\
-    -3.5697 & -3.57 \\
-    0.05 & 0.05 \\
-    0.005 & 5.00e-3 \\
-    50 & 50.00 \\
-    500 & 500.00 \\
-    5000 & 5000.00 \\
-    50,000 & 5.00e4 \\
     $5 \times 10^{-476}$ & 5.00e-476 \\
     $5.0009 \times 10^{-476}$ & 5.00e-476 \\
     $-\infty$ & -infinity (never ``infinite'')\\
@@ -42,6 +31,4 @@ Unless specified otherwise, any number from $0.00$ to $\pm 9999.99$ should be re
 \end{tabular}
 \end{center}
 
-Entry format is given with the problem. So ``q\_X'' means to enter ``q\_X'' replacing ``X'' with your solution. The first 6 digits of the MD5 sum should match the given solution (MD5(q\_X)= \ldots).
-
-Note that although some answers can usually only be integers (eg, number of elephants), for consistency, to generate the correct hash, the accuracy in terms of decimal places noted above is required.
+The first 6 digits of the MD5 sum should match the first 6 digits of the given solution.
