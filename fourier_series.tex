@@ -1,41 +1,54 @@
 % NT: Specifically direct students to watch videos and read specific materials; especially the 2nd lecture video.
 % NT: Add a section about different limits and ways of expressing FS.
 
-\section{Introduction to Fourier coefficients}
-\label{sec:fouriercoeffintro}
+\section{Even and odd functions}
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book: 1.4 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 2 (\url{https://www.youtube.com/watch?v=1rqJl7Rs6ps})
+    \item Wikipedia: \url{https://en.wikipedia.org/wiki/Even_and_odd_functions}
 \end{itemize}
 
 \subsection*{Challenge}
-Deduce in a simple way the Fourier coefficients $a_1$ and $b_1$ in the Fourier series
-\begin{equation}
-    \sum_{k=1}^{N} a_k cos(2 \pi k t) + b_k sin(2 \pi k t)
-\end{equation}
+Sum the points of all the following \emph{true} statements:
 
-for a signal made up of multiple sine signals
-\begin{equation}
-    \sum_{k=1}^{N} A_k sin(2 \pi k t + \phi_k)
-\end{equation}
+1 point: $f(x)=\sin(x)$ is an odd function
 
-for the following cases:
-\begin{enumerate}
-    \item $N=1$, $k=1$, $A_1=1$, $\phi_1=0$
-    \item $N=1$, $k=1$, $A_1=1$, $\phi_1=\pi/2$
-    \item $N=1$, $k=1$, $A_1=1$, $\phi_1=\pi/5$
-\end{enumerate}
+2 points: $f(x)=\sin(x)$ is an even function
 
-Hint: Using $sin(A+B) = sin(A) cos(B) + cos(A) sin(B)$ it should is possible to find the answer without resorting to complex calculation.
+4 points: $f(x)=\cos(x)$ is an odd function
 
-\subsection*{Solutions}
-\begin{enumerate}
-    \item MD5(o\_$a_k$) = a2c1fe\ldots, MD5(p\_$b_k$) = de80c6\ldots
-    \item MD5(a\_$a_k$) = 718a6c\ldots, MD5(s\_$b_k$) = f86f0c\ldots
-    \item MD5(d\_$a_k$) = 93d647\ldots, MD5(f\_$b_k$) = 9a7b58\ldots
-\end{enumerate}
+8 points: $f(x)=\cos(x)$ is an even function
+
+16 points: $f(x)=x$ is an odd function
+
+32 points: $f(x)=x$ is an even function
+
+64 points: $f(x)=\sin(x) + \cos(x)$ is an odd function
+
+128 points: $f(x)=\sin(x) + \cos(x)$ is an even function
+
+256 points: The infinitely repeating square wave where $f(x)=
+    \begin{cases}
+        1 & \text{for } 0<x<1 \\
+        -1 & \text{for } 1<x<2
+    \end{cases}$ is an odd function.
+
+512 points: The above infinitely repeating square wave is an even function.
+
+1024 points: The infinitely repeating square wave where $f(x)=
+    \begin{cases}
+        1 & \text{for } 0<x<2 \\
+        0 & \text{for } 2<x<4
+    \end{cases}$ is an odd function.
+
+2048 points: The infinitely repeating square wave where $f(x)=
+    \begin{cases}
+        1 & \text{for } 0<x<2 \\
+        0 & \text{for } 2<x<4
+    \end{cases}$ is an even function.
+
+\subsection*{Solution}
+\solint{g}{205d04}
 
 
 
@@ -44,46 +57,298 @@ Hint: Using $sin(A+B) = sin(A) cos(B) + cos(A) sin(B)$ it should is possible to 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Even and odd functions}
-% NT: Need to add practise about even/odd functions occuring as part of fourier functions, maybe in terms of trig cases
-% NT: There is confusion about f(t)=-f(t) technique for square-waves etc that don't exhibit such behaviour.
+\section{Introduction to sine and cosine Fourier coefficients}
+\label{sec:trigcoeff}
+
+\subsection*{Comment}
+Fourier series involves the construction of a signal by summing multiple periodic signals and careful choice of each frequency's amplitude and phase. For example, considering the following 3 signals:
+\begin{enumerate}
+    \item $f_1(t) = 2 \sin(2 \pi t)$
+    \item $f_2(t) = 1 \sin(4 \pi t + \pi)$
+    \item $f_3(t) = 0.3 \sin(6 \pi t + \pi/5)$
+\end{enumerate}
+Their sum (k = 1 to 3) produces a much more complex shape:
+
+\includegraphics{signal_buildup.png}
+
+Here we will consider Fourier sine and cosine series. We will go beyond this description later, but you should be aware of their existance and a method of their derivation.
+
+\subsection*{Challenge}
+As shown above, a complex function (signal) can be made up of a sum of sine signals:
+\begin{equation}
+    f(t) = A_0 + \sum_{k=1}^{N} A_k \sin(2 \pi k t + \phi_k)
+\end{equation}
+
+Using basic trigonomatric relations, show that this can be re-written in terms of a sum of sines and cosines:
+\begin{equation}
+    \label{eq:fssincos}
+    f(t) = \frac{a_0}{2} + \sum_{k=1}^{N} a_k \cos(2 \pi k t) + b_k \sin(2 \pi k t)
+\end{equation}
+
+I want you to see how the phase information is encoded in the representation of equation \ref{eq:fssincos}. $a_k$ and $b_k$ are referred to as Fourier coefficients. Write an expression for the coefficients $a_k$, $b_k$ and $a_0$.
+
+\subsection*{Solutions}
+To check your answer, calculate $a_0$, $a_1$ and $b_1$ given the following information:\\
+$A_0=-1/2$, $A_1 = 0.7$, $\phi_1 = \pi/5$.
+
+(make sure your calculator is using radians)
+
+$a_1 = 0.41145$, $b_1 = 0.566312$.
+
+$a_0$:
+\soltwodp{f}{75d06e}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The significance of the fourier coefficients}
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Wikipedia: \url{https://en.wikipedia.org/wiki/Even_and_odd_functions}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-fourier-series-intro}
+\end{itemize}
+
+\subsection*{Comments}
+I recommend to view the suggested resource as this gives a nice introduction to the subject and challenges ahead. Note that the period used in the video is different to that we're using in our description, but you should become comfortable with moving between different notations.
+
+\subsection*{Challenge}
+Write a few sentences describing in qualitative terms what the significance of the magnitude of the fourier coefficients $a_k$ and $b_k$ in challenge \ref{sec:trigcoeff} is.
+
+\subsection*{Solutions}
+Please compare your answer with your partner or discuss with the teacher in class.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Integral of $\sin(kt)$ and $\cos(kt)$}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-integral-of-sinmt-and-cosmt}
 \end{itemize}
 
 \subsection*{Challenge}
-Referring in part to the cases in challenge \ref{sec:fouriercoeffintro}, sum the points of all the following TRUE statements:
+Show that the following integrals evaluate to zero:
+\begin{equation}
+    \int_0^1 \sin(2 \pi k t) dt = 0
+\end{equation}
 
-1 point: Case 1 is an odd function
+\begin{equation}
+    \int_0^1 \cos(2 \pi k t) dt = 0
+\end{equation}
 
-2 points: Case 1 is an even function
+\subsection*{Solutions}
+Please compare your answer with your partner or discuss with the teacher in class.
 
-4 points: Case 2 is an odd function
 
-8 points: Case 2 is an even function
 
-16 point: Case 3 is an odd function
 
-32 points: Case 3 is an even function
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-64 points: $f(x)=Sin(x)$ is an odd function
+\section{Integral of product of sines and cosines}
 
-128 points: $f(x)=Sin(x)$ is an even function
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-integral-sine-times-sine}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-integral-cosine-times-cosine}
+\end{itemize}
 
-256 points: $f(x)=Cos(x)$ is an odd function
+\subsection*{Challenge}
+Considering the following integrals, show under what conditions the following integrals evaluate to zero, and what condition they don't evaluate to zero. What is the non-zero evaluation result?
 
-512 points: $f(x)=Cos(x)$ is an even function
+\begin{equation}
+    \int_0^1 \sin(2 \pi m t) \sin(2 \pi n t) dt
+\end{equation}
 
-1024 points: $f(x)=x$ is an odd function
+\begin{equation}
+    \int_0^1 \cos(2 \pi m t) \cos(2 \pi n t) dt
+\end{equation}
 
-2048 points: $f(x)=x$ is an even function
+\subsection*{Solutions}
+Please compare your answer with your partner or discuss with the teacher in class.
 
-\subsection*{Solution}
-X
 
-\hash{g}{6a18c0}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{First term in a trigonometric Fourier series}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-first-term-fourier-series}
+\end{itemize}
+
+\subsection*{Challenge}
+Considering a fourier series represented by
+\begin{equation}
+    f(t) = \frac{a_0}{2} + \sum_{k=1}^{N} a_k \cos(2 \pi k t) + b_k \sin(2 \pi k t)
+\end{equation}
+
+What is $a_0$ for the following functions?
+\begin{enumerate}
+    \item $f(t) = \sin(10 \pi t)$
+    \item Square wave function $f(t) = \begin{cases} 2 & \text{for } 0<x<1 \\ 1 & \text{for } 1<x<2 \end{cases}$
+    \item $f(t) = t^2$ considered only over the interval from $t=0$ to $t=1$
+\end{enumerate}
+
+\subsection*{Solutions}
+1.\\
+\soltwodp{d}{705887}
+
+2.\\
+\soltwodp{e}{e1509d}
+
+3.\\
+\soltwodp{f}{98680d}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Fourier coefficient $a_k$}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-fourier-coefficients-cosine}
+\end{itemize}
+
+\subsection*{Challenge}
+Derive an expression for the Fourier coefficient $a_k$ in
+\begin{equation}
+    f(t) = \frac{a_0}{2} + \sum_{k=1}^{N} a_k \cos(2 \pi k t) + b_k \sin(2 \pi k t)
+\end{equation}
+
+Note the difference in period between the above equation and the suggested resource.
+
+\subsection*{Solutions}
+Please compare your answer with your partner or discuss with the teacher in class.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Fourier coefficient $b_k$}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-fourier-coefficients-sine}
+\end{itemize}
+
+\subsection*{Challenge}
+Derive an expression for the Fourier coefficient $b_k$ in
+\begin{equation}
+    f(t) = \frac{a_0}{2} + \sum_{k=1}^{N} a_k \cos(2 \pi k t) + b_k \sin(2 \pi k t)
+\end{equation}
+
+Note the difference in period between the above equation and the suggested resource.
+
+\subsection*{Solutions}
+Please compare your answer with your partner or discuss with the teacher in class.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trigonometric Fourier series of a square wave}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-fourier-coefficients-for-square-wave}
+\end{itemize}
+
+\subsection*{Challenge}
+Calculate the Fourier series for the following square-wave:
+
+\begin{equation}
+   f(t) =
+   \begin{cases}
+       1 & \text{for } 0 < t < \frac{1}{2} \\
+       0 & \text{for } \frac{1}{2} < t < 1
+   \end{cases} 
+\end{equation}
+
+\includegraphics{fourier_sine_series.png}
+
+\subsection*{Solutions}
+To check your solution, write out the sum up to $k=2$ and then evaluate $f(0.9)$
+
+0.1258
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trigonometric Fourier series of another square wave}
+
+\subsection*{Challenge}
+Calculate the Fourier series for the following square-wave:
+
+\begin{equation}
+   f(t) =
+   \begin{cases}
+       1 & \text{for } -\frac{1}{4} < t < \frac{1}{4} \\
+       0 & \text{for } \frac{1}{4} < t <\frac{3}{4} 
+   \end{cases} 
+\end{equation}
+
+\includegraphics{fourier_cosine_series.png}
+
+\subsection*{Solutions}
+To check your solution, write out the sum up to $k=2$ and then evaluate $f(0.7)$
+
+0.30327
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Complex numbers}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Book: Appendex A starting at page 403 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
+\subsection*{Challenge}
+Considering $z=a+bi$ and $w=c+di$, determine:
+
+1. $z + w$
+
+2. $zw$
+
+3. $z \bar{z}$
+
+4. $z/w$
+
+5. $|z|$
+
+\subsection*{Solutions}
+To check your answers, substitute the following values: $a=1$, $b=2$, $c=3$, $d=4$.
+
+1.\\
+\solimagint{h}{d8c7d5}
 
 
 
@@ -793,4 +1058,4 @@ Write a few sentences summarising your understanding of what Gibb's phenomenon i
 
 % Convergence?
 
-
+\fi
