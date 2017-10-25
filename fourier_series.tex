@@ -74,6 +74,7 @@ Here we will consider Fourier sine and cosine series. We will go beyond this des
 \subsection*{Challenge}
 As shown above, a complex function (signal) can be made up of a sum of sine signals:
 \begin{equation}
+    \label{eq:fssinonly}
     f(t) = A_0 + \sum_{k=1}^{N} A_k \sin(2 \pi k t + \phi_k)
 \end{equation}
 
@@ -198,7 +199,7 @@ Considering a fourier series represented by
 What is $a_0$ for the following functions?
 \begin{enumerate}
     \item $f(t) = \sin(10 \pi t)$
-    \item Square wave function $f(t) = \begin{cases} 2 & \text{for } 0<x<1 \\ 1 & \text{for } 1<x<2 \end{cases}$
+    \item Square wave function $f(t) = \begin{cases} 2 & \text{for } 0<t<1 \\ 1 & \text{for } 1<t<2 \end{cases}$
     \item $f(t) = t^2$ considered only over the interval from $t=0$ to $t=1$
 \end{enumerate}
 
@@ -267,6 +268,7 @@ Please compare your answer with your partner or discuss with the teacher in clas
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigonometric Fourier series of a square wave}
+\label{sec:1stsqwch}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -297,6 +299,7 @@ To check your solution, write out the sum up to $k=2$ and then evaluate $f(0.9)$
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigonometric Fourier series of another square wave}
+\label{sec:2ndsqwch}
 
 \subsection*{Challenge}
 Calculate the Fourier series for the following square-wave:
@@ -318,7 +321,20 @@ To check your solution, write out the sum up to $k=2$ and then evaluate $f(0.7)$
 
 
 
-\iffalse
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier sine and cosine series}
+
+\subsection*{Challenge}
+Considering challenges \ref{sec:1stsqwch} and \ref{sec:2ndsqwch}, one corresponds to a Fourier sine series, and the other to a Fourier cosine series. Such series only contain sine and cosine terms, respectively. (1) State which challenge corresponds to which series, and (2) write a square-wave function that you think would involve both sine and cosine terms.
+
+\subsection*{Solutions}
+If you are unsure about your answer, you can either try to solve it to prove it, or please discuss with your partner or ask the teacher.
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -348,6 +364,18 @@ To check your answers, substitute the following values: $a=1$, $b=2$, $c=3$, $d=
 1.\\
 \solimagint{h}{d8c7d5}
 
+2.\\
+\solimagint{i}{3c520b}
+
+3.\\
+\solimagint{j}{66248e}
+
+4.\\
+\solimagtwodp{k}{39577d}
+
+5.\\
+\solimagtwodp{m}{b12a23}
+
 
 
 
@@ -355,31 +383,210 @@ To check your answers, substitute the following values: $a=1$, $b=2$, $c=3$, $d=
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Fourier coefficients of sin(x)}
-\label{sec:fcsinx}
+\section{Complex form of sine and cosine}
+
+\subsection*{Challenge}
+Write sine and cosine in terms of complex exponentials.
+
+\subsection*{Solutions}
+If you are unsure about your answer, please discuss in class.
+
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{An alternative way to write Fourier series}
+\label{sec:expfs}
+
+\subsection*{Comments}
+It turns out that a more mathematically-convenient and ultimately intuetive way to write Fourier series is in terms of complex exponentials in the form
+\begin{equation}
+    \label{eq:fsexp}
+    f(t) = \sum_{k=-n}^{k=n} c_k e^{i 2 \pi k t}
+\end{equation}
+
+A few things to note:
+\begin{itemize}
+    \item The sum now runs from $-n$ to $n$.
+    \item The $k=0$ term that was originally excluded from the sum in equation \ref{eq:fssincos} is now included.
+    \item The $c_k$'s, unlike the $a_k$'s and $b_k$'s, are complex.
+    \item $c_{-k} = \bar{c_k}$.
+    \item $c_0 = a_0/2$.
+\end{itemize}
+
+You see how we started with equation \ref{eq:fssinonly} and now end up with equation \ref{eq:fsexp}? Do you see more-or-less how the phase information is encoded in the $c_k$'s?
+
+\subsection*{Challenge}
+1. By comparing equation \ref{eq:fssincos} to equation \ref{eq:fsexp}, write $c_k$ in terms of $a_k$ and $b_k$ for $k<0$ and $k>0$.
+
+2. Show that 
+show that $c_{-k} = \bar{c_k}$
+
+3. Show that $c_0$ must be $a_0/2$
+
+\subsection*{Solutions}
+If you have trouble with the derivation, please discuss in class.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Integral of a complex exponential over a single period}
+
+\subsection*{Challenge}
+Integrate the following function over one period, assuming that $k$ must be an non-zero integer:
+\begin{equation}
+    g(t) = e^{i 2 \pi k t}
+\end{equation}
+
+\subsection*{Solution}
+The numerical answer is given below. Be sure you understand why the answer comes out as this number.
+
+\soltwodp{n}{f979e9}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivation of the complex Fourier coefficients}
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book: 1.4 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 2 (\url{https://www.youtube.com/watch?v=1rqJl7Rs6ps})
+    \item Video starting at 41m 56s: \url{https://www.youtube.com/watch?v=1rqJl7Rs6ps&t=41m56s}
 \end{itemize}
 
 \subsection*{Comments}
-You should be able to follow the derivation of the formula for Fourier coefficients ($C_k$'s) in the video. Feel free to seek help if you have trouble.
+This is the last major derivation for Fourier series, and parallels what you learned for trigonometric Fourier series. The video does a great job of showing the derivation. Try to become comfortable with manipulating complex exponentials and their periodicity.
 
 \subsection*{Challenge}
-1. Write $Sin(x)$ in exponential form.
+Derive an expression for the $c_k$'s in the equation
+\begin{equation}
+    f(t) = \sum_{k=-n}^{n} c_k e^{i 2 \pi k t} dt
+\end{equation}
+in terms of the function $f(t)$.
 
-2. Expand the Fourier series for the function $f(x)$ within the limit $k=-1$ to $k=1$. % NT: Check evaluation by making this a separate question and substituting to check answer.
+\subsection*{Solution}
+Please discuss in class if you are unsure of your derivation.
 
-3. Deduce the Fourier coefficients ($C_k$'s) for the function $Sin(x)$. \emph{This should be possible by inspection, rather than any significant calculation.} % NT: Include C_2, etc too
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Complex Fourier series of a square wave}
+
+\subsection*{Challenge}
+1. Determine an expression for the Fourier coefficients for the following square wave:
+\begin{equation}
+   f(t) =
+   \begin{cases}
+       5 & \text{for } 0 < t < \frac{1}{2} \\
+       0 & \text{for } \frac{1}{2} < t < 1
+   \end{cases} 
+\end{equation}
+
+2. Write the Fourier series for the square wave.
+
+\includegraphics{fs_exp_squarewave.png}
+
+\subsection*{Solution}
+1.\\
+To check your answer, substitute $k=5$ into your expression and you should obtain $i 0.227$.
+
+2.\\
+If you perform the sum for $n=3$ and evaluate at $t=0.7$, you should obtain a value of $0.0964$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Non-unit periods}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Book: Chapter 1.6 of the book (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
+\subsection*{Comment}
+Until now we considered signals with periodicity 1, but this will not always be the case, and in fact as we make the jump from Fourier series to Fourier transforms this will become more important. The resource gives the intuition behind the non-periodic case for complex Fourier series. For trigonometric Fourier series, the Fourier coefficients become:
+\begin{equation}
+    a_k = \frac{2}{T} \int_{t_0}^{t_0+T} f(t) \cos(2 \pi k t/T) dt
+\end{equation}
+\begin{equation}
+    b_k = \frac{2}{T} \int_{t_0}^{t_0+T} f(t) \sin(2 \pi k t/T) dt
+\end{equation}
+
+\subsection*{Challenge}
+Obtain an expression for the exponential Fourier series for the pulsing sawtooth function
+\begin{equation}
+    f(t)=
+    \begin{cases}
+        t & \text{for } 0<t<\frac{1}{4} \\
+        0 & \text{for } \frac{1}{4}<t<\frac{1}{2}
+    \end{cases}
+\end{equation}
+
+\includegraphics[scale=0.7]{sawwave.png}
+
+\subsection*{Solution}
+You should find the $c_k$'s for $k \ne 0$ are
+\begin{equation}
+    \frac{i \pi k e^{-i \pi k} + e^{-i \pi k} - 1}{16 \pi^2 k^2}
+\end{equation}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gibb's phenomenon}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Wikipedia: \url{https://en.wikipedia.org/wiki/Gibbs_phenomenon}
+    \item Book: 1.18 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+\end{itemize}
+
+\subsection*{Challenge}
+Write a few sentences summarising your understanding of what Gibb's phenomenon is. By what percentage does overshoot of a discontinuity of a square-wave function occur?
+
+\emph{The full derivation is beyond the scope of this course, so it is not necessary to understand the (rather complex) derivation in the notes. The aim of this challenge is simply to enable you to be able to describe qualitatively what Gibb's phenomenon is using a few sentences, and know the amount of overshoot in the case of a standard square-wave. No maths expected.}
+
+\subsection*{Solution}
+Please discuss in class.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier coefficients of sin(x)}
+\label{sec:fcsinx}
+
+\subsection*{Challenge}
+By writing $\sin(x)$ in exponential form, deduce the Fourier coefficients $c_{-2}$, $c_{-1}$ and $c_0$. Try to do this by inspection rather than application of formulas.
 
 \subsection*{Solutions}
-$C_{-1}$: \hash{h}{28f251}
+$c_{-2}$:\\
+\solimagtwodp{h}{53126e}
 
-$C_{0}$: \hash{j}{4fd3f6}
+$c_{-1}$:\\
+\solimagtwodp{k}{312a1a}
 
-$C_{1}$: \hash{k}{e82a2a}
+$c_0$:\\
+\solimagtwodp{j}{b6ffa8}
 
 
 
@@ -391,24 +598,19 @@ $C_{1}$: \hash{k}{e82a2a}
 \section{Fourier Coefficients of 1 + sin(x)}
 \label{sec:fcsinxp1}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.4 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 2 (\url{https://www.youtube.com/watch?v=1rqJl7Rs6ps})
-\end{itemize}
-
-\subsection*{Comments}
-You should be able to follow the derivation of the formula for Fourier coefficients in the video. Feel free to seek help if you have trouble.
-
 \subsection*{Challenge}
-Using the same approach as challenge \ref{sec:fcsinx}, deduce for the function $1+sin(x)$ the following Fourier coefficients:
+Using the same approach as challenge \ref{sec:fcsinx}, deduce for the function $1+sin(x)$ the Fourier coefficients $c_{-1}$, $c_0$ and $c_1$.
 
 \subsection*{Solutions}
-$C_{-1}$: \hash{z}{39e026}
+$c_{-1}$:\\
+\solimagtwodp{m}{434572}
 
-$C_0$: \hash{x}{0ef183}
+$c_0$:\\
+\solimagtwodp{n}{1444ea}
 
-$C_1$: \hash{c}{89b992}
+$c_1$:\\
+\solimagtwodp{o}{2e5a62}
+
 
 
 
@@ -421,409 +623,16 @@ $C_1$: \hash{c}{89b992}
 
 \subsection*{Resources}
 \begin{itemize}
+    \item Challenge \ref{sec:expfs}
     \item Book: 1.4 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
     \item Video: Lecture 2 (\url{https://www.youtube.com/watch?v=1rqJl7Rs6ps})
 \end{itemize}
 
 \subsection*{Challenge}
-If the Fourier coefficient $C_1$ is $4 + 6i$, what is the Fourier coefficient $C_{-1}$?
+If the Fourier coefficient $C_1$ is $4 + 6i$ for a real signal, what is the Fourier coefficient $C_{-1}$?
 
 \subsection*{Solution}
-X
-
-\hash{m}{36ab38}
-
-
-
-
-\stepcounter{section}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{The Fourier series of $f(t)=t$: $C_0$}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.5, 1.7 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 3 (\url{https://www.youtube.com/watch?v=BjBb5IlrNsQ})
-\end{itemize}
-
-\subsection*{Challenge}
-Considering the function $f(t)=t$ over the interval 0 to 1, calculate the Fourier coefficient $C_0$ using the derived formula for Fourier coefficients. Compare with the average over the interval.
-% NT: Add practise of e^2pi i k = 1 before this challenge.
-% NT: Change to saw-wave
-
-\subsection*{Solution}
-X
-
-\hash{aa}{2708ad}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{The Fourier series of $f(t)=t$: $C_k$}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.5, 1.7 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 3 (\url{https://www.youtube.com/watch?v=BjBb5IlrNsQ})
-\end{itemize}
-
-\subsection*{Challenge}
-Considering the function $f(t)=t$, calculate a general expression for the Fourier coefficients $C_k$ where $k \ne 0$.
-
-To check your answer, evaluate the Fourier coefficient for $k=-30$.
-
-\subsection*{Solution}
-X
-
-\hash{bb}{8005c7}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{The Fourier series of $f(t)=t$ in exponential form}
-\label{sec:fstexpform}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.4 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 3 (\url{https://www.youtube.com/watch?v=BjBb5IlrNsQ})
-\end{itemize}
-
-\subsection*{Challenge}
-1. Write $e^{i 2 \pi k}$ in terms of cosines and sines.
-
-2. Evaluate your expression obtained in (1) for $k=0,1,2,3,4$
-
-3. Write the function $f(t)=t$ evaluated between 0 and 1 in terms of its exponential Fourier series $f(t)=\sum_{k=-N}^{k=N} g(k,t)$ replacing $g(k,t)$ as appropriate.
-
-% NT: Add a challenge with a sum from k=-n to n with n=2
-To check your answer, evaluate the Fourier series up to $N=1$ with $t=0.8$.
-
-The graph with increasing values of $N$ looks like this:
-
-\includegraphics{fourier_series_t.png}
-
-\subsection*{Solution}
-X
-
-\hash{cc}{caa033}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{The Fourier series of $f(t)=t$ in trigonometric form}
-\label{sec:trigexpconvert}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.5, 1.7 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 2 (\url{https://www.youtube.com/watch?v=1rqJl7Rs6ps})
-\end{itemize}
-
-\subsection*{Comment}
-Since cosine and sine can be written in terms of exponentials, it is possible to switch between Fourier series that are expressed in terms of exponentials and Fourier series that are expressed in terms of sines and cosines. Many textbooks will actually work in terms of these trigonometric forms. Where only sine terms are involved, it is called a ``Fourier sine series'' and where only cosines are involved it's termed a ``Fourier cosine series''. The series have coefficients $a_0$, $a_k$ and $b_k$, in the following fashion:
-
-\begin{equation}
-    \label{eq:fsoftintrigform}
-    f(t) = \frac{a_0}{2} + \sum_{k=1}^{k=N} a_k cos(2 \pi k t) + b_k sin(2 \pi k t)
-\end{equation}
-
-Note that the sum here goes from $k=1$ to $k=N$, in contrast to the exponential form of Fourier series which goes between $k=\pm N$.
-
-\subsection*{Challenge}
-1. Write $sin(2 \pi t)$ in the form of an exponential sum:
-\begin{equation}
-    sin(2 \pi k t)=\sum_{k=-N}^{k=N} f(k) e^{g(k,t)}
-\end{equation}
-Your answer in challenge \ref{sec:fcsinx} may help you.
-
-What is $f(k)$, $g(k,t)$ and $N$? To check your answers for $f(k)$ and $g(k,t)$, substitute $k=1$ and $t=2$ as appropriate into your expressions for $f(k)$ and $g(k,t)$.
-
-2. By converting from an exponential-form sum ($\sum_{k=-N}^{k=N}$) to a trigonometric-form sum ($\sum_{k=1}^{k=N}$), re-write the series obtained in challenge \ref{sec:fstexpform} in terms of a trigonometric infinite series (ie, using sines and cosines). To check your answer, evaluate the Fourier series with $N=1$ with $t=0.8$ and ensure that you get the same answer as you did for challenge \ref{sec:fstexpform}.
-% NT: Put re-arranging practise into another challenge and make it in more depth (cosines, and both directions). Otherwise students try to use formula instead. Need practise about switching from sums from -infty to sums from 1
-
-3. You should find you are left with an expression only in terms of sine or cosine. Which is it? Is the function $f(t)=t$ is an odd function ($f(-t)=-f(t)$). Does an odd function result in $a_k$ or $b_k$ being zero? Note that for an even function ($f(-t)=f(t)$), the opposite is true.
-
-\subsection*{Solution}
-\emph{(See the hash examples about entering imaginary numbers)}
-
-$f(k)$: \hash{iiif}{3979fa}
-
-$g(k)$: \hash{iiig}{365dd7}
-
-$N$: \hash{iiin}{e3f634}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Periods other than unity}
-\label{sec:nonunitperiods}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.6.1 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-\end{itemize}
-
-\subsection*{Comment}
-Please read the resource. There, $c_n$ is illustrated for an arbitrary period $T$ going from $0$ to $T$, but you do not need to start from $0$. If instead you want to approximate a function from time $T_0$ to $T_0+T$, you can simply swap the integration limits (ie, $T_0$ instead of $0$ and $T_0+T$ for $T$).
-
-\subsection*{Challenge}
-\subsubsection*{Part I}
-1. By expanding the exponential out in terms of sine and cosine, determine the numerical value of $e^{i \pi k}$ for $k=0,1,2,3,4$.
-
-2. Assuming $k$ can only be an integer, determine the value of $N$ in the formula $e^{i \pi k} = N^k$ and the value of $M$ in the formula $e^{i 2 \pi k} = M^k$.
-
-\subsubsection*{Part II}
-Determine $C_0$ and $C_k$ for the following square-wave functions using exponential fourier-series representation:
-
-\vspace{2em}
-1.
-\begin{equation}
-    f(t)=
-    \begin{cases}
-        1 & \text{for } 0<t<1 \\
-        0 & \text{for } 1<t<2
-    \end{cases}
-\end{equation}
-
-\includegraphics[scale=0.5]{fourier_series_square_wave_01_2.png}
-
-\vspace{2em}
-2.
-\begin{equation}
-    f(t)=
-    \begin{cases}
-        1 & \text{for } 0<t<\frac{1}{2} \\
-        0 & \text{for } \frac{1}{2}<t<1
-    \end{cases}
-\end{equation}
-
-\includegraphics[scale=0.5]{fourier_series_square_wave_00p5_1.png}
-
-\vspace{2em}
-3. \emph{(Do not try to simplify the exponentials beyond cosines and sines)}
-\begin{equation}
-    f(t)=
-    \begin{cases}
-        1 & \text{for } \frac{1}{8}<t<\frac{7}{8} \\
-        0 & \text{for } \frac{7}{8}<t<\frac{9}{8}
-    \end{cases}
-\end{equation}
-
-\includegraphics[scale=0.5]{fourier_series_square_wave_eighths.png}
-
-\subsubsection*{Part III}
-1. Express each of the square-waves above in terms of an exponential fourier series $f(t)=\sum_{k=-N}^{k=N} g(k,t)$, changing $g(k,t)$ for the exponential fourier series expression. To check your expressions, evaluate the series for $t=1$ with $N=1$.
-
-\subsection*{Solution}
-\subsubsection*{Part I}
-1.\\
-$k=0$: \hash{ddk0}{1b3914}\\
-$k=1$: \hash{ddk1}{da2480}\\
-$k=2$: \hash{ddk2}{67efb2}\\
-$k=3$: \hash{ddk3}{26a591}\\
-$k=4$: \hash{ddk4}{f09b1c}
-
-2.\\
-N: \hash{ddn}{f3550e}\\
-M: \hash{ddm}{e84cb4}
-
-\subsubsection*{Part II}
-1.\\
-$C_0$: \hash{dd1c0}{aab052}\\
-$C_1$: $\displaystyle \frac{-i}{\pi}$
-
-2.\\
-$C_0$: \hash{dd2c0}{c34c5d}\\
-$C_1$: $\displaystyle \frac{-i}{\pi}$
-
-3.\\
-$C_0$: \hash{dd3c0}{ac102c}\\
-$C_1$: $\displaystyle \frac{-1}{\sqrt{2}\pi}$
-
-\subsubsection*{Part III}
-1. First square-wave: \hash{dd1sum}{35788a}\\
-2. Second square-wave: \hash{dd2sum}{75b60f}\\
-3. Third square-wave: 0.30 (in decimal form, but it can be written more neatly with fractions and roots)
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Infinite series}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.7 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-\end{itemize}
-
-\subsection*{Comment}
-It is important to understand why some series are infinite, while others are not (well, technically all series are infinite since they all involve sums to $n=\infty$, however for some series the Fourier coefficients are all zero above a certain value of $n$). Here
-
-\subsection*{Challenge}
-1. In challenge \ref{sec:fcsinx} and \ref{sec:fcsinxp1} you determined the fourier coefficients for $sin(x)$ and $sin(x)+1$. If you write the function in the form
-\begin{equation}
-    \label{eq:sinxform}
-    sin(x)=\sum_{k=-N}^{k=N} C_k e^{i k x}
-\end{equation}
-what is $N$ here?
-
-\vspace{1em}
-2. Expand $e^{i k x}$ in terms of sine and cosine. Which has the higher frequency? $k=1$ or $k=100$?
-
-\vspace{1em}
-3. Referring to the resource, do sharp corners in a function lead to higher or lower frequencies? % NT: Understanding why this is true confuses some people. Add an explanation.
-
-\vspace{1em}
-4. Does non-periodiciy lead to higher or lower frequencies? In challenge \ref{sec:fstexpform} you calculated the Fourier series for $f(t)=t$. If the series is written in a form similar to equation \ref{eq:sinxform}, what would $N$ be in this case? % NT: This is difficult and badly worded because explaining how f(t)=t leads to high frequencies in an intuetive fashion is difficult. Do the proper definition in terms of infinitely differentiable functions.
-
-\vspace{1em}
-5. In general, the Fourier series is a sum to $\pm \infty$, however in some cases the coefficients ($C_k$'s) are zero beyond a certain number of terms. Which of the functions below will have Fourier coefficients that are all zero after a certain number of terms? Sum the points of these functions.
-
-1 point: $x$
-
-2 points: $x^2$
-
-4 points: $cos(2 x) + 3 sin(7 x)$
-
-8 points: $e^{2 \pi i x}$
-
-\vspace{1em}
-6. Briefly explain the characteristics of functions that lead to infinite Fourier series and finite Fourier series.
-
-\subsection*{Solution}
-1. (enter as an integer, without ``.00'') \hash{ee1}{b6cadd} 
-
-2. (``1'' or ``100'') \hash{ee2}{a0bebe}
-
-3. (``lower'' or ``higher'') \hash{ee3}{f0d1f9}
-
-4. \hash{ee4}{7cd9d2}
-
-5. \hash{ee5}{9d1559}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{k-symmetry}
-
-\subsection*{Challenge}
-Determine what X and Y represent algebraically.
-\begin{equation}
-    cos(k \pi t) = \frac{1}{2} e^{-k i\pi t} + \frac{1}{2} e^{\bm{X} i \pi x}
-\end{equation}
-\begin{equation}
-    sin(k \pi t) = \frac{1}{2} i e^{\bm{Y} i \pi t} - \frac{1}{2} i e^{k i \pi t}
-\end{equation}
-
-To check your answers you may substitute any appropriate values from the following list: $k=2$, $t=1$
-
-\subsection*{Solution}
-X
-
-\hash{ff}{942d6f}
-
-Y
-
-MD5(gg\_Y) = a379b8\ldots
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Direct trigonometric calculation of a Fourier series: the coefficients}
-\label{sec:fs_squarewave}
-% NT: Need practise about integration over intervals
-
-\section*{Comment}
-This challenge introduces several key concepts at once, including decoupling of integral intervals and periodicity, the concept of a square wave and direct trigonometric evaluation of Fourier series. If you can master this you'll be in a really strong position.
-
-It is hopefully clear now that for real signals, due to the symmetry of the positive and negative k's, one can fully compose Fourier series in terms of sine and cosine. In challenge \ref{sec:trigexpconvert} we saw the formula for the function in terms of Fourier coefficients $a_0$, $a_n$ and $b_n$. While we will not use this approach, it is important to be able to utilise such a formulation since this is the way some books present it and some people have learnt it. Therefore, without proof, the coefficients can be calculated using
-
-\begin{equation}
-    a_k = \frac{2}{T} \int_{t_0}^{t_0+T} f(t) Cos(2 \pi k t/T) dt
-\end{equation}
-\begin{equation}
-    b_k = \frac{2}{T} \int_{t_0}^{t_0+T} f(t) Sin(2 \pi k t/T) dt
-\end{equation}
-
-\subsection*{Challenge}
-Using the direct trigonometric Fourier series, obtain a general expression for the $a_k$ and $b_k$ coefficients for the square-wave signal with periodicity 4:
-
-\begin{equation}
-    f(t)=
-    \begin{cases}
-        1 & \text{for } -1<t<1 \\
-        0 & \text{for } 1<t<3
-    \end{cases}
-\end{equation}
-
-Note the symmetry of the problem. Can you see what terms will be zero? To check your solution, calculate $a_k$ and $b_k$ for $k=0$, $k=2$ and $k=3$. Note that you will have to break the integrals into two parts and sum them in order to tackle this problem.
-
-A graph of the function, including the solution for various values of $n$, is shown here:
-
-\includegraphics[scale=0.75]{fs_square_wave.png}
-
-\subsection*{Solution}
-\begin{tabular}{|l|l|l|}
-    \hline
-    $k$ & $a_k$ & $b_k$ \\
-    \hline
-    0 & MD5(hh\_X)=e57c15\ldots & MD5(ii\_X)=377fe2\ldots \\
-    2 & MD5(jj\_X)=54aaa1\ldots & MD5(kk\_X)=be063f\ldots \\
-    3 & MD5(mm\_X)=b8fce7\ldots & MD5(nn\_X)=b6fbaf\ldots \\
-    \hline
-\end{tabular}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Direct trigonometric calculation of a Fourier series: the series}
-
-\subsection*{Comment}
-For a series with non-unit period, the Fourier series in trigonometric form given in equation \ref{eq:fsoftintrigform} can be modified to read
-
-\begin{equation}
-    \label{eq:fstrignonunit}
-    f(t) = \frac{a_0}{2} + \sum_{k=1}^{k=N} a_k cos(2 \pi k t/T) + b_k sin(2 \pi k t/T)
-\end{equation}
-
-\subsection*{Challenge}
-Calculate the Fourier series for the square wave introduced in challenge \ref{sec:fs_squarewave} using direct trigonometric calculation for up to $k=3$. Check your solution by evaluating for $t=0.1$.
-
-\subsection*{Solution}
-0.9397
-
-%\hash{oo}{bd7e5e}
+\solimagint{p}{de57ee}
 
 
 
@@ -858,9 +667,7 @@ Sum the points of the vectors in 2D that are orthogonal:
 128 points: (1, 1) and (1, 1)
 
 \subsection*{Solution}
-\six{}
-
-\hash{pp}{92843f}
+\solint{q}{919325}
 
 
 
@@ -908,9 +715,7 @@ Sum the points of the following vectors that form an orthonormal basis:
 ($0, 1$) and ($1, 0$)
 
 \subsection*{Solution}
-\six{}
-
-\hash{qq}{097fd7}
+\solint{r}{1f94dd}
 
 
 
@@ -938,9 +743,7 @@ Sum the components of the following vectors of an orthonormal basis in $\mathbb{
 \end{itemize}
 
 \subsection*{Solution}
-\six{}
-
-\hash{rr}{095c77}
+\solint{s}{c0828e}
 
 
 
@@ -960,24 +763,14 @@ Sum the components of the following vectors of an orthonormal basis in $\mathbb{
 The previous challenges have focussed on the orthogonality and orthonormality of vectors. We now make the jump to functions. As chapter 1.9 explains, although its not perfect, the analogy between vectors and functions is a good way to help understand and visualise the role that the terms of a Fourier series play in defining a basis upon which to describe a function.
 
 \subsection*{Challenge}
-Starting from the inner product of two terms ($e^{2 \pi i k_1 t}$, $e^{2 \pi i k_2 t}$) of a Fourier series, demonstrate that the terms of a Fourier series form an orthonormal basis. \textbf{Show a full derivation}.
-
-To check your intuition, you may evaluate the following cases:
+By evaluating the following functions, show that the terms of a Fourier series form an orthonormal basis:
 
 $X = (e^{2 \pi i k_1 t}, e^{2 \pi i k_1 t})$
 
 $Y = (e^{2 \pi i k_1 t}, e^{2 \pi i k_2 t})$
 
 \subsection*{Solution}
-If you are not confident about your derivation, please check with someone else. If there is any step that you do not fully understand, do not hesitate to ask. If you do not understand the connection between previous challenges on vectors and this challenge using functions, do not hesitate to ask someone.
-
-\textbf{X}
-
-\hash{ss}{8f7f41}
-
-\textbf{Y}
-
-MD5(tt\_Y) = 2c669b\ldots
+Please check your answer in class.
 
 
 
@@ -994,7 +787,7 @@ MD5(tt\_Y) = 2c669b\ldots
 \end{itemize}
 
 \subsection*{Comment}
-In the first lecture we saw how it was possible to approximate any function given enough circles. Here we link what you have learned back to that first lecture. I strongly recommend viewing the fun and informative videos listed here under Resources. In summary, by building a Fourier series you are representing a function using an orthonormal basis, where each component of the basis can be considered visually as a circle operating with individual radius and frequency on the real-imaginary plane. If, after completing this challenge, that last sentence makes sense to you, then you have achieved the first major goal of this course.
+In the first lecture we saw how it was possible to approximate any function given enough circles. Here we link what you have learned back to that first lecture. I strongly recommend viewing the fun and informative videos listed here under Resources. In summary, by building a Fourier series you are representing a function using an orthonormal basis, where each component of the basis can be considered visually as a circle operating with individual radius and frequency on the real-imaginary plane.
 
 \includegraphics[scale=0.5]{circle.png}
 
@@ -1021,39 +814,12 @@ C: $A=3$, $k=0.5$
 D: $A=2$, $k=1$
 
 \subsection*{Solution}
-\six{}
+\solstr{t}{d8a7e6}
 
-\hash{uu}{cb7845}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Gibb's phenomenon}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Wikipedia: \url{https://en.wikipedia.org/wiki/Gibbs_phenomenon}
-    \item Book: 1.18 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-\end{itemize}
-
-\subsection*{Challenge}
-Write a few sentences summarising your understanding of what Gibb's phenomenon is. By what percentage does overshoot of a discontinuity of a square-wave function occur?
-
-\emph{The full derivation is beyond the scope of this course, so it is not necessary to understand the (rather complex) derivation in the notes. The aim of this challenge is simply to enable you to be able to describe qualitatively what Gibb's phenomenon is using a few sentences, and know the amount of overshoot in the case of a standard square-wave. No maths expected.}
-
-\subsection*{Solution}
-\six{\%}
-
-\hash{vv}{aa19f2}
 
 
 
 \input{heat_equation}
 
-
-% Convergence?
-
 \fi
+% Convergence?
