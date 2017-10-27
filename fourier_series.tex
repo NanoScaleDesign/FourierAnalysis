@@ -104,7 +104,7 @@ $a_0$:
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The significance of the fourier coefficients}
+\section{The significance of the Fourier coefficients}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -122,11 +122,13 @@ Please compare your answer with your partner or discuss with the teacher in clas
 
 
 
+%NT: Students were confused about the interval of integration and how it changes when there is a 2pi inside the brackets or not.
+% Add a challenge on getting the appropriate integration limits for different forms of the wave. The key is the modification of the period
+% so that one period is complete under different $t$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Integral of $\sin(kt)$ and $\cos(kt)$}
 
 \subsection*{Resources}
@@ -143,6 +145,8 @@ Show that the following integrals evaluate to zero:
 \begin{equation}
     \int_0^1 \cos(2 \pi k t) dt = 0
 \end{equation}
+
+given that $k$ is a non-zero positive integer.
 
 \subsection*{Solutions}
 Please compare your answer with your partner or discuss with the teacher in class.
@@ -172,6 +176,8 @@ Considering the following integrals, show under what conditions the following in
 \begin{equation}
     \int_0^1 \cos(2 \pi m t) \cos(2 \pi n t) dt
 \end{equation}
+
+You may assume that $m$ and $n$ are non-zero positive integers.
 
 \subsection*{Solutions}
 Please compare your answer with your partner or discuss with the teacher in class.
@@ -419,6 +425,8 @@ A few things to note:
 You see how we started with equation \ref{eq:fssinonly} and now end up with equation \ref{eq:fsexp}? Do you see more-or-less how the phase information is encoded in the $c_k$'s?
 
 \subsection*{Challenge}
+This \emph{challenge} section is optional. The information in the \emph{comments} section however is crucial. If you have time, I recommend doing this challenge to help integrate the above information into your personal knowledge-structure, however if time is an issue, then the following challenges must take priority over this one.
+
 1. By comparing equation \ref{eq:fssincos} to equation \ref{eq:fsexp}, write $c_k$ in terms of $a_k$ and $b_k$ for $k<0$ and $k>0$.
 
 2. Show that $c_{-k} = \bar{c_k}$
@@ -431,7 +439,6 @@ If you have trouble with the derivation, please discuss in class.
 
 
 
-\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -498,10 +505,10 @@ Please discuss in class if you are unsure of your derivation.
 
 \subsection*{Solution}
 1.\\
-To check your answer, substitute $k=5$ into your expression and you should obtain $i 0.227$.
+You should find that $c_{-7} = i 0.227$.
 
 2.\\
-If you perform the sum for $n=3$ and evaluate at $t=0.7$, you should obtain a value of $0.0964$.
+If you perform the sum for $n=1$ and evaluate at $t=0.7$, you should obtain a value of $-0.527$.
 
 
 
@@ -525,6 +532,11 @@ Until now we considered signals with periodicity 1, but this will not always be 
     b_k = \frac{2}{T} \int_{t_0}^{t_0+T} f(t) \sin(2 \pi k t/T) dt
 \end{equation}
 
+while for complex Fourier series the Fourier coefficients become:
+\begin{equation}
+    c_k = \frac{1}{T} \int_{t_0}^{t_0+T} f(t) e^{-i 2 \pi kt/T} dt
+\end{equation}
+
 \subsection*{Challenge}
 Obtain an expression for the exponential Fourier series for the pulsing sawtooth function
 \begin{equation}
@@ -545,7 +557,7 @@ You should find the $c_k$'s for $k \ne 0$ are
 
 
 
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -819,6 +831,6 @@ D: $A=2$, $k=1$
 
 
 \input{heat_equation}
-
 \fi
+
 % Convergence?
