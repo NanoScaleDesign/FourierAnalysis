@@ -425,8 +425,6 @@ A few things to note:
 You see how we started with equation \ref{eq:fssinonly} and now end up with equation \ref{eq:fsexp}? Do you see more-or-less how the phase information is encoded in the $c_k$'s?
 
 \subsection*{Challenge}
-This \emph{challenge} section is optional. The information in the \emph{comments} section however is crucial. If you have time, I recommend doing this challenge to help integrate the above information into your personal knowledge-structure, however if time is an issue, then the following challenges must take priority over this one.
-
 1. By comparing equation \ref{eq:fssincos} to equation \ref{eq:fsexp}, write $c_k$ in terms of $a_k$ and $b_k$ for $k<0$ and $k>0$.
 
 2. Show that $c_{-k} = \bar{c_k}$
@@ -557,7 +555,6 @@ You should find the $c_k$'s for $k \ne 0$ are
 
 
 
-\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -565,17 +562,27 @@ You should find the $c_k$'s for $k \ne 0$ are
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Wikipedia: \url{https://en.wikipedia.org/wiki/Gibbs_phenomenon}
     \item Book: 1.18 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
 \end{itemize}
 
 \subsection*{Challenge}
-Write a few sentences summarising your understanding of what Gibb's phenomenon is. By what percentage does overshoot of a discontinuity of a square-wave function occur?
+1. Qualitatively speaking, what is the Gibb's phenomenon?
 
-\emph{The full derivation is beyond the scope of this course, so it is not necessary to understand the (rather complex) derivation in the notes. The aim of this challenge is simply to enable you to be able to describe qualitatively what Gibb's phenomenon is using a few sentences, and know the amount of overshoot in the case of a standard square-wave. No maths expected.}
+2. Considering a square wave of the form
+\begin{equation}
+    f(t)=
+    \begin{cases}
+        -1 & \text{for } -\frac{1}{2} < t < 0 \\
+        1 & \text{for } 0 < t < \frac{1}{2}
+    \end{cases}
+\end{equation}
+as the sum of the Fourier series goes to infinity, what is the maximum value of the signal?
+
+\emph{The full derivation is beyond the scope of this course, so it is not necessary to understand the derivation in the notes. The aim of this challenge is simply to enable you to be able to describe qualitatively what Gibb's phenomenon is using a few sentences, and know the amount of overshoot in the case of a standard $\pm 1$ square-wave.}
 
 \subsection*{Solution}
-Please discuss in class.
+2.\\
+\soltwodp{m}{d9c018}
 
 
 
@@ -714,19 +721,19 @@ Sum the points of the following vectors that form an orthonormal basis:
 ($\displaystyle -\sqrt{\frac{2}{7}}, \frac{3}{\sqrt{14}}, -\frac{1}{\sqrt{14}}$) and
 ($\displaystyle \sqrt{\frac{2}{3}},  \frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}$)
 
-16 points:
-($\displaystyle \frac{1}{\sqrt{6}}, \sqrt{\frac{2}{3}}, \frac{1}{\sqrt{6}}$),
-($\displaystyle -\frac{1}{\sqrt{2}},  \frac{2 \sqrt{2}}{5}, -\frac{3}{5 \sqrt{2}}$) and
-($\displaystyle \frac{1}{\sqrt{3}},  \frac{1}{5 \sqrt{3}}, -\frac{7}{5 \sqrt{3}}$)
+%16 points:
+%($\displaystyle \frac{1}{\sqrt{6}}, \sqrt{\frac{2}{3}}, \frac{1}{\sqrt{6}}$),
+%($\displaystyle -\frac{1}{\sqrt{2}},  \frac{2 \sqrt{2}}{5}, -\frac{3}{5 \sqrt{2}}$) and
+%($\displaystyle \frac{1}{\sqrt{3}},  \frac{1}{5 \sqrt{3}}, -\frac{7}{5 \sqrt{3}}$)
 
-32 points:
+16 points:
 ($0, 2$) and ($2, 0$)
 
-64 points:
+32 points:
 ($0, 1$) and ($1, 0$)
 
 \subsection*{Solution}
-\solint{r}{1f94dd}
+\solint{r}{3b1939}
 
 
 
@@ -742,7 +749,7 @@ Sum the points of the following vectors that form an orthonormal basis:
 \end{itemize}
 
 \subsection*{Challenge}
-Sum the components of the following vectors of an orthonormal basis in $\mathbb{R}^{300}$ space:
+Sum the components of the following vectors of a natural basis in $\mathbb{R}^{300}$ space:
 
 \begin{itemize}
     \item First component of the first vector
@@ -776,12 +783,16 @@ The previous challenges have focussed on the orthogonality and orthonormality of
 \subsection*{Challenge}
 By evaluating the following functions, show that the terms of a Fourier series form an orthonormal basis:
 
-$X = (e^{2 \pi i k_1 t}, e^{2 \pi i k_1 t})$
+$y_1(t) = (e^{2 \pi i k_1 t}, e^{2 \pi i k_1 t})$
 
-$Y = (e^{2 \pi i k_1 t}, e^{2 \pi i k_2 t})$
+$y_2(t) = (e^{2 \pi i k_1 t}, e^{2 \pi i k_2 t})$
 
 \subsection*{Solution}
-Please check your answer in class.
+$y_1(t)$:\\
+\solint{x}{6dbf9a}
+
+$y_2(t)$:\\
+\solint{y}{f05e43}
 
 
 
@@ -830,6 +841,7 @@ D: $A=2$, $k=1$
 
 
 
+\iffalse
 \input{heat_equation}
 \fi
 

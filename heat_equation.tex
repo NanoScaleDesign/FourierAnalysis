@@ -13,9 +13,11 @@ Determine $u_t$ and $u_{xx}$ for the equation
 To check your answer, substitute $x=3$ and $t=2$ into your answers, as appropriate.
 
 \subsection*{Solution}
-$u_t$: \hash{ww}{7901cb}
+$u_t$:\\
+\solint{t}{4fb068}
 
-$u_{xx}$: \hash{xx}{6aba1c}
+$u_{xx}$:\\
+\solint{x}{53502b}
 
 
 
@@ -27,16 +29,17 @@ $u_{xx}$: \hash{xx}{6aba1c}
 
 \subsection*{Resources}
 \begin{itemize}
+    \item Book: Section 1.13.1 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
     \item Lecture 4 from 37:00 onwards: (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA}), continuing at the start of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
 \end{itemize}
 
 \subsection*{Comment}
-Please watch and makes notes following the derivation of the heat equation shown in the videos in lectures 4-5.
+Here we can learn about an application of Fourier series to solve partial differential equations. This problem was one of the motivations for Fourier to develop the idea of Fourier series.
 
-This use of Fourier series is a great example of how the relatively abstract mathematical concepts covered by the course so-far can have real physical applications in science and engineering.
+The motivation for the equation $u_t = \frac{1}{2} u_{xx}$ described in the notes is complicated somewhat by the interpretation in terms of equivalences between electrical and thermal capacitance. If this is not so clear then don't worry about it. Generally you should understand how heat flow is proportional to the gradient of the temperature and that heat accumulates within a unit volume when the rate of heat flow into that volume is greater than the rate of heat flow out of that volume.
 
 \subsection*{Challenge}
-Add the points of the following true statements concerning a heated ring with circumference 1 and temperature distribution described by $u(x,t)$:
+The following statements concern a heated ring with circumference 1 and temperature distribution described by $u(x,t)$. Add the points of the statements that are defined by the system to be true:
 
 1 point: $\displaystyle u(x,t) = u(x,t)$
 
@@ -66,9 +69,7 @@ Add the points of the following true statements concerning a heated ring with ci
 
 
 \subsection*{Solution}
-\six{}
-
-\hash{yy}{ed4019}
+\solint{y}{2259d1}
 
 
 
@@ -85,10 +86,11 @@ Add the points of the following true statements concerning a heated ring with ci
 \end{itemize}
 
 \subsection*{Challenge}
-Starting from the heat (diffusion) equation $u_t = u_{xx}/2$, show that the Fourier coefficient at time $t$ is given by
+Starting from the heat (diffusion) equation $u_t = u_{xx}/2$, show that the general solution to the heat equation on a ring is given by
 
 \begin{equation}
-    C_k(t) = C_k(0) e^{-2 \pi^2 k^2 t}
+    %C_k(t) = C_k(0) e^{-2 \pi^2 k^2 t}
+    u(x,t) = \sum_{n=-\infty}^{n=\infty} c_n(0) e^{-2 \pi^2 n^2 t} e^{i 2 \pi n x}
 \end{equation}
 
 
