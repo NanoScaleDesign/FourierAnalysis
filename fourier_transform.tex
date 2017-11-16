@@ -12,26 +12,41 @@
 \end{itemize}
 
 \subsection*{Comment}
-Until now we have been considering Fourier series which allows us to describe periodic phenomena. This can however cause issues, such as in challenge \ref{sec:fstexpform} when the function isn't actually periodic, since the derived fourier series results in periodicity outside the region of integration. The Fourier transform can help overcome this limitation and accurately describe signals which are non-periodic.
+Until now we have been considering Fourier series. This is however limited to describing periodic phenomena since it is assumed that the signal repeats outside the region of integration. The Fourier transform can be thought of as an extension of Fourier series which allows the analysis of non-periodic phenomena.
 
-The suggested resources provide an excellent intuetive path to the connection between Fourier Series and Fourier Transforms, and this challenge is designed to give you the opportunity to take some time to try to understand the main concepts behind the transition.
+The suggested resources provide an excellent intuitive path of the connection between Fourier series and Fourier transforms, and this challenge is designed to give you the opportunity to take some time to try to understand the main concepts behind the transition.
 
 \subsection*{Challenge}
-Watch the two videos in the Resources section above, taking notes about the transition from Fourier Series to Fourier Analysis.
+Using the resources above, describe how to make the transition from Fourier series to the Fourier transform.
 
 
 
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fourier transform notation}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: Chapter 2.1, page 75 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-\end{itemize}
-%NT: Add video too from L7?
+\subsection*{Comment}
+Just so that you are aware, you should know that there are various equivalent notations in use, and if you use the Fourier transform in your later career you will probably come across notations different to the ones used in this course. This is partly because Fourier analysis is applicable to a wide range of fields and each field tends to have its own conventions based on how the Fourier transform is interpreted physically (if at all) in that field.
+
+In general, the Fourier transform is given by
+\begin{equation}
+    \mathcal{F}f(\omega) = \sqrt{\frac{|b|}{(2 \pi)^{1-a}}} \int_{-\infty}^{\infty} f(t) e^{i b \omega t} dt
+\end{equation}
+
+where $a$ and $b$ typically take on values such as 
+
+\begin{tabular}{|c|c c|}
+    \hline
+    \textbf{Case} & \textbf{a} & \textbf{b} \\
+    \hline
+    \textbf{1}    & 0          & 1          \\
+    \textbf{2}    & 1          & -1         \\
+    \textbf{3}    & -1         & 1          \\
+    \textbf{4}    & 0          & -2$\pi$   \\
+    \hline
+\end{tabular}
 
 \subsection*{Challenge}
 Add the points of the legitimate forms of Fourier notation:
@@ -49,7 +64,7 @@ Add the points of the legitimate forms of Fourier notation:
 32 points: $\displaystyle \mathcal{F}f(s)=\int_{-\infty}^{\infty} e^{-i s t} f(t) dt$
 
 \subsection*{Solution}
-\hash{eee}{58851c}
+\solint{c}{69ace4}
 
 
 
@@ -62,12 +77,12 @@ Add the points of the legitimate forms of Fourier notation:
 \subsection*{Challenge}
 Use L'H\^opital's rule to determine the limit of
 \begin{equation}
-    \frac{Sin(x)}{x}
+    \frac{\sin(x)}{x}
 \end{equation}
 as $x \rightarrow 0$.
 
 \subsection*{Solution}
-\hash{ccc}{9cc92f}
+\solint{d}{9948c6}
 
 
 
@@ -80,14 +95,9 @@ as $x \rightarrow 0$.
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book: Chapter 2.1, page 68, particularly at the bottom of the page (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+    \item Book: Chapter 2.1 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf}) %, page 68, particularly at the bottom of the page
     \item Video: Lecture 6 starting from 29:26 (\url{https://youtu.be/4lcvROAtN_Q?t=29m26s})
 \end{itemize}
-
-\subsection*{Comments}
-This challenge, and the next few, represent very common functions that can be evaluated using the Fourier transform. Try to understand the mathematics used in their evaluation (I will not expect you to be able to derive it starting Fourier series however, like Prof. Osgood does from page 65 onwards). The main learning concept is to understand how to use the Fourier Transform to convert between real-space and frequency-space.
-
-In this and subsequent challenges, I list both reading resources and video. For this challenge up to and including challenge \ref{sec:shiftstretch}, I would suggest starting with the reading resources, and then if you have trouble understanding, to use the video resource for further support.
 
 \subsection*{Challenge}
 Calculate the Fourier Transform for the window function
@@ -107,10 +117,40 @@ In graph-form the function and its transform appear as follows:
     \includegraphics[scale=0.5]{window1.png} & \includegraphics[scale=0.5]{window1ft.png}
 \end{tabular}
 
-To check your answer, calculate $\hat{f}(s=1.5)$.
+\subsection*{Solution}
+You should find that your solution is consistent with $\hat{f}(s=1.5)=-0.21$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier transform of sine and cosine}
+
+\subsection*{Comments}
+With Fourier series we understood the integer $k$ in $\sin(2 \pi k t)$ as the frequency of the signal, and by building up the sum of sines and cosines (using exponential notation) we could reproduce very well an arbitrary periodic signal. In the case of challenges \ref{sec:fcsinx} and \ref{sec:fcsinxp1} we determined the Fourier coefficients for a single-frequency $k=1$ sine signal.
+
+Can we still understand the $s$ in the Fourier transform $\int_{-\infty}^{\infty} f(t) e^{i 2 \pi s t}$ as analogous to $k$ somehow? What happens when you take the Fourier transform of a single-frequency signal? How is phase-information encoded? This is difficult to visualise but this challenge, dealing with simple single-frequency signals, should give you an initial insight.
+
+\subsection*{Challenge}
+Calculate the Fourier transforms of\\
+1. $\sin(2 \pi t)$\\
+2. $\cos(2 \pi t)$
+
+You may find the following identity useful:
+\begin{equation}
+    \int_{-\infty}^{\infty} e^{-i 2 \pi (s+c) t} = \delta(s+c)
+\end{equation}
 
 \subsection*{Solution}
-\hash{ddd}{b78cd8}
+In both cases, to check your answers calculate $\int_0^2 f(s) ds$.
+
+1.\\
+\solimagtwodp{e}{923c59}
+
+2.\\
+\solimagtwodp{f}{c68bbf}
 
 
 
@@ -128,17 +168,15 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
 \end{itemize}
 
 \subsection*{Challenge}
-Calculate the Fourier Transform for the triangle function shown below. In graph-form the function and its transform appear as follows:
+What is the Fourier transform of a triangle function, as shown below, in terms of the window function of challenge \ref{sec:tophat}? You may just state the function; calculation is not required unless you would like to.
 
 \begin{tabular}{cc}
     \textbf{Function} & \textbf{Fourier transform} \\
     \includegraphics[scale=0.5]{triangle.png} & \includegraphics[scale=0.5]{triangleft.png}
 \end{tabular}
 
-To check your answer, calculate $\hat{f}(s=1.5)$.
-
 \subsection*{Solution}
-\hash{fff}{55e1c1}
+Your answer should be consistent with $F(s=1.5) = 0.045$
 
 
 
@@ -146,7 +184,7 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Fourier transform of a gaussian}
+\section{Fourier transform of a Gaussian}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -155,20 +193,18 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
 \end{itemize}
 
 \subsection*{Challenge}
-Calculate the Fourier Transform for the gaussian function:
+Calculate the Fourier transform for the Gaussian function:
 
 \begin{equation}
     f(t) = e^{-\pi t^2}
 \end{equation}
 
-The gaussian function looks like
+The Gaussian function looks like
 
 \includegraphics{gaussian.png}
 
-To check your answer, calculate $\hat{f}(s=1.5)$.
-
 \subsection*{Solution}
-\hash{ggg}{341b23}
+Your answer should be consistent with $F(s=1.5) =$ \num{8.51e-4}
 
 
 
@@ -184,18 +220,25 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
 \end{itemize}
 
 \subsection*{Challenge}
-% NT: Add explicitly
-Calculate the Fourier Transform for the rocket function shown below. In graph-form the function and its transform appear as follows:
+Calculate the Fourier Transform for the rocket function:
+\begin{equation}
+    f(at)=
+    \begin{cases}
+        2 - |t| & \text{for } 0 \le |t| < \frac{1}{2}\\
+        1 - |t| & \text{for } \frac{1}{2} \le |t| \le 1\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+    
+shown below. In graph-form the function and its transform appear as follows:
 
 \begin{tabular}{cc}
     \textbf{Function} & \textbf{Fourier transform} \\
     \includegraphics[scale=0.5]{rocket.png} & \includegraphics[scale=0.5]{rocketft.png}
 \end{tabular}
 
-To check your answer, calculate $\hat{f}(s=1.5)$.
-
 \subsection*{Solution}
-\hash{hhh}{a344fd}
+Your answer should be consistent with $F(s=1.5) = -0.17$
 
 
 
@@ -212,7 +255,7 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
 \end{itemize}
 
 \subsection*{Challenge}
-1. By delaying the window function slightly as shown below, we are introducing a phase-shift. Write a few sentences explaining what is meant by a phase-shift and how it relates to the current situation.
+1. By delaying the window function slightly as shown below, we are introducing a phase-shift. What is a phase-shift? What does it mean in terms of the window-function here?
 
 2. Calculate the Fourier Transform for the window function delayed by $1/100$ s, $1/10$ s and $1$ s.
 
@@ -228,9 +271,9 @@ To check your answer, calculate $\hat{f}(s=1.5)$.
     \includegraphics[scale=0.5]{tophatdelayre.png} & \includegraphics[scale=0.5]{tophatdelayim.png}
 \end{tabular}
 
-To check your answer, calculate $\hat{f}(s=2.9)$ for each case. By doing this, you will also gain insight into the new nature of the real and imaginary parts of the function with shifting.
-
 \subsection*{Solution}
+You may check your calculations by calculating $\hat{f}(s=2.9)$ for each case.
+
 $1/100$ s delay: $0.0333568 - 0.0061462i$
 
 $1/10$ s delay: $-0.00843515 - 0.0328527i$
@@ -266,7 +309,7 @@ A triangle function of general width can be defined as
 
 1. In challenge \ref{sec:ft_triangle} the base-width of the triangle was $2$ (ie, $1-(-1)$) and the half-base-width was $1$ (ie, $1-0$). What is the half-base-width for a triangle when $a=2$ and $a=1/2$?
 
-2. Calculate the Fourier Transform $\hat{f}(s)$ for the case where the width of the triangle-function is doubled. To check your answer, evaluate the transform at $s=0.1$.
+2. Calculate the Fourier Transform $\hat{f}(s)$ for the case where the width of the triangle-function is doubled.
 
 3. Write a few sentences explaining how stretching and squeezing in the time-domain is related to stretching and squeezing in the frequency domain.
 
@@ -274,10 +317,15 @@ A triangle function of general width can be defined as
 
 \subsection*{Solution}
 1.\\
-$a=2$: \hash{iii}{e8cb88}\\
-$a=1/2$: \hash{jjj}{eb8c63}\\
+$a=2$\\
+\soltwodp{g}{3cd169}
 
-2. $\hat{f}(0.1)=1.75$
+$a=1/2$\\
+\soltwodp{h}{3bb5c8}
+
+2.\\
+To check your answer, evaluate the transform at $s=0.1$.\\
+$\hat{f}(0.1)=1.75$
 
 
 
@@ -312,4 +360,4 @@ Show that the Fourier Transform of the function $f(at\pm b)$ can be given by
 
 
 % Calculate fourier transform of dirichlet window https://www.youtube.com/watch?annotation_id=annotation_655167&feature=iv&src_vid=8JKb9UN6W4c&v=_HJH3MekMHY
-
+\fi

@@ -36,7 +36,11 @@ $u_{xx}$:\\
 \subsection*{Comment}
 Here we can learn about an application of Fourier series to solve partial differential equations. This problem was one of the motivations for Fourier to develop the idea of Fourier series.
 
-The motivation for the equation $u_t = \frac{1}{2} u_{xx}$ described in the notes is complicated somewhat by the interpretation in terms of equivalences between electrical and thermal capacitance. If this is not so clear then don't worry about it. Generally you should understand how heat flow is proportional to the gradient of the temperature and that heat accumulates within a unit volume when the rate of heat flow into that volume is greater than the rate of heat flow out of that volume.
+The motivation for the equation $u_t = \frac{1}{2} u_{xx}$ described in the notes is complicated somewhat by the interpretation in terms of equivalences between electrical and thermal capacitance. If this is not so clear then don't worry about it. At a minimum you should understand the following:
+\begin{itemize}
+    \item Heat flow is proportional to the gradient of the temperature.
+    \item Heat accumulates within a unit volume when the rate of heat flow into that volume is greater than the rate of heat flow out of that volume.
+\end{itemize}
 
 \subsection*{Challenge}
 The following statements concern a heated ring with circumference 1 and temperature distribution described by $u(x,t)$. Add the points of the statements that are defined by the system to be true:
@@ -77,25 +81,24 @@ The following statements concern a heated ring with circumference 1 and temperat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Heat equation: Fourier coefficients}
+\section{Heat equation on a ring: derivation}
 \label{sec:heateqnfc}
 
 \subsection*{Resources}
 \begin{itemize}
+    \item Book: Section 1.13.1 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
     \item Lecture 4 from 37:00 onwards: (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA}), continuing at the start of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
 \end{itemize}
 
 \subsection*{Challenge}
 Starting from the heat (diffusion) equation $u_t = u_{xx}/2$, show that the general solution to the heat equation on a ring is given by
-
 \begin{equation}
-    %C_k(t) = C_k(0) e^{-2 \pi^2 k^2 t}
     u(x,t) = \sum_{n=-\infty}^{n=\infty} c_n(0) e^{-2 \pi^2 n^2 t} e^{i 2 \pi n x}
 \end{equation}
-
+and write an expression for $c_n(0)$ in terms of the initial temperature distribution $u(x,0)$.
 
 \subsection*{Solution}
-Compare with your peers during discussion time and please ask if there is anything you do not understand.
+Please compare with your peers during discussion time and ask if there is anything you do not understand.
 
 
 
@@ -103,58 +106,31 @@ Compare with your peers during discussion time and please ask if there is anythi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Heat equation}
+\section{Heat equation on a ring: calculation}
 \label{sec:heateqn}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item Lecture 4 from 37:00 onwards: (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA}), continuing at the start of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
-\end{itemize}
-
-\subsection*{Comment}
-Note that the exponential in the answer for $B(t)$ is negative, leading to a decay to mean ambient temperature over time (you can think of the temperature $u(x,t)$ as the temperature relative to the surrounding environment rather than absolute temperature measured in Kelvin).
-
 \subsection*{Challenge}
-Write the heat equation and its Fourier coefficient in the form below. Identify A(x), B(t) and C(x). To check your answers, substitute $k=1$, $x=2$ and $t=3$ into the expressions (purely for checking the solution; these numbers have no physical basis).
-% This is not ideal because it doesn't distinguish negative signs
+Consider an initial heat distribution around a ring. Relative to ambient temperature, the initial temperature distribution follows a cosine distribution with the peak temperature at $x=0$.
 
-\begin{equation}
-    \hat{f}(k) = \int_0^1 A(x) f(x) dx
-\end{equation}
+1. Write an expression for the initial relative temperature distribution, $u(x,0)$, assuming the ring has a circumference of 1 unit.
 
-\begin{equation}
-    u(x,t) = \sum_{k=-\infty}^{k=\infty} \hat{f}(k) B(t) C(x)
-\end{equation}
+2. Determine $c_{n=\pm 1}(0)$ and $c_{n \ne 1}(0)$
+
+3. Write an expression for the temperature distribution as a function of position and time $u(x,t)$.
+
+You can see an animation of the solution here:\\
+\url{https://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Images/cosrelax.gif}
 
 \subsection*{Solution}
-A: \hash{zz}{ffef92}
+1. You should find that your temperature distribution satisfies the result:\\
+$u(0.2,0) = 0.309$
 
-B: \hash{aaa}{c04067}
+2.\\
+$c_{n=\pm 1}(0)$\\
+\soltwodp{b}{06ac46}
 
-C: \hash{bbb}{ae8c65}
+$c_{n \ne 1}(0)$\\
+\soltwodp{a}{690969}
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Heat equation derivation}
-%
-%\subsection*{Resources}
-%\begin{itemize}
-%    \item Lecture 4 from 37:00 onwards: (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA}), continuing at the start of lecture 5 (\url{https://www.youtube.com/watch?v=X5qRpgfQld4})
-%\end{itemize}
-%
-%\subsection*{Challenge}
-%Continuing from challenge \ref{sec:heateqnfc}, derive the expression found in challenge \ref{sec:heateqn} for the temperature on a ring of unit length as a function of position and time using Fourier series.
-%
-%\subsection*{Solution}
-%Please check your derivation with your peers. The teacher will also review your derivation during challenge-log collection.
-
-
-
-
-% So we have a fourier series in space (with FC's given by C_k when t=0) that decays over time
-% Note f^(k) is the equivalent of c_k
-% Calculate the heat around a ring
+3. To check your answer you may substitute $x=0.3$ and $t=0.01$ into your solution:\\
+$u(0.3,0.01) = -0.25$
