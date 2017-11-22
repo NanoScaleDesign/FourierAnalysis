@@ -21,7 +21,6 @@ Using the resources above, describe how to make the transition from Fourier seri
 
 
 
-\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,7 +48,9 @@ where $a$ and $b$ typically take on values such as
 \end{tabular}
 
 \subsection*{Challenge}
-Add the points of the legitimate forms of Fourier notation:
+1. Write the Fourier transform using the four possible notations.
+
+2. Add the points of the legitimate forms of Fourier notation:
 
 1 point: $\displaystyle \mathcal{F}f(w)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
 
@@ -64,6 +65,7 @@ Add the points of the legitimate forms of Fourier notation:
 32 points: $\displaystyle \mathcal{F}f(s)=\int_{-\infty}^{\infty} e^{-i s t} f(t) dt$
 
 \subsection*{Solution}
+2.\\
 \solint{c}{69ace4}
 
 
@@ -134,27 +136,31 @@ With Fourier series we understood the integer $k$ in $\sin(2 \pi k t)$ as the fr
 Can we still understand the $s$ in the Fourier transform $\int_{-\infty}^{\infty} f(t) e^{i 2 \pi s t}$ as analogous to $k$ somehow? What happens when you take the Fourier transform of a single-frequency signal? How is phase-information encoded? This is difficult to visualise but this challenge, dealing with simple single-frequency signals, should give you an initial insight.
 
 \subsection*{Challenge}
-Calculate the Fourier transforms of\\
-1. $\sin(2 \pi t)$\\
-2. $\cos(2 \pi t)$
+1. Calculate the Fourier transforms of\\
+(I) $\sin(2 \pi t)$\\
+(II) $\cos(2 \pi t)$
 
 You may find the following identity useful:
 \begin{equation}
     \int_{-\infty}^{\infty} e^{-i 2 \pi (s+c) t} = \delta(s+c)
 \end{equation}
 
-\subsection*{Solution}
-In both cases, to check your answers calculate $\int_0^2 f(s) ds$.
+2. Write $\sin(2 \pi t)$ and $\cos(2 \pi t)$ in terms of complex exponentials. Can you see an analogy between the Fourier transforms you calculated and the complex exponential forms of sine and cosine?
 
-1.\\
+\subsection*{Solution}
+1. In both cases, to check your answers calculate $\int_0^2 f(s) ds$.
+
+(I)\\
 \solimagtwodp{e}{923c59}
 
-2.\\
+(II)\\
 \solimagtwodp{f}{c68bbf}
 
+2. Please discuss with your partner in class, and ask the teacher if you are unsure.
 
 
 
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
