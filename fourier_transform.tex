@@ -71,7 +71,6 @@ where $a$ and $b$ typically take on values such as
 
 
 
-\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,7 +173,7 @@ You may find the following identity useful:
 \end{itemize}
 
 \subsection*{Challenge}
-What is the Fourier transform of a triangle function, as shown below, in terms of the window function of challenge \ref{sec:tophat}? You may just state the function; calculation is not required unless you would like to.
+What is the Fourier transform of a triangle function, as shown below, in terms of the window function of challenge \ref{sec:tophat}? You may just state the function; calculation is not required unless you would like to try and prove it.
 
 \begin{tabular}{cc}
     \textbf{Function} & \textbf{Fourier transform} \\
@@ -199,7 +198,7 @@ Your answer should be consistent with $F(s=1.5) = 0.045$
 \end{itemize}
 
 \subsection*{Challenge}
-Calculate the Fourier transform for the Gaussian function:
+Starting from the general formula for Fourier transform, calculate the Fourier transform for the Gaussian function:
 
 \begin{equation}
     f(t) = e^{-\pi t^2}
@@ -207,7 +206,7 @@ Calculate the Fourier transform for the Gaussian function:
 
 The Gaussian function looks like
 
-\includegraphics{gaussian.png}
+\includegraphics[width=8cm]{gaussian.png}
 
 \subsection*{Solution}
 Your answer should be consistent with $F(s=1.5) =$ \num{8.51e-4}
@@ -240,7 +239,7 @@ shown below. In graph-form the function and its transform appear as follows:
 
 \begin{tabular}{cc}
     \textbf{Function} & \textbf{Fourier transform} \\
-    \includegraphics[scale=0.5]{rocket.png} & \includegraphics[scale=0.5]{rocketft.png}
+    \includegraphics[scale=0.6]{rocket.png} & \includegraphics[scale=0.6]{rocketft.png}
 \end{tabular}
 
 \subsection*{Solution}
@@ -249,6 +248,7 @@ Your answer should be consistent with $F(s=1.5) = -0.17$
 
 
 
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -261,11 +261,11 @@ Your answer should be consistent with $F(s=1.5) = -0.17$
 \end{itemize}
 
 \subsection*{Challenge}
-1. By delaying the window function slightly as shown below, we are introducing a phase-shift. What is a phase-shift? What does it mean in terms of the window-function here?
+1. What is meant by a ``phase-shift'' of a signal in time? What does it mean in terms of the window-function here?
 
-2. Calculate the Fourier Transform for the window function delayed by $1/100$ s, $1/10$ s and $1$ s.
+2. Calculate the Fourier Transform for the window function delayed by \SI{1}{\second}.
 
-3. Write a short summary of how the real and imaginary parts of the signal are changing as the delay increases. You considered the original window function in challenge \ref{sec:tophat}.
+A graph with increasing delay is shown in the figure below. What is happening to the real and imaginary parts of the signal as the delay increases? You considered the original window function in challenge \ref{sec:tophat}.
 
 \begin{tabular}{c}
     \textbf{Function} \\
@@ -278,13 +278,7 @@ Your answer should be consistent with $F(s=1.5) = -0.17$
 \end{tabular}
 
 \subsection*{Solution}
-You may check your calculations by calculating $\hat{f}(s=2.9)$ for each case.
-
-$1/100$ s delay: $0.0333568 - 0.0061462i$
-
-$1/10$ s delay: $-0.00843515 - 0.0328527i$
-
-$1$ s delay: $0.0274405 + 0.0199367i$
+2. You should find that $\hat{f}(s=2.9) = 0.0274405 + 0.0199367i$
 
 
 
@@ -347,23 +341,21 @@ $\hat{f}(0.1)=1.75$
     \item Book: Chapter 2.2.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
 \end{itemize}
 
-\subsection*{Comment}
-During the past few challenges we have been considering various transforms of common functions. The ability to utilise such transforms; and generate your own manipulations of them; can be very useful for applications related to filtering.
-
 \subsection*{Challenge}
-Show that the Fourier Transform of the function $f(at\pm b)$ can be given by
-\begin{equation}
-    \frac{1}{|a|} e^{\pm i 2 \pi s b/a} \hat{f}(s/a)
-\end{equation}
+Calculate the Fourier transform of the signal shown below.
 
+\includegraphics[width=8cm]{triangleshiftsqueeze.png}
+
+\subsection*{Solution}
+Your answer should be consistent with $\hat{f}(s=1.1) = -0.155 + 0.050 i$.
 
 
 
 
 \input{convolution}
+\fi
 % Discrete (L19-10:30,L20)
 
 
 
 % Calculate fourier transform of dirichlet window https://www.youtube.com/watch?annotation_id=annotation_655167&feature=iv&src_vid=8JKb9UN6W4c&v=_HJH3MekMHY
-\fi
