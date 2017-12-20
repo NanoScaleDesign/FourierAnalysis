@@ -10,10 +10,18 @@
 \end{itemize}
 
 \subsection*{Comment}
-Here we expand our study to convolution; a powerful function for processing signals. This introduction by Prof. Osgood provides an excellent introduction. What you will learn here is that convolution in real space is related to multiplication in frequency space. Visualisation of what convolution in real-space means however, is rather difficult, and I would recommend to focus purely on the mathematical meaning here.
+Here we expand our study to convolution; a powerful function for processing signals.
+This introduction by Prof. Osgood provides an excellent introduction.
+%What you will learn here is that convolution in real space is related to multiplication in frequency space.
+Visualisation of what convolution in real-space means however, is rather difficult, and I would recommend to focus purely on the mathematical meaning here of how it relates functions in real space and frequency space.
 
 \subsection*{Challenge}
-Show that convolution in real-space ($\ff(g*f)(s)$) corresponds to multiplication in frequency space ($\ff g(s) \ff f(s)$).
+Briefly describe what convolution of two functions means, and how it can relate two functions of time in real space to their equivalent functions in frequency space.
+
+%Show that convolution in real-space ($\ff(g*f)(s)$) corresponds to multiplication in frequency space ($\ff g(s) \ff f(s)$). % No time in 2017.
+
+\subsection*{Solution}
+Please compare your answer with your partner or discuss with the teacher in class.
 
 
 
@@ -29,9 +37,7 @@ Show that convolution in real-space ($\ff(g*f)(s)$) corresponds to multiplicatio
 \end{itemize}
 
 \subsection*{Comment}
-The above video includes an excellent example of using fourier analysis in a scientific context, including its application in filters.
-
-The challenge below asks you to watch to 24:15, however after this point he goes on to describe the futility of trying to visualise convolution in the time-domain. Nevertheless, the graphics on convolution on Wikipedia [1] (especially these: [2a,b]) I think go some way to visualising what's happening in the time-domain.
+The above video includes an excellent example of using fourier analysis in a scientific context, including its application in filters. I encorage you to watch until 24:15. After this point Prof. Osgood goes on to describe the futility of trying to visualise convolution in the time-domain, however the graphics on convolution on Wikipedia [1] (especially these: [2a,b]) I think go a little way to visualising what's happening in the time-domain.
 
 1: \url{https://en.wikipedia.org/wiki/Convolution}\\
 2a: \url{https://en.wikipedia.org/wiki/Convolution\#/media/File:Convolution_of_box_signal_with_itself2.gif}\\
@@ -42,37 +48,41 @@ For your reference, turbidity standards of 5, 50, and 500 Nephelometric Turbidit
 \emph{Source: \url{https://en.wikipedia.org/wiki/Turbidity}}
 
 \subsection*{Challenge}
-1. Take notes following the above video until 24:15. There is a lot of useful information here. The questions below highlight the key points that I want you to understand, however they do not cover everything, so please be sure to follow the video.
+%1. Take notes following the above video until 24:15. There is a lot of useful information here. The questions below highlight the key points that I want you to understand, however they do not cover everything, so please be sure to follow the video.
 
-2. Using a few sentences and diagrams, describe an ideal low-pass, high-pass and band-pass filter. How can they be applied in the frequency domain to influence the signal in the time-domain?
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Convolution with a window function}
-
-\subsection*{Comment}
-The ``signal'' here is $g(t-\tau)$ and the ``window function'' is $f(\tau)$.
-
-\subsection*{Challenge}
-1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t-\tau)=(t-\tau)^2$ with time. 
-
-Obtain the convolution of the signal $(f \star g)(t)$ with a window function:
-\begin{equation}
-    f(\tau)=
-    \begin{cases}
-        1 & \text{for } -1/2 < \tau < 1/2\\
-        0 & \text{otherwise}
-    \end{cases}
-\end{equation}
-
-2. If this window-function were a filter, what sort of band-pass filter could you consider this to be?
+Using a few sentences and diagrams, describe an ideal low-pass, high-pass and band-pass filter. How can they be applied in the frequency domain to influence the signal in the time-domain?
 
 \subsection*{Solution}
-1. Substitute $t=0$ into your final answer: \hash{ppp}{290253}
+Please compare your answer with your partner or discuss with the teacher in class.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Convolution with a window function}
+%
+%%\subsection*{Comment}
+%%The ``signal'' here is $g(t-\tau)$ and the ``window function'' is $f(\tau)$.
+%
+%\subsection*{Challenge}
+%%1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t-\tau)=(t-\tau)^2$ with time. 
+%Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t)=t^2$ with time. 
+%
+%Obtain the convolution of the signal $(f \star g)(t)$ with a window function:
+%\begin{equation}
+    %f(t)=
+    %\begin{cases}
+        %1 & \text{for } -1/2 < t < 1/2\\
+        %0 & \text{otherwise}
+    %\end{cases}
+%\end{equation}
+%
+%%2. If this window-function were a filter, what sort of band-pass filter could you consider this to be?
+%
+%\subsection*{Solution}
+%Your answer should be consistent with $(f \star g)(2) = \frac{49}{12}$
 
 
 
@@ -177,7 +187,7 @@ Obtain the convolution of the signal $(f \star g)(t)$ with a window function:
 %    \end{cases}
 %\end{equation}
 
-In challenge \ref{sec:tophat} you calculated the spectrum of a window function. Imagine here you have two window functions $f(t)$ and $g(\tau)$.
+In challenge \ref{sec:tophat} you calculated the spectrum of a window function. Imagine here you have two window functions $f(t)$ and $g(t)$.
 
 \begin{equation}
     f(t)=
@@ -188,19 +198,19 @@ In challenge \ref{sec:tophat} you calculated the spectrum of a window function. 
 \end{equation}
 
 \begin{equation}
-    g(\tau)=
+    g(t)=
     \begin{cases}
-        1 & \text{for } |\tau| < 1/2 \\
-        0 & \text{for } |\tau| > 1/2
+        1 & \text{for } |t| < 1/2 \\
+        0 & \text{for } |t| > 1/2
     \end{cases}
 \end{equation}
 
 1. Use your knowledge of the window-function in the frequency domain from challenge \ref{sec:tophat} to calculate the frequency-domain spectrum of the convolution of the two window functions.
 
-2. Compare your answer to that obtained in challenge \ref{sec:ft_triangle}. What is the resulting function in the time-domain? \emph{This should be possible by comparison, without calculation.}
+2. What is the resulting function in the time-domain? \emph{This should be possible by deduction based on previous challenges, without calculation.}
 
 \subsection*{Solution}
-1. To check your answer, substitute $s=1/2$ into your answer: 0.41
+1. Substitute $s=1/2$ into your final answer and you should obtain 0.405.
 
-2. To check your answer, substitute $t=1/2$ into your answer: 0.50
+2. Substitute $t=1/2$ into your final answer and you should obtain 0.50.
 
