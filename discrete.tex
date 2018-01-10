@@ -16,7 +16,8 @@ The following pages are based on slides developed by Prof. Maraso Yamashiro for 
 2. Write a sentence or two summarising what aliasing is and the Nyquist sampling theorem.
 
 \subsection*{Solutions}
-1. Write your solution X to 2 decimal places in units of kHz: \hash{xxx}{8a6fe0}
+1.\\
+\soltwodp{x}{e20c17}
 
 2. Check your answer with your partner and discuss any differences. Ask the teacher if you are unsure.
 
@@ -32,7 +33,7 @@ The following pages are based on slides developed by Prof. Maraso Yamashiro for 
 
 \subsection*{Resources}
 
-The following pages are based on slides developed by Prof. Maraso Yamashiro for the 2015 class on Fourier Analysis. Please follow the derivation on the following pages.
+The following pages are based on slides developed by Prof. Maraso Yamashiro for the 2015 class on Fourier Analysis. The slides have been lightly modified for notation differences. Please follow the derivation on the following pages. Note that the equation for the discrete Fourier Transform on the top slide of page 90 should read $\hat{f}_n = N c_n = \sum_{k=0}^{N-1} f_k e^{-2 \pi n x_k}$ (not $e^{-inx_k}$) (mistake by the current author, not Prof. Yamashiro).
 
 \includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x2,frame=true]{discrete_10-15.pdf}
 
@@ -58,7 +59,7 @@ f = \left(
 \end{equation}
 
 \subsection*{Challenge}
-Calculate the missing values A-H in the following calculation of the frequency spectrum:
+Calculate the missing values A-H in the following calculation of the frequency spectrum. To a certain extent you may be able to pattern-match to guess the values, but please be sure that you practise the calculation method too, since that is the main learning objective here.
 % NT: Some people do pattern-matching. Maybe need to do a smaller problem where calculation is the only way (can be partial like the previous sensei's 4x4 non-sinusoidal function)
 
 
@@ -97,20 +98,31 @@ Calculate the missing values A-H in the following calculation of the frequency s
 
 \subsection*{Solutions}
 
-Enter imaginary numbers as shown in the table in section \ref{sec:hashes}. For example: $-1/\sqrt{2}-i/\sqrt{2}$ would be entered for \hash{abc}{a1b2c3} as ``abc\_re(-0.71)im(-0.71)'', $-i$ would be entered simply as ``abc\_im(-1.00)'' and $-1$ would just be ``abc\_-1.00''.
+Enter imaginary numbers as indicated below. For example: $-1/\sqrt{2}-i/\sqrt{2}$ with a prefix of ``a'' would be entered as ``are(-0.71)im(-0.71)'', $-i$ would be entered as ``are(0.00)im(-1.00)'' and $-1$ would be ``are(-1.00)im(0.00)''.
 
-\begin{tabular}{|c|c|}
-    \hline
-    \textbf{A} & \hash{yyya}{b3a860} \\
-    \textbf{B} & \hash{yyyb}{1058f4} \\
-    \textbf{C} & \hash{yyyc}{e6bc8f} \\
-    \textbf{D} & \hash{yyyd}{da2637} \\
-    \textbf{E} & \hash{yyye}{696976} \\
-    \textbf{F} & \hash{yyyf}{850784} \\
-    \textbf{G} & \hash{yyyg}{dca1dd} \\
-    \textbf{H} & \hash{yyyh}{cb48e5} \\
-    \hline
-\end{tabular}
+\textbf{A}\\
+\solimagtwodp{a}{95c9e4}
+
+\textbf{B}\\
+\solimagtwodp{b}{ec0ffd}
+
+\textbf{C}\\
+\solimagtwodp{c}{13085b}
+
+\textbf{D}\\
+\solimagtwodp{d}{d01771}
+
+\textbf{E}\\
+\solimagtwodp{e}{332be1}
+
+\textbf{F}\\
+\solimagtwodp{f}{27b237}
+
+\textbf{G}\\
+\solimagtwodp{g}{cbd79b}
+
+\textbf{H}\\
+\solimagtwodp{h}{293fff}
 
 
 
@@ -127,15 +139,21 @@ Having identified the frequency spectrum, it is possible then to analyse the fre
     \item Video: \url{https://www.youtube.com/watch?v=mkGsMWi_j4Q}
 \end{itemize}
 
+\subsection*{Comment}
+The video discusses the phase of the signal as the angle formed by rotating anti-clockwise from an arrow pointing in the positive direction along the real axis. You saw in challenge \ref{sec:ftofsinandcos} how the continuous Fourier transform of a cosine function yields real values and the Fourier transform of a sine function yields imaginary values. Here you can see how phase-shift of a cosine signal leads to real and imaginary solutions and how this can be represented in a real-complex plane.
+
 \subsection*{Challenge}
 What is the frequency, magnitude and phase of the sine-wave as determined through our discrete Fourier transform analysis?
 
 \subsection*{Solutions}
-Frequency: \hash{zzz}{874a2c}
+\textbf{Frequency}\\
+\soltwodp{z}{a78955}
 
-Magnitude: \hash{aaaa}{2b946c}
+\textbf{Magnitude}\\
+\soltwodp{a}{a1e88c}
 
-Phase: \hash{bbbb}{132b51}
+\textbf{Phase}
+\soltwodp{b}{fd9a84}
 
 
 
@@ -146,23 +164,33 @@ Phase: \hash{bbbb}{132b51}
 \section{Analysing a more complex function: part I}
 
 \subsection*{Challenge}
-The following signal shown in the graph below has a fundamental frequency of 1 Hz:
+Considering the signal:
 \begin{equation}
-    f(t) = Cos(2 \pi t) + Sin(4 \pi t)
+    f(t) = \cos(2 \pi t) + \sin(4 \pi t)
 \end{equation}
 
 \includegraphics[scale=0.75]{dftcossin.png}
 
 1. What are the two frequencies that make up the signal?
 
-2. As described earlier, if you sample too infrequently, aliasing will occur. What is the maximum sampling frequency at which aliasing will occur for this signal?
+2. What is the fundamental frequency of this signal?
+
+3. What is the maximum sampling frequency at which aliasing will occur for this signal?
 
 \subsection*{Solutions}
-1.\\
-Lower frequency in Hz: \hash{cccc}{5a14e7}\\
-Higher frequency in Hz: \hash{dddd}{1125b4}
+\textbf{1. Lower of the two frequencies in Hz}\\
+\soltwodp{c}{166765}
 
-2. \hash{eeee}{6ee287} times per second (or Hz)
+\textbf{1. Higher of the two frequencies in Hz}\\
+\soltwodp{d}{c22bee}
+
+\textbf{2.}\\
+(units: Hz)\\
+\soltwodp{f}{6786da}
+
+\textbf{3.}\\
+(units: Hz)\\
+\soltwodp{e}{0a9397}
 
 
 
@@ -215,17 +243,16 @@ Calculating the matrix F yields
 2. Determine, by calculation, the frequencies with their magnitudes and phases of this signal. In this case, you can know the constituent frequencies, their magnitudes and phases because you know how the signal is made up of two signals. Check that your calculation aligns with your intuition.
 
 \subsection*{Solutions}
-1.\\
-A = \hash{a}{d90da1}\\
-B = \hash{b}{23ae42}
+\textbf{1. A}\\
+\solimagtwodp{a}{223b8b}
 
-2. If you are not sure what your intuition should be, or if your answer does not match your intuition, please discuss with your partner or the teacher in class.
+\textbf{1. B}\\
+\solimagtwodp{b}{df600a}
+
+\textbf{2.} If you are not sure what your intuition should be, or if your answer does not match your intuition, please discuss with your partner or the teacher in class.
 
 
 % NT: Go the other way to reconstruct a signal. Should spend an entire class on this.
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -244,9 +271,7 @@ The following pages are based on slides developed by Prof. Maraso Yamashiro for 
 Considering a signal sampled at 22 kHz, how many multiplications are required to calculate $F$ in the calculation $\bm{\hat{f}} = F \bm{f}$?
 
 \subsection*{Solutions}
-\emph{(Note: a number like 5,232,500,000 is entered as ``5.23e9'')}
-
-\hash{c}{5bd29d}
+\solscitwodp{c}{eb9210}
 
 
 
@@ -314,10 +339,14 @@ This problem is overcome through the use of \emph{zero-padding}. In the example 
 4. Considering the original unpadded signal, how many times more multiplications are required under standard DFT compared to processing under FFT?
 
 \subsection*{Solutions}
-1. \hash{d}{65464b}
+\textbf{1}\\
+\solscitwodp{d}{293b72}
 
-2. \hash{e}{166b99}
+\textbf{2}\\
+\soltwodp{e}{f5df85}
 
-3. 491,520
+\textbf{3}\\
+491,520
 
-4. 984.70
+\textbf{4}\\
+984.70
