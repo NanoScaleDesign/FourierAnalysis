@@ -1,5 +1,5 @@
 # Fourier Analysis
-This is course material for the Fourier Analysis course held at Kyushu University during Autumn 2017.
+This is course material for the Fourier Analysis course held at Kyushu University during Autumn 2018.
 The students learn by utilising freely-available online content and notes from the teacher to work through challenges contained in a PDF file.
 The intention is to take the students from "beginner" to "experienced" by working through the challenges in sequence.
 
