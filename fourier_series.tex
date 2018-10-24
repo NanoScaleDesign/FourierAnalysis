@@ -29,8 +29,8 @@ Sum the points of all the following \emph{true} statements:
 
 256 points: The infinitely repeating square wave (see figure below) where $f(x)=
     \begin{cases}
-        1 & \text{for } 0<x<1 \\
-        -1 & \text{for } 1<x<2
+        1 & \text{for } 0<x<\frac{1}{2} \\
+        -1 & \text{for } \frac{1}{2}<x<1
     \end{cases}$ is an odd function.
 
 512 points: $f(x)$ above is an even function.
@@ -78,7 +78,7 @@ As shown above, a complex function (signal) can be made up of a sum of sine sign
     f(t) = A_0 + \sum_{k=1}^{N} A_k \sin(2 \pi k t + \phi_k)
 \end{equation}
 
-Using basic trigonomatric relations, show that this can be re-written in terms of a sum of sines and cosines:
+Using basic trigonometric relations, show that this can be re-written in terms of a sum of sines and cosines:
 \begin{equation}
     \label{eq:fssincos}
     f(t) = \frac{a_0}{2} + \sum_{k=1}^{N} a_k \cos(2 \pi k t) + b_k \sin(2 \pi k t)
@@ -284,6 +284,10 @@ Please compare your answer with your partner or discuss with the teacher in clas
     \item Video: \url{https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-fourier-coefficients-for-square-wave}
 \end{itemize}
 
+\subsection*{Comment}
+
+You may find \url{https://www.desmos.com/} useful for plotting equations of Fourier series that you calculate.
+
 \subsection*{Challenge}
 Calculate the Fourier series for the following square-wave:
 
@@ -330,7 +334,6 @@ To check your solution, write out the sum up to $k=2$ and then evaluate $f(0.7)$
 
 
 
-\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -470,7 +473,7 @@ The numerical answer is given below. Be sure you understand why the answer comes
 \end{itemize}
 
 \subsection*{Comments}
-This is the last major derivation for Fourier series, and parallels what you learned for trigonometric Fourier series. The video does a great job of showing the derivation. Try to become comfortable with manipulating complex exponentials and their periodicity.
+The video does a great job of showing the derivation. Try to become comfortable with manipulating complex exponentials and their periodicity.
 
 \subsection*{Challenge}
 Derive an expression for the $c_k$'s in the equation
@@ -513,7 +516,7 @@ If you perform the sum for $n=1$ and evaluate at $t=0.7$, you should obtain a va
 
 
 
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -658,144 +661,144 @@ If the Fourier coefficient $C_1$ is $4 + 6i$ for a real signal, what is the Four
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{2D orthogonal vectors}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-\end{itemize}
-
-\subsection*{Challenge}
-Sum the points of the vectors in 2D that are orthogonal:
-
-1 point: (5, 4) and (-1, 1.25)
-
-2 points:  (2, -3) and (-6, 4)
-
-4 points: (-2.25, 1.5) and (2, 3)
-
-8 points: (4.5, 4) and (3, -3.375)
-
-16 points: (6, 4) and (4, -6)
-
-32 points: (5, 1) and (-2, 8.125)
-
-64 points: (0, 1) and (1, 0)
-
-128 points: (1, 1) and (1, 1)
-
-\subsection*{Solution}
-\solint{q}{919325}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Orthonormal basis}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Video: \url{https://www.khanacademy.org/math/linear-algebra/alternate-bases/orthonormal-basis/v/linear-algebra-introduction-to-orthonormal-bases}
-\end{itemize}
-
-\subsection*{Challenge}
-Sum the points of the following vectors that form an orthonormal basis:
-
-1 point :
-($\displaystyle \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}}$) and
-($\displaystyle \frac{2}{\sqrt{5}}, \frac{4}{\sqrt{5}}$)
-
-2 points:
-($\displaystyle \frac{2}{\sqrt{5}}$, $\displaystyle \frac{1}{\sqrt{5}}$) and
-($\displaystyle \frac{-1}{\sqrt{5}}$, $\displaystyle \frac{2}{\sqrt{5}}$)
-
-4 points:
-($\displaystyle \frac{2}{\sqrt{2}}, \sqrt{\frac{7}{8}}, \frac{1}{\sqrt{6}}$),
-($\displaystyle -\sqrt{\frac{2}{5}}, \frac{7}{\sqrt{14}}, -\frac{1}{\sqrt{6}}$) and
-($\displaystyle \frac{1}{\sqrt{3}},  \frac{1}{5 \sqrt{3}}, -\frac{7}{5 \sqrt{3}}$)
-
-8 points:
-($\displaystyle \frac{1}{\sqrt{21}}, \frac{2}{\sqrt{21}}, \frac{4}{\sqrt{21}}$),
-($\displaystyle -\sqrt{\frac{2}{7}}, \frac{3}{\sqrt{14}}, -\frac{1}{\sqrt{14}}$) and
-($\displaystyle \sqrt{\frac{2}{3}},  \frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}$)
-
-%16 points:
-%($\displaystyle \frac{1}{\sqrt{6}}, \sqrt{\frac{2}{3}}, \frac{1}{\sqrt{6}}$),
-%($\displaystyle -\frac{1}{\sqrt{2}},  \frac{2 \sqrt{2}}{5}, -\frac{3}{5 \sqrt{2}}$) and
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{2D orthogonal vectors}
+%
+%\subsection*{Resources}
+%\begin{itemize}
+%    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+%\end{itemize}
+%
+%\subsection*{Challenge}
+%Sum the points of the vectors in 2D that are orthogonal:
+%
+%1 point: (5, 4) and (-1, 1.25)
+%
+%2 points:  (2, -3) and (-6, 4)
+%
+%4 points: (-2.25, 1.5) and (2, 3)
+%
+%8 points: (4.5, 4) and (3, -3.375)
+%
+%16 points: (6, 4) and (4, -6)
+%
+%32 points: (5, 1) and (-2, 8.125)
+%
+%64 points: (0, 1) and (1, 0)
+%
+%128 points: (1, 1) and (1, 1)
+%
+%\subsection*{Solution}
+%\solint{q}{919325}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Orthonormal basis}
+%
+%\subsection*{Resources}
+%\begin{itemize}
+%    \item Video: \url{https://www.khanacademy.org/math/linear-algebra/alternate-bases/orthonormal-basis/v/linear-algebra-introduction-to-orthonormal-bases}
+%\end{itemize}
+%
+%\subsection*{Challenge}
+%Sum the points of the following vectors that form an orthonormal basis:
+%
+%1 point :
+%($\displaystyle \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}}$) and
+%($\displaystyle \frac{2}{\sqrt{5}}, \frac{4}{\sqrt{5}}$)
+%
+%2 points:
+%($\displaystyle \frac{2}{\sqrt{5}}$, $\displaystyle \frac{1}{\sqrt{5}}$) and
+%($\displaystyle \frac{-1}{\sqrt{5}}$, $\displaystyle \frac{2}{\sqrt{5}}$)
+%
+%4 points:
+%($\displaystyle \frac{2}{\sqrt{2}}, \sqrt{\frac{7}{8}}, \frac{1}{\sqrt{6}}$),
+%($\displaystyle -\sqrt{\frac{2}{5}}, \frac{7}{\sqrt{14}}, -\frac{1}{\sqrt{6}}$) and
 %($\displaystyle \frac{1}{\sqrt{3}},  \frac{1}{5 \sqrt{3}}, -\frac{7}{5 \sqrt{3}}$)
-
-16 points:
-($0, 2$) and ($2, 0$)
-
-32 points:
-($0, 1$) and ($1, 0$)
-
-\subsection*{Solution}
-\solint{r}{3b1939}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Natural basis}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-\end{itemize}
-
-\subsection*{Challenge}
-Sum the components of the following vectors of a natural basis in $\mathbb{R}^{300}$ space:
-
-\begin{itemize}
-    \item First component of the first vector
-    \item first component of the second vector
-    \item 200th component of the 100th vector
-    \item 200th component of the 200th vector
-    \item last component of the 299th vector
-    \item last component of the last vector
-\end{itemize}
-
-\subsection*{Solution}
-\solint{s}{c0828e}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Orthonormal basis for Fourier series}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
-    \item Video: Lecture 4 (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA})
-\end{itemize}
-
-\subsection*{Comment}
-The previous challenges have focussed on the orthogonality and orthonormality of vectors. We now make the jump to functions. As chapter 1.9 explains, although its not perfect, the analogy between vectors and functions is a good way to help understand and visualise the role that the terms of a Fourier series play in defining a basis upon which to describe a function.
-
-\subsection*{Challenge}
-By evaluating the following functions, show that the terms of a Fourier series form an orthonormal basis:
-
-$y_1(t) = (e^{2 \pi i k_1 t}, e^{2 \pi i k_1 t})$
-
-$y_2(t) = (e^{2 \pi i k_1 t}, e^{2 \pi i k_2 t})$
-
-\subsection*{Solution}
-$y_1(t)$:\\
-\solint{x}{6dbf9a}
-
-$y_2(t)$:\\
-\solint{y}{f05e43}
+%
+%8 points:
+%($\displaystyle \frac{1}{\sqrt{21}}, \frac{2}{\sqrt{21}}, \frac{4}{\sqrt{21}}$),
+%($\displaystyle -\sqrt{\frac{2}{7}}, \frac{3}{\sqrt{14}}, -\frac{1}{\sqrt{14}}$) and
+%($\displaystyle \sqrt{\frac{2}{3}},  \frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}$)
+%
+%%16 points:
+%%($\displaystyle \frac{1}{\sqrt{6}}, \sqrt{\frac{2}{3}}, \frac{1}{\sqrt{6}}$),
+%%($\displaystyle -\frac{1}{\sqrt{2}},  \frac{2 \sqrt{2}}{5}, -\frac{3}{5 \sqrt{2}}$) and
+%%($\displaystyle \frac{1}{\sqrt{3}},  \frac{1}{5 \sqrt{3}}, -\frac{7}{5 \sqrt{3}}$)
+%
+%16 points:
+%($0, 2$) and ($2, 0$)
+%
+%32 points:
+%($0, 1$) and ($1, 0$)
+%
+%\subsection*{Solution}
+%\solint{r}{3b1939}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Natural basis}
+%
+%\subsection*{Resources}
+%\begin{itemize}
+%    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+%\end{itemize}
+%
+%\subsection*{Challenge}
+%Sum the components of the following vectors of a natural basis in $\mathbb{R}^{300}$ space:
+%
+%\begin{itemize}
+%    \item First component of the first vector
+%    \item first component of the second vector
+%    \item 200th component of the 100th vector
+%    \item 200th component of the 200th vector
+%    \item last component of the 299th vector
+%    \item last component of the last vector
+%\end{itemize}
+%
+%\subsection*{Solution}
+%\solint{s}{c0828e}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Orthonormal basis for Fourier series}
+%
+%\subsection*{Resources}
+%\begin{itemize}
+%    \item Book: 1.9 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
+%    \item Video: Lecture 4 (\url{https://www.youtube.com/watch?v=n5lBM7nn2eA})
+%\end{itemize}
+%
+%\subsection*{Comment}
+%The previous challenges have focussed on the orthogonality and orthonormality of vectors. We now make the jump to functions. As chapter 1.9 explains, although its not perfect, the analogy between vectors and functions is a good way to help understand and visualise the role that the terms of a Fourier series play in defining a basis upon which to describe a function.
+%
+%\subsection*{Challenge}
+%By evaluating the following functions, show that the terms of a Fourier series form an orthonormal basis:
+%
+%$y_1(t) = (e^{2 \pi i k_1 t}, e^{2 \pi i k_1 t})$
+%
+%$y_2(t) = (e^{2 \pi i k_1 t}, e^{2 \pi i k_2 t})$
+%
+%\subsection*{Solution}
+%$y_1(t)$:\\
+%\solint{x}{6dbf9a}
+%
+%$y_2(t)$:\\
+%\solint{y}{f05e43}
 
 
 
@@ -812,7 +815,7 @@ $y_2(t)$:\\
 \end{itemize}
 
 \subsection*{Comment}
-In the first lecture we saw how it was possible to approximate any function given enough circles. Here we link what you have learned back to that first lecture. I strongly recommend viewing the fun and informative videos listed here under Resources. In summary, by building a Fourier series you are representing a function using an orthonormal basis, where each component of the basis can be considered visually as a circle operating with individual radius and frequency on the real-imaginary plane.
+In the first lecture we saw how it was possible to approximate any function given enough circles. Here we link what you have learned back to that first lecture. I strongly recommend viewing the fun and informative videos listed here under Resources. In summary, by building a Fourier series you are representing a function using a sum of periodic functions, where each component can be considered visually as a circle operating with individual radius, frequency and phase on the real-imaginary plane.
 
 \includegraphics[scale=0.5]{circle.png}
 
@@ -846,5 +849,4 @@ D: $A=2$, $k=1$
 
 \input{heat_equation}
 \fi
-
 % Convergence?
