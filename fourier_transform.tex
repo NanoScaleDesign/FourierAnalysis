@@ -5,7 +5,12 @@
 \section{Limits of $\sin(x)$}
 
 \subsection*{Resources}
-Using a Taylor series expansion, determine the limiting value of the following functions as $T \rightarrow \infty$:
+\begin{itemize}
+    \item \url{http://mathworld.wolfram.com/SeriesExpansion.html}
+\end{itemize}
+
+\subsection*{Challenge}
+Considering the series expansion around $0$, determine the limiting value of the following functions as $T \rightarrow \infty$:
 
 1. $\sin(x/T)$
 
@@ -47,56 +52,6 @@ Using the resources above, show how to make the transition from Fourier series t
 
 \subsection*{Solution}
 Please compare your working with your partner.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Fourier transform notation}
-
-\subsection*{Comment}
-Just so that you are aware, you should know that there are various equivalent notations in use, and if you use the Fourier transform in your later career you will probably come across notations different to the ones used in this course. This is partly because Fourier analysis is applicable to a wide range of fields and each field tends to have its own conventions based on how the Fourier transform is interpreted physically (if at all) in that field.
-
-In general, the Fourier transform is given by
-\begin{equation}
-    \mathcal{F}f(\omega) = \sqrt{\frac{|b|}{(2 \pi)^{1-a}}} \int_{-\infty}^{\infty} f(t) e^{i b \omega t} dt
-\end{equation}
-
-where $a$ and $b$ typically take on values such as 
-
-\begin{tabular}{|c|c c|}
-    \hline
-    \textbf{Case} & \textbf{a} & \textbf{b} \\
-    \hline
-    \textbf{1}    & 0          & 1          \\
-    \textbf{2}    & 1          & -1         \\
-    \textbf{3}    & -1         & 1          \\
-    \textbf{4}    & 0          & -2$\pi$   \\
-    \hline
-\end{tabular}
-
-\subsection*{Challenge}
-1. Write the Fourier transform using the four possible notations.
-
-2. Add the points of the legitimate forms of Fourier notation:
-
-1 point: $\displaystyle \mathcal{F}f(w)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
-
-2 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{-i 2 \pi w t} f(t) dt$
-
-4 points: $\displaystyle \mathcal{F}f(w)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
-
-8 points: $\displaystyle \mathcal{F}f(s)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \pi s t} f(t) dt$
-
-16 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{i 2 \pi w t} f(t) dt$
-
-32 points: $\displaystyle \mathcal{F}f(s)=\int_{-\infty}^{\infty} e^{-i s t} f(t) dt$
-
-\subsection*{Solution}
-2.\\
-\solint{c}{8cecbb}
-
 
 
 
@@ -154,6 +109,56 @@ You should find that your solution is consistent with $\hat{f}(s=1.5)=-0.21$.
 
 
 \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier transform notation}
+
+\subsection*{Comment}
+Just so that you are aware, you should know that there are various equivalent notations in use, and if you use the Fourier transform in your later career you will probably come across notations different to the ones used in this course. This is partly because Fourier analysis is applicable to a wide range of fields and each field tends to have its own conventions based on how the Fourier transform is interpreted physically (if at all) in that field.
+
+In general, the Fourier transform is given by
+\begin{equation}
+    \mathcal{F}f(\omega) = \sqrt{\frac{|b|}{(2 \pi)^{1-a}}} \int_{-\infty}^{\infty} f(t) e^{i b \omega t} dt
+\end{equation}
+
+where $a$ and $b$ typically take on values such as 
+
+\begin{tabular}{|c|c c|}
+    \hline
+    \textbf{Case} & \textbf{a} & \textbf{b} \\
+    \hline
+    \textbf{1}    & 0          & 1          \\
+    \textbf{2}    & 1          & -1         \\
+    \textbf{3}    & -1         & 1          \\
+    \textbf{4}    & 0          & -2$\pi$   \\
+    \hline
+\end{tabular}
+
+\subsection*{Challenge}
+1. Write the Fourier transform using the four possible notations.
+
+2. Add the points of the legitimate forms of Fourier notation:
+
+1 point: $\displaystyle \mathcal{F}f(w)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
+
+2 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{-i 2 \pi w t} f(t) dt$
+
+4 points: $\displaystyle \mathcal{F}f(w)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
+
+8 points: $\displaystyle \mathcal{F}f(s)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \pi s t} f(t) dt$
+
+16 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{i 2 \pi w t} f(t) dt$
+
+32 points: $\displaystyle \mathcal{F}f(s)=\int_{-\infty}^{\infty} e^{-i s t} f(t) dt$
+
+\subsection*{Solution}
+2.\\
+\solint{c}{8cecbb}
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
