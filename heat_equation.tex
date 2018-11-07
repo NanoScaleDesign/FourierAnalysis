@@ -103,7 +103,7 @@ Please compare with your peers during discussion time and ask if there is anythi
 
 
 
-\iffalse
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,28 +114,18 @@ Please compare with your peers during discussion time and ask if there is anythi
 Remember that any integer multiple of $2 \pi$ in the complex exponential (eg, $e^{i 4 \pi}$ or $e^{i 2 \pi n}$ where $n$ is an integer) is equivalent to having $2 \pi$ in the exponential due to the periodic nature of complex exponentials (ie, that $e^{i 2 \pi} = \cos(2 \pi) + i \sin(2 \pi)$ and $\cos(2 \pi) = \cos(4 \pi) = \cos(6 \pi)$ etc).
 
 \subsection*{Challenge}
-Consider an initial heat distribution around a ring. Relative to ambient temperature, the initial temperature distribution follows a cosine distribution with the peak temperature at $x=0$.
+Consider an initial heat distribution around a ring. Relative to ambient temperature, the initial temperature distribution follows a cosine distribution with the peak temperature at $x=0$. Assume that the ring has a circumference length of 1 unit.
 
-1. Write an expression for the initial relative temperature distribution, $u(x,0)$, assuming the ring has a circumference of 1 unit.
+1. Write an expression for the initial relative temperature distribution, $u(x,0)$.
 
-2. Determine $c_{n=\pm 1}(0)$ and $c_{n \ne 1}(0)$
+2. Write an expression for the relative temperature distribution, $u(x,t)$, as a function of time.
 
-3. Write an expression for the temperature distribution as a function of position and time $u(x,t)$.
+\emph{Note: You may use a computer-algebra system such as Wolfram Alpha to help you do the necessary integrals.}
 
 You can see an animation of the solution here:\\
 \url{https://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Images/cosrelax.gif}
 
 \subsection*{Solution}
-1. You should find that your temperature distribution satisfies the result:\\
-$u(0.2,0) = 0.309$
+1. You should find that your temperature distribution satisfies the result $u(0.2,0) = 0.309$.
 
-2.\\
-$c_{n=\pm 1}(0)$\\
-\soltwodp{b}{06ac46}
-
-$c_{n \ne 1}(0)$\\
-\soltwodp{a}{690969}
-
-3. To check your answer you may substitute $x=0.3$ and $t=0.01$ into your solution:\\
-$u(0.3,0.01) = -0.25$
-\fi
+2. To check your answer you may substitute $x=0.3$ and $t=0.01$ into your solution: $u(0.3,0.01) = -0.25$
