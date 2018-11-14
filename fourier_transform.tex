@@ -37,8 +37,9 @@ To check your answer, substitute $x=2$ as appropriate.
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Video I: Lecture 5 from 27:00 (\url{https://youtu.be/X5qRpgfQld4?t=27m})
-    \item Video II: Lecture 6 up to 20:00 (\url{https://www.youtube.com/watch?v=4lcvROAtN_Q})
+    \item 3B1B video: \url{https://www.youtube.com/watch?v=spUNpyF58BY}
+    \item Stanford video (part I): Lecture 5 from 27:00 (\url{https://youtu.be/X5qRpgfQld4?t=27m})
+    \item Stanford video (part II): Lecture 6 up to 20:00 (\url{https://www.youtube.com/watch?v=4lcvROAtN_Q})
     \item Book: Chapter 2 (\url{https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf})
 \end{itemize}
 
@@ -105,56 +106,6 @@ In graph-form the function and its transform appear as follows:
 
 \subsection*{Solution}
 You should find that your solution is consistent with $\hat{f}(s=1.5)=-0.21$.
-
-
-
-\iffalse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Fourier transform notation}
-
-\subsection*{Comment}
-Just so that you are aware, you should know that there are various equivalent notations in use, and if you use the Fourier transform in your later career you will probably come across notations different to the ones used in this course. This is partly because Fourier analysis is applicable to a wide range of fields and each field tends to have its own conventions based on how the Fourier transform is interpreted physically (if at all) in that field.
-
-In general, the Fourier transform is given by
-\begin{equation}
-    \mathcal{F}f(\omega) = \sqrt{\frac{|b|}{(2 \pi)^{1-a}}} \int_{-\infty}^{\infty} f(t) e^{i b \omega t} dt
-\end{equation}
-
-where $a$ and $b$ typically take on values such as 
-
-\begin{tabular}{|c|c c|}
-    \hline
-    \textbf{Case} & \textbf{a} & \textbf{b} \\
-    \hline
-    \textbf{1}    & 0          & 1          \\
-    \textbf{2}    & 1          & -1         \\
-    \textbf{3}    & -1         & 1          \\
-    \textbf{4}    & 0          & -2$\pi$   \\
-    \hline
-\end{tabular}
-
-\subsection*{Challenge}
-1. Write the Fourier transform using the four possible notations.
-
-2. Add the points of the legitimate forms of Fourier notation:
-
-1 point: $\displaystyle \mathcal{F}f(w)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
-
-2 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{-i 2 \pi w t} f(t) dt$
-
-4 points: $\displaystyle \mathcal{F}f(w)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
-
-8 points: $\displaystyle \mathcal{F}f(s)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \pi s t} f(t) dt$
-
-16 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{i 2 \pi w t} f(t) dt$
-
-32 points: $\displaystyle \mathcal{F}f(s)=\int_{-\infty}^{\infty} e^{-i s t} f(t) dt$
-
-\subsection*{Solution}
-2.\\
-\solint{c}{8cecbb}
 
 
 
@@ -260,7 +211,7 @@ Your answer should be consistent with $F(s=1.5) =$ \num{8.51e-4}
 \end{itemize}
 
 \subsection*{Challenge}
-Calculate the Fourier Transform for the rocket function:
+Using the results from previous challenges, calculate the Fourier Transform for the rocket function:
 \begin{equation}
     f(t)=
     \begin{cases}
@@ -299,7 +250,7 @@ Your answer should be consistent with $F(s=1.5) = -0.17$
 
 2. Calculate the Fourier Transform for the window function delayed by \SI{1}{\second}.
 
-A graph with increasing delay is shown in the figure below. What is happening to the real and imaginary parts of the signal as the delay increases? You considered the original window function in challenge \ref{sec:tophat}.
+3. A graph with different delays is shown in the figure below. Think about what is happening to the real and imaginary parts of the signal as the delay increases. Briefly qualitatively summarise what you see happening. You considered the original window function in challenge \ref{sec:tophat}.
 
 \begin{tabular}{c}
     \textbf{Function} \\
@@ -312,7 +263,11 @@ A graph with increasing delay is shown in the figure below. What is happening to
 \end{tabular}
 
 \subsection*{Solution}
+1. Please compare your answer with that of your partner.
+
 2. You should find that $\hat{f}(s=2.9) = 0.0274405 + 0.0199367i$
+
+3. Please compare your answer with that of your partner.
 
 
 
@@ -385,10 +340,64 @@ Your answer should be consistent with $\hat{f}(s=1.1) = -0.155 + 0.050 i$.
 
 
 
-\input{convolution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier transform notation}
+
+\subsection*{Comment}
+Just so that you are aware, you should know that there are various equivalent notations in use, and if you use the Fourier transform in your later career you will probably come across notations different to the ones used in this course. This is partly because Fourier analysis is applicable to a wide range of fields and each field tends to have its own conventions based on how the Fourier transform is interpreted physically (if at all) in that field.
+
+In general, the Fourier transform is given by
+\begin{equation}
+    \mathcal{F}f(\omega) = \sqrt{\frac{|b|}{(2 \pi)^{1-a}}} \int_{-\infty}^{\infty} f(t) e^{i b \omega t} dt
+\end{equation}
+
+where $a$ and $b$ typically take on values such as 
+
+\begin{tabular}{|c|c c|}
+    \hline
+    \textbf{Case} & \textbf{a} & \textbf{b} \\
+    \hline
+    \textbf{1}    & 0          & 1          \\
+    \textbf{2}    & 1          & -1         \\
+    \textbf{3}    & -1         & 1          \\
+    \textbf{4}    & 0          & -2$\pi$   \\
+    \hline
+\end{tabular}
+
+\subsection*{Challenge}
+1. Write the Fourier transform using the four possible notations.
+
+2. Add the points of the legitimate forms of Fourier notation:
+
+1 point: $\displaystyle \mathcal{F}f(w)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
+
+2 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{-i 2 \pi w t} f(t) dt$
+
+4 points: $\displaystyle \mathcal{F}f(w)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i w t} f(t) dt$
+
+8 points: $\displaystyle \mathcal{F}f(s)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \pi s t} f(t) dt$
+
+16 points: $\displaystyle \mathcal{F}f(w)=\int_{-\infty}^{\infty} e^{i 2 \pi w t} f(t) dt$
+
+32 points: $\displaystyle \mathcal{F}f(s)=\int_{-\infty}^{\infty} e^{-i s t} f(t) dt$
+
+\subsection*{Solution}
+2.\\
+\solint{c}{8cecbb}
+
+
+
+
+
+
+
+
+%\input{convolution}
 % Discrete (L19-10:30,L20)
 
 
 
 % Calculate fourier transform of dirichlet window https://www.youtube.com/watch?annotation_id=annotation_655167&feature=iv&src_vid=8JKb9UN6W4c&v=_HJH3MekMHY
-\fi
