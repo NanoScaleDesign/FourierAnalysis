@@ -12,13 +12,13 @@
 \subsection*{Comment}
 Here we expand our study to convolution; a powerful function for processing signals.
 This introduction by Prof. Osgood provides an excellent introduction.
-%What you will learn here is that convolution in real space is related to multiplication in frequency space.
+What you will learn here is that convolution in real space is related to multiplication in frequency space.
 Visualisation of what convolution in real-space means however, is rather difficult, and I would recommend to focus purely on the mathematical meaning here of how it relates functions in real space and frequency space.
 
 \subsection*{Challenge}
 Briefly describe what convolution of two functions means, and how it can relate two functions of time in real space to their equivalent functions in frequency space.
 
-%Show that convolution in real-space ($\ff(g*f)(s)$) corresponds to multiplication in frequency space ($\ff g(s) \ff f(s)$). % No time in 2017.
+Show that convolution in real-space ($\ff(g*f)(s)$) corresponds to multiplication in frequency space ($\ff g(s) \ff f(s)$).
 
 \subsection*{Solution}
 Please compare your answer with your partner or discuss with the teacher in class.
@@ -58,49 +58,49 @@ Please compare your answer with your partner or discuss with the teacher in clas
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Convolution with a window function}
-%
-%%\subsection*{Comment}
-%%The ``signal'' here is $g(t-\tau)$ and the ``window function'' is $f(\tau)$.
-%
-%\subsection*{Challenge}
-%%1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t-\tau)=(t-\tau)^2$ with time. 
-%Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t)=t^2$ with time. 
-%
-%Obtain the convolution of the signal $(f \star g)(t)$ with a window function:
-%\begin{equation}
-    %f(t)=
-    %\begin{cases}
-        %1 & \text{for } -1/2 < t < 1/2\\
-        %0 & \text{otherwise}
-    %\end{cases}
-%\end{equation}
-%
-%%2. If this window-function were a filter, what sort of band-pass filter could you consider this to be?
-%
-%\subsection*{Solution}
-%Your answer should be consistent with $(f \star g)(2) = \frac{49}{12}$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convolution with a window function}
+
+\subsection*{Comment}
+The ``signal'' here is $g(t-\tau)$ and the ``window function'' is $f(\tau)$.
+
+\subsection*{Challenge}
+%1. Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t-\tau)=(t-\tau)^2$ with time. 
+Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies as $g(t)=t^2$ with time. 
+
+Obtain the convolution of the signal $(f \star g)(t)$ with a window function:
+\begin{equation}
+    f(t)=
+    \begin{cases}
+        1 & \text{for } -1/2 < t < 1/2\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+
+%2. If this window-function were a filter, what sort of band-pass filter could you consider this to be?
+
+\subsection*{Solution}
+Your answer should be consistent with $(f \star g)(2) = 49/12$
 
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Convolution with a continuous function}
-%
-%\subsection*{Challenge}
-%Consider that you have a (somewhat unrealistic but mathematically manageable) input signal that varies with time $\tau$ as $f(\tau)=\tau$.  Apply a filter to the signal that is defined at time $t$ as $e^{-|t|}$.
-%
-%\emph{Hint: $\int_{-\infty}^{\infty} \text{(even function)} = 2 \int_{0}^{\infty} \text{(even function)}$.}
-%
-%To check your answer, substitute $t=1$ into your final answer.
-%
-%\subsection*{Solution}
-%\hash{qqq}{e48f28}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convolution with a continuous function}
+
+\subsection*{Challenge}
+Calculate the convolution of $f(t)=t$ with $g(t)=e^{-|t|}$.
+
+\emph{Hint 1: $\int_{-\infty}^{\infty} \text{(even function)} = 2 \int_{0}^{\infty} \text{(even function)}$.}
+
+\emph{Hint 2: It does not matter which function you make ``f'' or ``g'', but one way is easier than the other to compute.}
+
+\subsection*{Solution}
+To check your answer, substitute $t=1$ into your final answer and you should obtain $(f \star g)(1) = 2$.
 
 
 
