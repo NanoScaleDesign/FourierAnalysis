@@ -25,7 +25,7 @@ The following pages are based on slides developed by Prof. Maraso Yamashiro for 
 
 
 
-\iffalse
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +35,13 @@ The following pages are based on slides developed by Prof. Maraso Yamashiro for 
 
 The following pages are based on slides developed by Prof. Maraso Yamashiro for the 2015 class on Fourier Analysis. The slides have been lightly modified for notation differences.
  %Please follow the derivation on the following pages.
-Note that the equation for the discrete Fourier Transform on the top slide of page 90 should read $\hat{f}_n = N c_n = \sum_{k=0}^{N-1} f_k e^{-2 \pi n x_k}$ (not $e^{-inx_k}$) (mistake by the current author, not Prof. Yamashiro).
+Note that the equation for the discrete Fourier Transform on the 5th slide should read
+
+\begin{equation}
+    \hat{f}_n = N c_n = \sum_{k=0}^{N-1} f_k e^{-2 \pi n x_k}
+\end{equation}
+
+and not $e^{-inx_k}$ (my mistake).
 
 \includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x2,frame=true]{discrete_10-15.pdf}
 
@@ -180,10 +186,11 @@ Considering the signal:
 3. What is the maximum sampling frequency at which aliasing will occur for this signal?
 
 \subsection*{Solutions}
-\textbf{1. Lower of the two frequencies in Hz}\\
+\textbf{1.}\\
+(Lower of the two frequencies in Hz)\\
 \soltwodp{c}{166765}
 
-\textbf{1. Higher of the two frequencies in Hz}\\
+(Higher of the two frequencies in Hz)\\
 \soltwodp{d}{c22bee}
 
 \textbf{2.}\\
@@ -351,4 +358,43 @@ This problem is overcome through the use of \emph{zero-padding}. In the example 
 
 \textbf{4}\\
 984.70
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Signal processing with Python}
+
+\subsection*{Comment}
+Here you can put your understanding to practical use by cleaning the noise from an audio signal. This gives you experience of a very common application of Fourier analysis.
+
+Note that running the python program will result in sound being played, which can be loud. PLEASE BE VERY CAREFUL WHEN PLAYING THE SOUND FOR THE FIRST TIME, ESPECIALLY IF YOU ARE WEARING HEADPHONES.
+
+Graphs will also be displayed in the default browser on your computer.
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Python outline code: \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/audio.py}
+    \item Noisy audio (to be read by the python code): \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/bbcnews181210.noisy.wav}
+    \item Noisy audio (media-player format, can be played in a media player): \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/bbcnews181210.mediaformat.noisy.wav}
+\end{itemize}
+
+\subsection*{Challenge}
+You are trying to listen to the BBC news but there is background noise that makes it difficult to hear. Your challenge is to remove the noise from the signal.
+
+You may use the outline python code above to help you, or you may use your own code from scratch. The code above relies on the following libraries:
+\begin{itemize}
+    \item sounddevice
+    \item numpy
+    \item scipy
+    \item plotly
+\end{itemize}
+
+Generally, to install new libraries you can use \emph{pip3 install sounddevice} etc.
+
+\subsection*{Solutions}
+There will be a final output file called \emph{bbcnews181210.mediaformat.clean.wav}.
+You can play this in any media player, and should be a clean sound without the background noise.
 \fi
