@@ -8,8 +8,8 @@ def main():
     data = read_image('kyudai.png')
 
     # Calculate 2D FFT
-    fft = calculate_fft(data)
-    fft = shift_fft(fft)
+    fft = calculate_fft(data) # Your code here
+    fft = shift_fft(fft) # Your code here
 
     # Modify FFT
     fft = modify_fft(fft) # Your code here
@@ -44,9 +44,12 @@ def read_image(fname):
 def shift_fft(fft):
     """
     Shift the zero-frequencies to the centre of the 2D fft
+    You do not need to do this by hand and can use the shift function included
+    in numpy instead.
     """
 
-    fft = np.fft.fftshift(fft)
+    # Your code here
+
     return fft
 
 
@@ -66,9 +69,10 @@ def modify_fft(fft):
 
 def calculate_fft(data):
     """
-    Calculates 2D FFT
+    Calculate the 2D FFT
     """
-    fft = np.fft.fft2(data)
+
+    # Your code here
 
     return fft
 
