@@ -376,12 +376,17 @@ Graphs will also be displayed in the default browser on your computer.
 
 For Mac users: I recommend downloading the terminal software iTerm2 (\url{https://www.iterm2.com}). It is much easier to use than the default terminal on Macs.
 
+When you download the files below, I recommend that you create a new directory beforehand (for example, on your desktop) and save all the files to that new directory.
+
 \subsection*{Resources}
 \begin{itemize}
-    \item Python outline code: \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/audio.py}
-    \item Noisy audio (to be read by the python code): \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/bbcnews181210.noisy.wav}
-    \item Noisy audio (media-player format, can be played in a media player): \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/bbcnews181210.mediaformat.noisy.wav}
+    \item Python outline code: \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/audio.py} *
+    \item Noisy audio (to be read by the python code): \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/bbcnews181210.noisy.wav} *
+    \item Noisy audio (media-player format**): \url{http://raw.githubusercontent.com/NanoScaleDesign/FourierAnalysis/master/Audio/bbcnews181210.mediaformat.noisy.wav}
 \end{itemize}
+
+* If this brings up a webpage, you might need to right-click on the page and download it, ensuring the name is correct.\\
+** Can be played in a media player such as iTunes or VLC.
 
 \subsection*{Challenge}
 You are trying to listen to the BBC news but there is background noise that makes it difficult to hear. Your challenge is to remove the noise from the signal.
@@ -398,7 +403,7 @@ Generally, to install new libraries you can use \emph{pip3 install sounddevice} 
 
 \subsection*{Solutions}
 There will be a final output file called \emph{bbcnews181210.mediaformat.clean.wav}.
-You can play this in any media player, and should be a clean sound without the background noise.
+You can play this in a media player such as iTunes or VLC, and should be a clean sound without the background noise.
 
 
 
@@ -411,18 +416,20 @@ You can play this in any media player, and should be a clean sound without the b
 \subsection*{Comment}
 2D fourier transforms primarily come up in relation to images. The extention from 1D to 2D is fairly straightforward, and this challenge is designed to give you a basic understanding of the transition to multiple dimensions.
 
-Note: Continuous Time Fourier Transforms are mentioned briefly in the video resource below. This is not something we have time to cover in this course so you may ignore that part of the video.
+Note: Discrete-Time Fourier Transforms are mentioned briefly in the video resource below. This is not something we have time to cover in this course so you may ignore that part of the video. Also, we have not really discussed the inverse DFT and we will not cover this in this course apart from a programming perspective.
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Video: \url{https://www.youtube.com/watch?v=NbQY1x8H6QQ} until 18:25.
+    \item Video: \url{https://youtu.be/NbQY1x8H6QQ?t=137} from 2:17 until 18:25.
 \end{itemize}
 
 \subsection*{Challenge}
-What is meant by a two-dimensional ``basis function'' in the video? Draw an example of a 2D basis function and describe its relation to the 2D DFT.
+1. Relate the 2D Discrete Fourier Transform shown in the video to the 1D DFT you are already familiar with. What has changed?
+
+2. What is meant by a two-dimensional basis function? Draw an example of a 2D basis function and describe its relation to the 2D DFT.
 
 \subsection*{Solution}
-Please compare with your partner and discuss in class.
+Please compare your solutions with your partner and discuss in class.
 
 
 
