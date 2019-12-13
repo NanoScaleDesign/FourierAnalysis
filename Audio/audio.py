@@ -26,7 +26,7 @@ def main():
     
     # Clean the signal and plot the frequency graph of the new signal
     fft_clean = clean_spectrum(fft) # Edit this function
-    mag = calc_mag(fft)
+    mag = calc_mag(fft_clean)
     plotgraph(rec=mag,fs=1,fname='fft_clean.html',title='Clean signal spectrum',xtitle='Frequency (Hz)',ytitle='Magnitude')
    
     # Perform inverse FFT, plot magnitudes and play back again
